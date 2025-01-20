@@ -42,6 +42,6 @@ You can preview the production build with `npm run preview`.
 
 git init
 git add .
-git commit -m "our message"
+git commit -m "done with landing page need some changes"
 git push -u origin main
 git push
