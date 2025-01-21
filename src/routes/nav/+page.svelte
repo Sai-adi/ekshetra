@@ -56,7 +56,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    <ul class="mt-20 space-y-6 px-6">
+    <ul class="mt-20 space-y-6 px-6"> <!-- Added padding here -->
       <li><a href="#about" class="block text-lg underline-animation">About</a></li>
       <li><a href="#events" class="block text-lg underline-animation">Events</a></li>
       <li><a href="#gallery" class="block text-lg underline-animation">Gallery</a></li>
@@ -93,8 +93,7 @@
     display: inline-block;
   }
 
-  .underline-animation::after
-  {
+  .underline-animation::after {
     content: '';
     position: absolute;
     left: 0;
@@ -124,10 +123,12 @@
   ul {
     list-style: none;
     padding: 0;
+    margin: 0; /* Ensure no default margin */
   }
 
   li {
     margin: 1rem 0;
+    text-align: center; /* Center the text in each list item */
   }
 
   @media (min-width: 1024px) {
