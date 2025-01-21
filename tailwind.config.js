@@ -14,6 +14,11 @@ export default {
                 gradientEnd: '#ec4899',
                 track: '#f3f4f6',
             },
+            fontFamily: {
+                merriweather: ['Merriweather', 'serif'],
+                lora: ['Lora', 'serif'],
+                audiowide: ['Audiowide', 'cursive'],
+            },
         },
     },
 
