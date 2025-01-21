@@ -5,15 +5,30 @@
   let isMenuOpen = false;
   let isModalOpen = false;
 
+  // Toggle the mobile menu
   const toggleMenu = () => {
     isMenuOpen = !isMenuOpen;
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (isMenuOpen) {
+      mobileMenu.style.transform = 'translateX(0)';
+    } else {
+      mobileMenu.style.transform = 'translateX(-100%)';
+    }
   };
 
+  // Toggle the modal
   const toggleModal = () => {
     isModalOpen = !isModalOpen;
   };
 
+  // GSAP animations on mount
   onMount(() => {
+    const menuButton = document.getElementById('menuButton');
+    const closeMenuButton = document.getElementById('closeMenuButton');
+
+    menuButton.addEventListener('click', toggleMenu);
+    closeMenuButton.addEventListener('click', toggleMenu);
+
     gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
     gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
     gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
@@ -45,56 +60,50 @@
 </script>
 
 <header class="bg-gradient-to-r from-orange-400 to-pink-500 sticky top-0 z-50">
-  <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-    <a href="" class="text-white text-3xl font-extrabold tracking-wide hover:scale-110 transition-transform duration-500" aria-label="EKSHETRA 3.0">
-      EKSHETRA 3.0
+  <!-- Header Section -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-2 mx-auto bg-[#1e293b] rounded-full shadow-md max-w-7xl h-20 mt-4"> <!-- Set a fixed height -->
+    <div class="flex items-center space-x-3">
+      <img src="main.png" alt="EKSHETRA Logo" class="w-16 h-16 rounded-full object-cover"> <!-- Adjusted size and added object-cover -->
+    </div>
+
+    <div class="hidden lg:flex space-x-12 text-lg">
+      <a href="#about" class="nav-link text-white underline-animation">About</a>
+      <a href="#events" class="nav-link text-white underline-animation">Events</a>
+      <a href="#gallery" class="nav-link text-white underline-animation">Gallery</a>
+      <a href="#team" class="nav-link text-white underline-animation">Team</a>
+      <a href="#contact" class="nav-link text-white underline-animation">Contact</a>
+    </div>
+
+    <a href="#register" class="hidden lg:inline-block px-5 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+      Register
     </a>
 
-    <ul class="hidden md:flex space-x-8 text-white text-lg font-semibold">
-      <li>
-        <a href="/sponsors" class="relative group" aria-label="Sponsors">
-          <span class="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-10 rounded-lg transition-all duration-300 group-hover:opacity-30"></span>
-          <span class="relative hover:text-yellow-300 transition-colors duration-300">Sponsors</span>
-        </a>
-      </li>
-      <li>
-        <a href="/about" class="relative group" aria-label="About">
-          <span class="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-10 rounded-lg transition-all duration-300 group-hover:opacity-30"></span>
-          <span class="relative hover:text-teal-300 transition-colors duration-300">About</span>
-        </a>
-      </li>
-      <li>
-        <a href="/gallery" class="relative group" aria-label="Gallery">
-          <span class="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-10 rounded-lg transition-all duration-300 group-hover:opacity-30"></span>
-          <span class="relative hover:text-purple-300 transition-colors duration-300">Gallery</span>
-        </a>
-      </li>
-      <li>
-        <a href="/contact" class="relative group" aria-label="Contact">
-          <span class="absolute inset-0 bg-gradient-to-r from-white to-transparent opacity-10 rounded-lg transition-all duration-300 group-hover:opacity-30"></span>
-          <span class="relative hover:text-pink-300 transition-colors duration-300">Contact</span>
-        </a>
-      </li>
-    </ul>
-
-    <button class="md:hidden text-white hover:text-gray-200 transition-transform duration-300 transform hover:scale-110" on:click={toggleMenu} aria-label="Toggle mobile menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    <button class="lg:hidden flex items-center px-4 py-2 bg-[#0ea5e9] text-white rounded-full shadow-lg hover:bg-[#0284c7] transition-all duration-300 transform hover:scale-105 hover:shadow-xl" id="menuButton">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </nav>
 
-  {#if isMenuOpen}
-    <div class="bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 text-white flex flex-col items-center space-y-4 py-6 md:hidden animate-fade-in">
-      <a href="/sponsors" class="hover:text-yellow-300 transition-colors duration-300">Sponsors</a>
-      <a href="/about" class="hover:text-teal-300 transition-colors duration-300">About</a>
-      <a href="/gallery" class="hover:text-purple-300 transition-colors duration-300">Gallery</a>
-      <a href="/contact" class="hover:text-pink-300 transition-colors duration-300">Contact</a>
-    </div>
-  {/if}
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed top-0 left-0 w-3/4 h-full bg-[#334155] text-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <button id="closeMenuButton" class="absolute top-4 right-4 text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <ul class="mt-20 space-y-6 px-6">
+      <li><a href="#about" class="block text-lg underline-animation">About</a></li>
+      <li><a href="#events" class="block text-lg underline-animation">Events</a></li>
+      <li><a href="#gallery" class="block text-lg underline-animation">Gallery</a></li>
+      <li><a href="#team" class="block text-lg underline-animation">Team</a></li>
+      <li><a href="#contact" class="block text-lg underline-animation">Contact</a></li>
+      <li><a href="#register" class="block px-4 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg">Register</a></li>
+    </ul>
+  </div>
 </header>
 
-<section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-32 relative overflow-hidden">
+<section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
     <div class="bg-shape2 absolute w-64 h-64 bg-white opacity-10 rounded-full bottom-20 right-32 animate-ping"></div>
@@ -102,7 +111,10 @@
     <div class="bg-shape4 absolute w-32 h-32 bg-pink-300 opacity-30 rounded-full top-20 right-10 animate-bounce"></div>
   </div>
 
-  <h1 class="hero-title text-4xl font-bold">EKSHETRA 3.0</h1>
+  <div class="flex justify-center items-center mt-10">
+    <img src="name.png" alt="" class="max-w-full max-h-32 object-cover" loading="lazy"> <!-- Added loading="lazy" -->
+  </div>
+  
   <p class="hero-tagline text-xl mt-4">Igniting Innovation, Celebrating Excellence!</p>
   <p class="hero-date text-lg mt-2">Feb 20-22, 2025</p>
   
@@ -253,42 +265,6 @@
   </div>
 </section>
 
-<!-- Schedule Section -->
-<section class="bg-gradient-to-r from-indigo-900 via-purple-900 to-black py-16 px-4 text-white">
-  <h2 class="text-4xl font-extrabold text-center mb-8 text-yellow-400">Event Schedule</h2>
-  <div class="max-w-6xl mx-auto bg-gradient-to-r from-gray-800 to-gray-900 shadow-2xl rounded-xl p-8">
-    <table class="w-full border-collapse text-gray-200">
-      <thead>
-        <tr class="bg-gradient-to-r from-indigo-800 to-purple-700 text-white">
-          <th class="p-4 text-left rounded-tl-lg">Time</th>
-          <th class="p-4 text-left">Event</th>
-          <th class="p-4 text-left rounded-tr-lg">Location</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="hover:bg-gray-700 transition duration-300">
-          <td class="p-4 border-t border-gray-600">10:00 AM</td>
-          <td class="p-4 border-t border-gray-600">Inauguration</td>
-          <td class="p-4 border-t border-gray-600">Main Hall</td>
-        </tr>
-        <tr class="hover:bg-gray-700 transition duration-300">
-          <td class="p-4 border-t border-gray-600">11:30 AM</td>
-          <td class="p-4 border-t border-gray-600">AI Workshop</td>
-          <td class="p-4 border-t border-gray-600">Lab 1</td>
-        </tr>
-        <tr class="hover:bg-gray-700 transition duration-300">
-          <td class="p-4 border-t border-gray-600">2:00 PM</td>
-          <td class="p-4 border-t border-gray-600">Hackathon</td>
-          <td class="p-4 border-t border-gray-600">Tech Room</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mt-8 text-center">
-      <a href="#" class="bg-yellow-600 text-white py-3 px-6 rounded-lg hover:bg-yellow-700 transition duration-300 transform hover:scale-105">Download Schedule</a>
-    </div>
-  </div>
-</section>
-
 <style>
   @keyframes marquee {
     from {
@@ -350,7 +326,6 @@
   }
 
   a:hover {
-    background-color: #fbbf24;
     transform: translateY(-2px);
   }
 
