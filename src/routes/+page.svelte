@@ -80,7 +80,6 @@
 </script>
 
 <Nav />
-
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
@@ -94,7 +93,8 @@
   </div>
   
   <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
-  <p class="hero-date text-lg mt-2 fontaudiowide text-lg">Feb 20-22, 2025</p>
+  <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22</p>
+  <p class="hero-date normal-font text-lg mt-2">BITS-VIZAG</p>
   
   <!-- Countdown Timer -->
   <div id="countdown" class="text-3xl font-bold mt-4 countdown">{countdownText}</div>
@@ -102,7 +102,7 @@
   <div class="button-container mt-6 space-x-4">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
     <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
-</div>
+  </div>
 </section>
 
 <!-- About the Fest Section -->
@@ -148,15 +148,15 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.5a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0018.5 4h-13A2.5 2.5 0 003 6.5v11A2.5 2.5 0 005.5 20h11" />
           </svg>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 fontaudiowide text-lg">Competitions</p>
+        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Competitions</p>
       </div>
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
         <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-pink-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w- 8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
           </svg>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 fontaudiowide text-lg">Cultural Shows</p>
+        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
       </div>
     </div>
   </div>

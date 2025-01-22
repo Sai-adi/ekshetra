@@ -42,6 +42,6 @@ You can preview the production build with `npm run preview`.
 
 git init
 git add .
-git commit -m "updated the links"
+git commit -m "done with the contact-us page"
 git push -u origin main
 git push
