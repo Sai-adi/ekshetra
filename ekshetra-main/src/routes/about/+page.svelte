@@ -3,6 +3,7 @@
   import AOS from "aos";
   import "aos/dist/aos.css"; // Import AOS styles
   import Nav from "../nav/+page.svelte";
+  import Footer from "../footer/+page.svelte";
 
   onMount(() => {
     AOS.init({
@@ -16,6 +17,7 @@
 </script>
 
 <Nav />
+<Footer />
 <section class="relative bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white py-20 px-8 overflow-hidden pt-[120px]">
   <!-- Background Shapes -->
   <div class="absolute inset-0 pointer-events-none">

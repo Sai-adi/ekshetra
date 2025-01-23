@@ -6,7 +6,7 @@
       // Simulate a loading delay
       setTimeout(() => {
         isLoading = false;
-      }, 3000); // Adjust the delay as needed
+      }, 2000); // Adjust the delay as needed
     });
   </script>
   
@@ -60,7 +60,7 @@
   
     /* Spacing between the logos */
     .netflix-logo .logo-spacing {
-      margin-top: 20px; /* Adjust the spacing between the two logos */
+      margin-top: 5px; /* Adjust the spacing between the two logos */
       animation: bounce 1.5s infinite ease-in-out;
     }
   
@@ -71,7 +71,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 50%;
+      width: 70%;
       height: 2px;
       background: red;
       transform: translate(-50%, -50%) scaleX(0);

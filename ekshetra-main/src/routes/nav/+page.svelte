@@ -27,13 +27,13 @@
 <header class="bg-gradient-to-r from-orange-400 to-pink-500 sticky top-0 z-50">
   <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-2 mx-auto bg-[#1e293b] rounded-full shadow-md max-w-7xl h-20 mt-4">
     <div class="flex items-center space-x-3">
-      <a href="#" data-text="HOME" id="home-link"><img src="/logos/main.png" alt="EKSHETRA Logo" class="w-16 h-16 rounded-full object-cover"></a>
+      <a href="/" data-text="HOME" id="home-link"><img src="/logos/main.png" alt="EKSHETRA Logo" class="w-16 h-16 rounded-full object-cover"></a>
     </div>
 
     <div class="hidden lg:flex space-x-12 text-lg">
       <a href="about" class="nav-link text-white underline-animation">About</a>
       <a href="#events" class="nav-link text-white underline-animation">Events</a>
-      <a href="#gallery" class="nav-link text-white underline-animation">Gallery</a>
+      <a href="gallery" class="nav-link text-white underline-animation">Gallery</a>
       <a href="#team" class="nav-link text-white underline-animation">Team</a>
       <a href="#contact" class="nav-link text-white underline-animation">Contact</a>
     </div>

@@ -5,7 +5,7 @@
   import 'aos/dist/aos.css'; // Import AOS styles
   import Nav from './nav/+page.svelte'; // Ensure this is the correct import
   import LoadingPage from './loading_page/+page.svelte'; // Adjust the path as necessary
-
+  import MouseFollower from './follower/+page.svelte';
   let isMenuOpen = false;
   let countdownText = '';
   
@@ -82,6 +82,12 @@
 
 <Nav />
 <LoadingPage />
+<MouseFollower />
+
+<svelte:head>
+  <title>E-KSHETRA 3.0</title>
+  
+</svelte:head>
 
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
@@ -244,6 +250,7 @@
     </div>
   </div>
 </section>
+
 
 <style>
   @keyframes marquee {
