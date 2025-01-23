@@ -32,7 +32,7 @@
 
     <div class="hidden lg:flex space-x-12 text-lg">
       <a href="about" class="nav-link text-white underline-animation">About</a>
-      <a href="#events" class="nav-link text-white underline-animation">Events</a>
+      <a href="events" class="nav-link text-white underline-animation">Events</a>
       <a href="#gallery" class="nav-link text-white underline-animation">Gallery</a>
       <a href="#team" class="nav-link text-white underline-animation">Team</a>
       <a href="#contact" class="nav-link text-white underline-animation">Contact</a>
@@ -58,7 +58,7 @@
     </button>
     <ul class="mt-20 space-y-6 px-6"> <!-- Added padding here -->
       <li><a href="about" class="block text-lg underline-animation">About</a></li>
-      <li><a href="#events" class="block text-lg underline-animation">Events</a></li>
+      <li><a href="events" class="block text-lg underline-animation">Events</a></li>
       <li><a href="#gallery" class="block text-lg underline-animation">Gallery</a></li>
       <li><a href="#team" class="block text-lg underline-animation">Team</a></li>
       <li><a href="#contact" class="block text-lg underline-animation">Contact</a></li>
