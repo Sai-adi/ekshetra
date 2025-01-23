@@ -35,7 +35,7 @@
       <a href="events" class="nav-link text-white underline-animation">Events</a>
       <a href="#gallery" class="nav-link text-white underline-animation">Gallery</a>
       <a href="#team" class="nav-link text-white underline-animation">Team</a>
-      <a href="#contact" class="nav-link text-white underline-animation">Contact</a>
+      <a href="contact" class="nav-link text-white underline-animation">Contact</a>
     </div>
 
     <a href="#register" class="hidden lg:inline-block px-5 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
@@ -61,7 +61,7 @@
       <li><a href="events" class="block text-lg underline-animation">Events</a></li>
       <li><a href="#gallery" class="block text-lg underline-animation">Gallery</a></li>
       <li><a href="#team" class="block text-lg underline-animation">Team</a></li>
-      <li><a href="#contact" class="block text-lg underline-animation">Contact</a></li>
+      <li><a href="contact" class="block text-lg underline-animation">Contact</a></li>
       <li><a href="#register" class="block px-4 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg">Register</a></li>
     </ul>
   </div>
