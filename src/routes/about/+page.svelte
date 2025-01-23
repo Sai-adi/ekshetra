@@ -52,35 +52,42 @@
     </h1>
 
     <!-- About College -->
-    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">
-        About Our College
-      </h2>
-      <p class="text-lg leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem enim atque tenetur laborum quis itaque corporis, facilis dolor placeat nulla et nam eos quae sit nostrum eveniet! Odit, eum dolores.
-      </p>
-    </div>
-
+    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+  <img src="collage.jpg" alt="collage image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+  <div class="flex-1">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
+      About Our College
+    </h2>
+    <p class="text-lg leading-relaxed text-center md:text-right">
+      Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+    </p>
+  </div>
+</div>
     <!-- About Ekshetra 2.0 -->
-    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">
-        Ekshetra 2.0 - A Remarkable Journey
-      </h2>
-      <p class="text-lg leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore itaque ab, quaerat ea cumque, minima maxime iste perspiciatis harum deleniti voluptate ullam dicta, consequatur architecto unde obcaecati accusantium quibusdam.
-      </p>
-    </div>
+    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+  <img src="ekshetra2.0.jpg" alt="collage image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+  <div class="flex-1">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
+      Ekshetra 2.0 - A Remarkable Journey
+    </h2>
+    <p class="text-lg leading-relaxed text-center md:text-right">
+      Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+    </p>
+  </div>
+</div>
 
     <!-- About Ekshetra 3.0 -->
-    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
-      <h2 class="text-2xl font-semibold mb-4 text-purple-300">
-        Ekshetra 3.0 - Present & Happening
-      </h2>
-      <p class="text-lg leading-relaxed">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, ab itaque asperiores voluptatum deleniti in dignissimos ea tempore nisi est culpa, aliquam maiores iste delectus neque iure explicabo quam reiciendis!
-      </p>
-    </div>
+    <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+  <img src="jo.jpg" alt="collage image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+  <div class="flex-1">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
+      Ekshetra 2.0 - A Remarkable Journey
+    </h2>
+    <p class="text-lg leading-relaxed text-justification md:text-right">
+      Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+    </p>
   </div>
+</div>
 
   <style>
     @media (max-width: 768px) {
@@ -135,12 +142,18 @@
       font-style: normal;
     }
 
-    body {
-      font-family: 'Merriweather', serif;
-    }
+     body {
+    font-family: 'Audiowide', cursive;
+  }
 
-    h1, h2, h3 {
-      font-family: 'Lora', serif;
-    }
+  /* Headings */
+  h1, h2, h3 {
+    font-family: 'Audiowide', cursive;
+  }
+
+  /* Paragraphs */
+  p {
+    font-family: 'Audiowide', cursive;
+  }
   </style>
 </section>
