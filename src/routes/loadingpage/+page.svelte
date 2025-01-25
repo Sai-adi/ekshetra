@@ -84,7 +84,7 @@
       bind:this={videoElement}
       on:loadedmetadata={setVideoStartTime}
     >
-      <source src="/show1.mp4" type="video/mp4" />
+      <source src="/show7.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
