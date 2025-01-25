@@ -3,33 +3,45 @@
   import Nav from '../../components/Nav.svelte';
   import gsap from 'gsap';
   import AOS from 'aos';
-  import 'aos/dist/aos.css'; // Import AOS styles
+  import 'aos/dist/aos.css';
 
-  // Array of images for the slider
-  const ekshetra2Images = [
-    { src: 'https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg', alt: 'Photo 1' },
-    { src: 'https://i.redd.it/tc0aqpv92pn21.jpg', alt: 'Photo 2' },
-    { src: 'https://wharferj.files.wordpress.com/2015/11/bio_north.jpg', alt: 'Photo 3' },
-    { src: 'https://images7.alphacoders.com/878/878663.jpg', alt: 'Photo 4' },
-  ];
+  const imageFiles = import.meta.glob('/static/gallery/*');
+  let ekshetra2Images = [];
+
+  onMount(async () => {
+    ekshetra2Images = await Promise.all(
+      Object.keys(imageFiles).map(async (path) => {
+        return path.replace('/static', '');
+      })
+    );
+
+    AOS.init();
+    
+    gsap.fromTo('.heading', { opacity: 1 }, {
+      opacity: 0,
+      duration: 2,
+      delay: 1,
+      onComplete: () => {
+        headingVisible = false;
+        imagesVisible = true;
+      }
+    });
+  });
 
   let currentIndex = 0;
-  let headingVisible = true; // State to control heading visibility
-  let imagesVisible = false; // State to control images visibility
+  let headingVisible = true;
+  let imagesVisible = false;
 
-  // Function to go to the next image
   const nextImage = () => {
     currentIndex = (currentIndex + 1) % ekshetra2Images.length;
     animateSlider();
   };
 
-  // Function to go to the previous image
   const prevImage = () => {
     currentIndex = (currentIndex - 1 + ekshetra2Images.length) % ekshetra2Images.length;
     animateSlider();
   };
 
-  // Function to animate the slider
   const animateSlider = () => {
     gsap.to('.slider', {
       x: -currentIndex * 100 + '%',
@@ -37,45 +49,14 @@
       ease: 'power2.inOut',
     });
   };
-
-  // Initialize AOS and GSAP on mount
-  onMount(() => {
-    AOS.init();
-    
-    // Fade in the heading and then fade it out
-    gsap.fromTo('.heading', { opacity: 1 }, {
-      opacity: 0,
-      duration: 2,
-      delay: 1, // Delay before starting the fade-out
-      onComplete: () => {
-        headingVisible = false; // Hide the heading after the animation
-        imagesVisible = true; // Show the images after the heading fades out
-      }
-    });
-
-    // Bounce animation for the PNG image every 10 seconds
-    const bounceImage = () => {
-      gsap.fromTo('.bounce-image', { y: 0 }, {
-        y: -20,
-        duration: 0.5,
-        yoyo: true,
-        repeat: 1,
-        ease: 'power1.inOut',
-      });
-    };
-
-    // Set interval for bouncing
-    setInterval(bounceImage, 10000); // Bounce every 10 seconds
-  });
 </script>
 
 <Nav />
 
-<!-- Image Slider with Parallax Effect -->
-<section class="relative min-h-screen bg-gray-900 text-white">
+<section class="relative min-h-screen bg-gray-100 text-white">
   {#if headingVisible}
     <div class="absolute inset-0 flex items-center justify-center z-10 heading">
-      <h1 class="text-5xl font-extrabold text-center tracking-wide">
+      <h1 class="text-5xl font-extrabold text-center tracking-wide text-gray-800">
         Memories of <span class="text-blue-500">Ekshetra 2.0</span>
       </h1>
     </div>
@@ -84,14 +65,12 @@
   {#if imagesVisible}
     <div class="relative overflow-hidden">
       <div class="slider flex transition-transform duration-700">
-        {#each ekshetra2Images as image}
-          <div class="flex-shrink-0 w-full h-screen bg-cover bg-center" style="background-image: url('{image.src}');" data-aos="fade-up">
-            <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
-              <div class="text-center">
-                <h2 class="text-3xl font-bold">{image.alt}</h2>
-                <p class="mt-4">Description for {image.alt}</p>
-              </div>
-            </div>
+        {#each ekshetra2Images as imagePath}
+          <div class="flex-shrink-0 w-full h-screen flex items-center justify-center p-8" data-aos="fade-up">
+            <div 
+              class="max-w-full max-h-full bg-contain bg-no-repeat bg-center" 
+              style="background-image: url('{imagePath}'); width: 80%; height: 80%;" 
+            />
           </div>
         {/each}
       </div>
@@ -104,24 +83,12 @@
       </button>
     </div>
   {/if}
-
-  <!-- PNG Image with Anchor Tag -->
-  <a href="/ekshetra3" class="absolute bottom-4 right-4 z-20">
-    <img src="/path/to/your/image.png" alt="Go to another page" class="bounce-image w-16 h-16" />
-  </a>
 </section>
 
 <style>
-  /* Custom styles for parallax effect */
-  section {
-    perspective: 1000px;
-  }
-
-  .slider {
-    transform-style: preserve-3d;
-  }
-
   .slider > div {
-    transform: translateZ(-1px) scale(1.1); /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
