@@ -109,7 +109,8 @@
     <div class="bg-shape3 absolute w-40 h-40 bg-orange-300 opacity-30 rounded-full bottom-10 left-10 animate-spin"></div>
     <div class="bg-shape4 absolute w-32 h-32 bg-pink-300 opacity-30 rounded-full top-20 right-10 animate-bounce"></div>
   </div>
- 
+  <div class="cursor tw-hidden md:tw-block" />
+  
   <div class="flex justify-center items-center mt-10">
     <img src="n.png" alt="" class="max-w-full max-h-36 object-cover" loading="lazy"> 
   </div>
@@ -121,7 +122,7 @@
   <!-- Countdown Timer -->
   <div id="countdown" class="text-3xl font-bold mt-4 countdown">{countdownText}</div>
 
-  <div class="button-container mt-6 space-x-4">
+  <div class="button-container mt-4 space-4">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
     <!-- svelte-ignore a11y_consider_explicit_label -->
     <a href="events"><button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
