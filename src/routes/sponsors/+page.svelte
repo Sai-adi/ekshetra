@@ -3,7 +3,7 @@
     import { gsap } from 'gsap';
     import AOS from 'aos';
     import 'aos/dist/aos.css'; // Import AOS styles
-  
+    import Nav from "../nav/+page.svelte";
     let sponsors = {
       diamond: [
         {
@@ -96,9 +96,9 @@
       });
     }
   </script>
-  
+  <Nav />
   <section class="py-20 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
-    <div class="container mx-auto text-center">
+    <div class="container mx-auto text-center mt-12">
       <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-red-500 to-pink-500 mb-12">
         Our Sponsors
       </h2>
