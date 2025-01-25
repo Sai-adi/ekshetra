@@ -4,6 +4,7 @@
   import AOS from 'aos';
   import 'aos/dist/aos.css'; // Import AOS styles
   import Nav from './nav/+page.svelte'; // Ensure this is the correct import
+  import LoadingPage from './loadingpage/+page.svelte';
 
   let isMenuOpen = false;
   let countdownText = '';
@@ -78,8 +79,8 @@
     gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
   });
 </script>
-
 <Nav />
+<LoadingPage />
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
@@ -101,8 +102,9 @@
 
   <div class="button-container mt-6 space-x-4">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
-    <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
-  </div>
+    <!-- svelte-ignore a11y_consider_explicit_label -->
+    <a href="events"><button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
+    </a></div>
 </section>
 
 <!-- About the Fest Section -->
@@ -204,7 +206,7 @@
     </div>
 
     <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
-      <a href="#know-more" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
+      <a href="events" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
     </div>
   </div>
 </section>
@@ -238,7 +240,7 @@
       </div>
     </div>
     <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
-      <a href="#know-more" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
+      <a href="sponsors" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
     </div>
   </div>
 </section>
