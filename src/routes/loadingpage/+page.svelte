@@ -78,13 +78,12 @@
     <video
       class="loading-video"
       autoplay
-      muted
       loop
       playsinline
       bind:this={videoElement}
       on:loadedmetadata={setVideoStartTime}
     >
-      <source src="/show6.mp4" type="video/mp4" />
+      <source src="/show1.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
