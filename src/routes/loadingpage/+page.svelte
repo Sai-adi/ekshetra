@@ -8,7 +8,7 @@
     // Simulate a loading delay
     setTimeout(() => {
       isLoading = false;
-    }, 4000); // Adjust the delay as needed
+    }, 7000); // Adjust the delay as needed
   });
 
   // Function to set the video start time and handle the fade-out
@@ -78,6 +78,7 @@
     <video
       class="loading-video"
       autoplay
+      muted
       loop
       playsinline
       bind:this={videoElement}
