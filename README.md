@@ -45,3 +45,11 @@ git add .
 git commit -m "done with the contact-us page"
 git push -u origin main
 git push
+
+
+
+for pulling 
+
+git add .
+git commit -m "your commit message"
+git pull --rebase
