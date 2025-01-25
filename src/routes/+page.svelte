@@ -8,6 +8,7 @@
 
   let isMenuOpen = false;
   let countdownText = '';
+  let mapRef;
 
   // Countdown Timer Logic
   const eventDate = new Date("February 20, 2025 00:00:00").getTime();
@@ -77,6 +78,26 @@
     gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
     gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
     gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
+
+    gsap.set(mapRef, { scale: 1 });
+
+    // Map hover animations
+    mapRef.addEventListener("mouseenter", () => {
+      gsap.to(mapRef, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+    });
+
+    mapRef.addEventListener("mouseleave", () => {
+      gsap.to(mapRef, { scale: 1, duration: 0.3, ease: "power2.out" });
+    });
+
+    // Load animations
+    gsap.from(".contact-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.out",
+    });
   });
 </script>
 <Nav />
@@ -125,7 +146,7 @@
         EKSHETRA 3.0 is the ultimate celebration of talent, innovation, and creativity! 
         Join us for a thrilling lineup of events, workshops, competitions, and cultural showcases.
       </p>
-      <p class="leading-relaxed animate-textFadeIn fontaudiowide text-lg" data-aos="fade-up" data-aos-delay="300">
+      <p class="leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">
         Experience the vibrant energy of students and professionals coming together 
         to explore new horizons in technology and art. Let's make this a fest to remember!
       </p>
@@ -142,7 +163,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 6.75l2.25 2.25L14.25 6.75M9.75 11.25l2.25 2.25L14.25 11.25M9.75 15.75l2.25 2.25L14.25 15.75" />
           </svg>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 fontaudiowide text-lg">Workshops</p>
+        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Workshops</p>
       </div>
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-green-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="500">
         <div class="w-16 h-16 bg-green-700 text-green-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-green-800">
@@ -182,25 +203,25 @@
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
         <div class="text-3xl font-semibold text-indigo-400">Technical Workshops</div>
-        <p class="mt-3 text-sm text-gray-400 fontaudiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
+        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-pink-600 to-pink-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
         <div class="text-3xl font-semibold text-pink-400">Cultural Performances</div>
-        <p class="mt-3 text-sm text-gray-400 fontaudiowide text-lg">Catch the best of talent, dance, music, and drama from students across the country.</p>
+        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Catch the best of talent, dance, music, and drama from students across the country.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-teal-600 to-teal-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
         <div class="text-3xl font-semibold text-teal-400">Sports Competitions</div>
-        <p class="mt-3 text-sm text-gray-400 fontaudiowide text-lg">Get ready to show off your skills in thrilling sports competitions.</p>
+        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Get ready to show off your skills in thrilling sports competitions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-purple-600 to-purple-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
         <div class="text-3xl font-semibold text-purple-400">Guest Lectures</div>
-        <p class="mt-3 text-sm text-gray-400 fontaudiowide text-lg">Engage with thought leaders and learn from their inspiring journeys.</p>
+        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Engage with thought leaders and learn from their inspiring journeys.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
     </div>
@@ -221,19 +242,19 @@
 
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-4xl font-extrabold text-orange-500 mb-6 font-lora text-2xl" data-aos="fade-up">Our Esteemed Partners</h2>
-    <p class="text-lg text-gray-400 leading-relaxed mb-8 fontaudiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
+    <p class="text-lg text-gray-400 leading-relaxed mb-8 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
 
     <div class="overflow-hidden relative">
       <div class="animate-marquee flex items-center gap-12 sponsor-marquee">
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg" >
+        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
           <img src="https://via.placeholder.com/150" alt="Tech Innovators Inc. Logo" class="w-24 h-24 mr-4">
           <p class="font-semibold text-gray-700">Tech Innovators Inc.</p>
         </div>
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg" >
+        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
           <img src="https://via.placeholder.com/150" alt="NextGen Solutions Logo" class="w-24 h-24 mr-4">
           <p class="font-semibold text-gray-700">NextGen Solutions</p>
         </div>
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg" >
+        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
           <img src="https://via.placeholder.com/150" alt="GlobalTech Corporation Logo" class="w-24 h-24 mr-4">
           <p class="font-semibold text-gray-700">GlobalTech Corporation</p>
         </div>
@@ -243,6 +264,53 @@
       <a href="sponsors" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
     </div>
   </div>
+
+  <!-- Contact Section -->
+<div class="relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+  <!-- Contact Details -->
+  <div class="flex flex-col items-center md:items-start w-full md:w-1/2">
+    <div class="flex items-center space-x-3 mb-4">
+      <!-- Phone Icon GIF -->
+      <div class="w-8 h-8 flex justify-center items-center">
+        <img src="./logos/image.png" alt="Phone Icon" class="w-8 h-8" />
+      </div>
+      <span class="text-2xl font-semibold">Contact Us</span>
+    </div>
+    <p class="text-xl font-medium mb-2">
+      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+    </p>
+    <p class="text-lg text-gray-400 mb-4">
+      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+    </p>
+
+    <!-- Subheading Above Social Media Links -->
+    <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+
+    <!-- Instagram SVG -->
+    <div class="flex justify-center mt-4">
+      <a href="https://instagram.com" target="_blank" class="hover:scale-110 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Google Map Embed -->
+  <div class="w-full md:w-1/2 mt-4 md:mt-0">
+    <iframe
+      bind:this={mapRef}
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+      width="100%"
+      height="250"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="rounded-lg shadow-lg transition-transform duration-300"
+    ></iframe>
+  </div>
+</div>
 </section>
 
 <style>
@@ -258,7 +326,7 @@
     display: flex;
     gap: 2rem;
     white-space: nowrap;
- animation: marquee 15s linear infinite;
+    animation: marquee 15s linear infinite;
   }
 
   .sponsor-marquee:hover {
@@ -452,4 +520,17 @@
         max-width: 200px; /* Optional: Set a max width for buttons */
     }
 }
+/* Animated Gradient Background */
+  @keyframes gradient-xy {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  .animate-gradient-xy {
+    background-size: 200% 200%;
+    animation: gradient-xy 6s ease infinite;
+  }
 </style>
