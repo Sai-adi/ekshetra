@@ -264,11 +264,16 @@
       <a href="sponsors" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
     </div>
   </div>
-
+  <section class="absolute inset-0 flex items-center justify-center">
+    <div class="text-center mt-4">
+  <p>Made with 🩷 by <a href="https://konkorde.org " class="text-blue-500 hover:underline">KONKORDE</a></p>
+</div>
+  </section>
+  
   <!-- Contact Section -->
-<div class="relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+<div class=" mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
   <!-- Contact Details -->
-  <div class="flex flex-col items-center md:items-start w-full md:w-1/2">
+  <div class=" mt-3 flex flex-col items-center md:items-start w-full md:w-1/2">
     <div class="flex items-center space-x-3 mb-4">
       <!-- Phone Icon GIF -->
       <div class="w-8 h-8 flex justify-center items-center">
@@ -300,7 +305,7 @@
   <div class="w-full md:w-1/2 mt-4 md:mt-0">
     <iframe
       bind:this={mapRef}
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+      src="https://www.google.coqm/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
       width="100%"
       height="250"
       style="border:0;"
@@ -311,6 +316,7 @@
     ></iframe>
   </div>
 </div>
+        
 </section>
 
 <style>
