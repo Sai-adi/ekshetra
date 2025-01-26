@@ -3,12 +3,7 @@
   import AOS from "aos";
   import "aos/dist/aos.css"; // Import AOS styles
   import Nav from "../nav/+page.svelte";
-<<<<<<< HEAD
-  import gsap from "gsap";
-=======
-  import { gsap } from "gsap"; // Ensure GSAP is imported
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
-
+  import gsap from "gsap"; // Ensure GSAP is imported
   const events = [
     { 
       name: "Paper Presentation", 
@@ -48,28 +43,6 @@
       offset: 100 // Start animations a bit earlier
     });
 
-<<<<<<< HEAD
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        gsap.to('.background-layer', {
-          scale: 1.1, // Scale up the background
-          duration: 0.5,
-          ease: "power1.out"
-        });
-      });
-
-      card.addEventListener('mouseleave', () => {
-        gsap.to('.background-layer', {
-          scale: 1, // Scale back to original
-          duration: 0.5,
-          ease: "power1.out"
-        });
-      });
-    });
-  });
-=======
     // GSAP animations on mount
     gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
     gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
@@ -86,7 +59,6 @@
       ease: "power3.out",
     });
 
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
 </script>
 
 <Nav />
