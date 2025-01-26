@@ -3,11 +3,7 @@
   import AOS from "aos";
   import "aos/dist/aos.css"; // Import AOS styles
   import Nav from "../nav/+page.svelte";
-<<<<<<< HEAD
-  import gsap from "gsap";
-=======
-  import { gsap } from "gsap"; // Ensure GSAP is imported
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
+  import gsap from "gsap";// Ensure GSAP is imported
 
   const events = [
     { 
@@ -48,7 +44,6 @@
       offset: 100 // Start animations a bit earlier
     });
 
-<<<<<<< HEAD
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
@@ -69,14 +64,13 @@
       });
     });
   });
-=======
     // GSAP animations on mount
     gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
     gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
     gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
     gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
     gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
-  });
+  
   // Load animations
     gsap.from(".contact-section", {
       opacity: 0,
@@ -86,7 +80,6 @@
       ease: "power3.out",
     });
 
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
 </script>
 
 <Nav />

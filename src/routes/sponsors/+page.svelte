@@ -1,5 +1,5 @@
 <script>
-<<<<<<< HEAD
+
   import { onMount } from 'svelte';
   import AOS from 'aos';
   import 'aos/dist/aos.css'; // Import AOS styles
@@ -48,104 +48,6 @@
 
     <!-- Sponsors Section -->
     {#each Object.entries(sponsors) as [tier, sponsorList]}
-=======
-    import { onMount } from 'svelte';
-    import { gsap } from 'gsap';
-    import AOS from 'aos';
-    import 'aos/dist/aos.css'; // Import AOS styles
-    import Nav from "../nav/+page.svelte";
-    let sponsors = {
-      diamond: [
-        {
-          name: "Diamond Sponsor 1",
-          logo: "diamond-sponsor1-logo.png",
-          website: "https://diamond-sponsor1.com",
-          description: "Diamond Sponsor 1 is a leader in the industry, providing innovative solutions and exceptional service."
-        },
-        {
-          name: "Diamond Sponsor 2",
-          logo: "diamond-sponsor2-logo.png",
-          website: "https://diamond-sponsor2.com",
-          description: "Diamond Sponsor 2 provides top-notch services and has a strong commitment to quality."
-        },
-        {
-          name: "Diamond Sponsor 1",
-          logo: "diamond-sponsor1-logo.png",
-          website: "https://diamond-sponsor1.com",
-          description: "Diamond Sponsor 1 is a leader in the industry, providing innovative solutions and exceptional service."
-        },
-      ],
-      gold: [
-        {
-          name: "Gold Sponsor 1",
-          logo: "gold-sponsor1-logo.png",
-          website: "https://gold-sponsor1.com",
-          description: "Gold Sponsor 1 is known for its quality and customer satisfaction."
-        },
-        {
-          name: "Gold Sponsor 2",
-          logo: "gold-sponsor2-logo.png",
-          website: "https://gold-sponsor2.com",
-          description: "Gold Sponsor 2 excels in customer satisfaction and offers a wide range of services."
-        },
-        {
-          name: "Gold Sponsor 2",
-          logo: "gold-sponsor2-logo.png",
-          website: "https://gold-sponsor2.com",
-          description: "Gold Sponsor 2 excels in customer satisfaction and offers a wide range of services."
-        },
-      ],
-      silver: [
-        {
-          name: "Silver Sponsor 1",
-          logo: "silver-sponsor1-logo.png",
-          website: "https://silver-sponsor1.com",
-          description: "Silver Sponsor 1 offers great value and has a reputation for reliability."
-        },
-        {
-          name: "Silver Sponsor 2",
-          logo: "silver-sponsor2-logo.png",
-          website: "https://silver-sponsor2.com",
-          description: "Silver Sponsor 2 is a trusted partner, providing excellent service and support."
-        },
-        {
-          name: "Silver Sponsor 2",
-          logo: "silver-sponsor2-logo.png",
-          website: "https://silver-sponsor2.com",
-          description: "Silver Sponsor 2 is a trusted partner, providing excellent service and support."
-        },
-      ],
-    };
-  
-    let selectedSponsor = null;
-  
-    function openModal(sponsor) {
-      selectedSponsor = sponsor;
-      gsap.fromTo(".modal", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.5 });
-    }
-  
-    function closeModal() {
-      gsap.fromTo(".modal", { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.8, duration: 0.5, onComplete: () => selectedSponsor = null });
-    }
-  
-    onMount(() => {
-      AOS.init(); // Initialize AOS
-      animateShapes();
-    });
-  
-    function animateShapes() {
-      const shapes = document.querySelectorAll('.shape');
-      shapes.forEach((shape) => {
-        gsap.to(shape, {
-          y: -100,
-          duration: Math.random() * 3 + 2, // Random duration between 2 and 5 seconds
-          repeat: -1,
-          yoyo: true,
-          ease: "power1.inOut",
-        });
-      });
-    }
-  </script>
   <Nav />
   <section class="pt-14 py-18 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
     <div class="container mx-auto text-center mt-12">
@@ -153,8 +55,6 @@
         Our Sponsors
       </h2>
   
-      <!-- Diamond Sponsors Section -->
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
       <div class="mb-16">
         <h3 class="text-4xl font-bold text-white mb-8 capitalize">{tier} Sponsors</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -177,7 +77,6 @@
           <button on:click={closeModal} class="mt-4 bg-red-500 text-white px-4 py-2 rounded">Close</button>
         </div>
       </div>
-<<<<<<< HEAD
     {/if}
   </div>
 </section>
@@ -218,7 +117,6 @@
   @keyframes fadeIn {
     from {
       opacity: 0;
-=======
   
       <!-- Silver Sponsors Section -->
       <div class="mb-16">
@@ -315,7 +213,6 @@
       cursor: pointer;
       width: 250px; /* Fixed width for uniformity */
       height: 300px; /* Fixed height for uniformity */
->>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
     }
     to {
       opacity: 1;
