@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import AOS from "aos"; // Import AOS
-  import "aos/dist/aos.css"; // Import AOS styles
+  import AOS from "aos";
+  import "aos/dist/aos.css";
   import Nav from "../nav/+page.svelte";
+  import gsap from "gsap";
 
   const committees = [
     {
@@ -49,48 +50,92 @@
     },
   ];
 
+  const scrambleText = (element, text) => {
+    const originalText = text;
+    const length = originalText.length;
+    let currentText = "";
+
+    const scramble = () => {
+      currentText = "";
+      for (let i = 0; i < length; i++) {
+        const char = originalText[i];
+        if (char.match(/[0-9]/)) {
+          currentText += Math.floor(Math.random() * 10); // Scramble numbers
+        } else if (char.match(/[a-zA-Z]/)) {
+          const isUppercase = char === char.toUpperCase();
+          const randomChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97); // Random letter
+          currentText += isUppercase ? randomChar.toUpperCase() : randomChar;
+        } else {
+          currentText += char; // Preserve non-alphanumeric characters
+        }
+      }
+      element.innerText = currentText;
+    };
+
+    const interval = setInterval(() => {
+      scramble();
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(interval);
+
+      gsap.to(element, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.in",
+        onComplete: () => {
+          element.innerText = originalText;
+          gsap.to(element, {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+        },
+      });
+    }, 3000); // Duration of scrambling effect
+  };
+
   onMount(() => {
     AOS.init({
-      duration: 800, // Animation duration
-      easing: "ease-in-out", // Easing function
+      duration: 800,
+      easing: "ease-in-out",
       once: false,
       mirror: true,
-      offset: 100, // Start animations a bit earlier
+      offset: 100,
+    });
+
+    const scrambleElements = document.querySelectorAll(".scramble-effect");
+    scrambleElements.forEach((element) => {
+      scrambleText(element, element.textContent);
     });
   });
 </script>
 
 <Nav />
-<div class="relative bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 min-h-screen text-white py-10 overflow-hidden">
-  <!-- Decorative Shapes -->
-  <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 opacity-20 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute top-1/3 right-0 w-72 h-72 bg-purple-500 opacity-25 rounded-full blur-2xl animate-pulse"></div>
-  <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-indigo-500 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+<div class="bg-light-effect mb-autorelative min-h-screen text-white py-10 overflow-hidden relative">
+  <!-- Background Shapes -->
+  <div class="bg-shapes"></div>
 
-  <!-- Main Content -->
   <div class="relative z-20 container mx-auto px-4 mt-20">
-    <h1 class="text-5xl font-extrabold text-center text-blue-400 mb-12 tracking-wider hero-title" data-aos="fade-up">
+    <h1 class="text-5xl font-extrabold text-center text-blue-400 mb-12 tracking-wider" data-aos="fade-up">
       Contact Us
     </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each committees as committee}
         <div
-          class="bg-gray-800 rounded-xl shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300 p-6 relative group committee-card"
-          data-aos="fade-up" 
+          class="bg-gray-800 rounded-xl shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300 p-6 relative group"
+          data-aos="fade-up"
         >
-          <div
-            class="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-25 transition-opacity duration-300 pointer-events-none"
-          ></div>
           <h2 class="text-2xl font-semibold mb-4 text-center text-blue-300 group-hover:text-white transition-colors duration-300">
             {committee.name}
           </h2>
           <ul>
             {#each committee.heads as head}
               <li class="flex items-center justify-between py-3 px-4 bg-gray-700 rounded-lg mb-3 shadow-md hover:bg-gray-600 transition-colors duration-300">
-                <span class="text-lg font-medium">{head.name}</span>
+                <span class="text-lg font-medium scramble-effect">{head.name}</span>
                 <a
                   href="tel:{head.phone}"
-                  class="text-blue-400 font-semibold hover:text-blue-300 transition-colors duration-200"
+                  class="text-blue-400 font-semibold hover:text-blue-300 transition-colors duration-200 scramble-effect"
                 >
                   {head.phone}
                 </a>
@@ -101,9 +146,9 @@
       {/each}
     </div>
   </div>
-
-  <!-- Contact Section -->
-  <div class="mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+</div>
+<!-- Contact Section -->
+  <div class="mt-auto relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
     <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
       <div class="flex items-center space-x-3 mb-4">
         <div class="w-8 h-8 flex justify-center items-center">
@@ -141,15 +186,75 @@
       ></iframe>
     </div>
   </div>
-</div>
-
 <footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center" data-aos="fade-up">
+  <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
 
 <style>
+  .bg-light-effect {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(219, 39, 119, 0.4), rgba(56, 189, 248, 0.5));
+    background-size: 200% 200%;
+    animation: gradient-animation 8s infinite alternate;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .bg-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .bg-shapes::before,
+  .bg-shapes::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bg-shapes::before {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 15%;
+    filter: blur(120px);
+  }
+
+  .bg-shapes::after {
+    width: 400px;
+    height: 400px;
+    bottom: 15%;
+    right: 10%;
+    filter: blur(150px);
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(30px) translateX(-30px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
   footer {
     background-color: #1f2937;
     color: #ffffff;
@@ -166,5 +271,26 @@
   footer a:hover {
     text-decoration: underline;
     color: #60a5fa;
+  }
+   @font-face {
+    font-family: 'Audiowide';
+    src: url('./assets/fonts/Audiowide-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+
+  /* Default body font */
+  body {
+    font-family: 'Audiowide', cursive;
+  }
+
+  /* Headings */
+  h1, h2, h3 {
+    font-family: 'Audiowide', cursive;
+  }
+
+  /* Paragraphs */
+  p {
+    font-family: 'Audiowide', cursive;
   }
 </style>
