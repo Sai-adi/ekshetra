@@ -101,7 +101,7 @@
   });
 </script>
 <Nav />
-<!-- <LoadingPage /> -->
+<LoadingPage />
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
