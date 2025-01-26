@@ -3,7 +3,11 @@
   import AOS from "aos";
   import "aos/dist/aos.css"; // Import AOS styles
   import Nav from "../nav/+page.svelte";
+<<<<<<< HEAD
   import gsap from "gsap";
+=======
+  import { gsap } from "gsap"; // Ensure GSAP is imported
+>>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
 
   const events = [
     { 
@@ -33,6 +37,8 @@
     },
   ];
 
+  let mapRef;
+
   onMount(() => {
     AOS.init({
       duration: 800, // Animation duration
@@ -42,6 +48,7 @@
       offset: 100 // Start animations a bit earlier
     });
 
+<<<<<<< HEAD
     const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
@@ -62,6 +69,24 @@
       });
     });
   });
+=======
+    // GSAP animations on mount
+    gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
+    gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+    gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
+    gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
+    gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
+  });
+  // Load animations
+    gsap.from(".contact-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.out",
+    });
+
+>>>>>>> 90849c21699f299e255d2a44c802e0bd93cfd4fd
 </script>
 
 <Nav />
@@ -86,7 +111,61 @@
       {/each}
     </div>
   </div>
+  <!-- Full-Width Contact Section -->
+<div class="mt-8 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+  <!-- Contact Details -->
+  <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
+    <div class="flex items-center space-x-3 mb-4">
+      <!-- Phone Icon GIF -->
+      <div class="w-8 h-8 flex justify-center items-center">
+        <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
+      </div>
+      <span class="text-2xl font-semibold">Contact Us</span>
+    </div>
+    <p class="text-xl font-medium mb-2">
+      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+    </p>
+    <p class="text-lg text-gray-400 mb-4">
+      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+    </p>
+
+    <!-- Subheading Above Social Media Links -->
+    <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+
+    <!-- Instagram SVG -->
+    <div class="flex justify-center mt-4">
+      <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Google Map Embed -->
+  <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
+    <iframe
+      bind:this={mapRef}
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+      width="100%"
+      height="250"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="rounded-lg shadow-lg transition-transform duration-300"
+    ></iframe>
+  </div>
 </div>
+
+
+</div>
+<footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto text-center" data-aos="fade-up">
+    <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
+  </div>
+</footer>
+
 
 <style>
   body {

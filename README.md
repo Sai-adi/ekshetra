@@ -42,7 +42,7 @@ You can preview the production build with `npm run preview`.
 
 git init
 git add .
-git commit -m "done with the contact-us page"
+git commit -m "done with bottom nav bar"
 git push -u origin main
 git push
 
