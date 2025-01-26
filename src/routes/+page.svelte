@@ -101,7 +101,7 @@
   });
 </script>
 <Nav />
-<LoadingPage />
+<!-- <LoadingPage /> -->
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
@@ -160,28 +160,28 @@
     <div class="mt-12 flex justify-center gap-8">
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="400">
         <div class="w-16 h-16 bg-blue-700 text-blue-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-blue-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <a href="about"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 6.75l2.25 2.25L14.25 6.75M9.75 11.25l2.25 2.25L14.25 11.25M9.75 15.75l2.25 2.25L14.25 15.75" />
-          </svg>
+          </svg></a>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Workshops</p>
+        <a href="about"><p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Workshops</p></a>
       </div>
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-green-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="500">
         <div class="w-16 h-16 bg-green-700 text-green-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-green-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <a href="about"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.5a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0018.5 4h-13A2.5 2.5 0 003 6.5v11A2.5 2.5 0 005.5 20h11" />
-          </svg>
+          </svg></a>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Competitions</p>
+        <a href="about"><p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Competitions</p></a>
       </div>
-      <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
+      <a href="about"><div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
         <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-pink-800">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
           </svg>
         </div>
         <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
-      </div>
+      </div></a>
     </div>
   </div>
 </section>
@@ -209,7 +209,7 @@
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-pink-600 to-pink-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
-        <div class="text-3xl font-semibold text-pink-400">Cultural Performances</div>
+        <div class="text-3xl font-semibold text-pink-400">Cultural Events</div>
         <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Catch the best of talent, dance, music, and drama from students across the country.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
@@ -228,7 +228,7 @@
     </div>
 
     <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
-      <a href="events" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
+      <a href="events" class=" mt-7 px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
     </div>
   </div>
 </section>
@@ -242,7 +242,7 @@
   <div class="absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent opacity-80 z-0"></div>
 
   <div class="container mx-auto text-center relative z-10">
-    <h2 class="text-4xl font-extrabold text-orange-500 mb-6 font-lora text-2xl" data-aos="fade-up">Our Esteemed Partners</h2>
+    <h2 class="text-4xl mt-7 font-extrabold text-orange-500 mb-6 font-lora text-2xl" data-aos="fade-up">Our Esteemed Partners</h2>
     <p class="text-lg text-gray-400 leading-relaxed mb-8 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
 
     <div class="overflow-hidden relative">
@@ -270,7 +270,7 @@
   <!-- Contact Section -->
 <div class=" mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
   <!-- Contact Details -->
-  <div class=" mt-3 flex flex-col items-center md:items-start w-full md:w-1/2">
+  <div class=" mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
     <div class="flex items-center space-x-3 mb-4">
       <!-- Phone Icon GIF -->
       <div class="w-8 h-8 flex justify-center items-center">
@@ -290,7 +290,7 @@
 
     <!-- Instagram SVG -->
     <div class="flex justify-center mt-4">
-      <a href="https://instagram.com" target="_blank" class="hover:scale-110 transition-transform duration-300">
+      <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
         </svg>
@@ -299,7 +299,7 @@
   </div>
 
   <!-- Google Map Embed -->
-  <div class="w-full md:w-1/2 mt-4 md:mt-0">
+  <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
     <iframe
       bind:this={mapRef}
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
@@ -316,7 +316,7 @@
         
 </section>
 <footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center ">
+  <div class="container mx-auto text-center" data-aos="fade-up">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>

@@ -97,7 +97,7 @@
     }
   </script>
   <Nav />
-  <section class="py-20 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
+  <section class="pt-14 py-18 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
     <div class="container mx-auto text-center mt-12">
       <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-red-500 to-pink-500 mb-12">
         Our Sponsors
@@ -164,6 +164,52 @@
       <div class="shape" style="position: absolute; left: 15%; top: 70%; width: 120px; height: 120px; border-radius: 50%; background: rgba(255, 255, 255, 0.2);"></div>
       <div class="shape" style="position: absolute; left: 75%; top: 80%; width: 110px; height: 110px; border-radius: 50%; background: rgba(255, 255, 255, 0.2);"></div>
     </div>
+    <!-- Contact Section -->
+  <div class="mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+    <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="w-8 h-8 flex justify-center items-center">
+          <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
+        </div>
+        <span class="text-2xl font-semibold">Contact Us</span>
+      </div>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+      </p>
+      <p class="text-lg text-gray-400 mb-4">
+        <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+      </p>
+      <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+      <div class="flex justify-center mt-4">
+        <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Google Map Embed -->
+    <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+        width="100%"
+        height="250"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="rounded-lg shadow-lg transition-transform duration-300"
+      ></iframe>
+    </div>
+    
+  </div>
+  <footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto text-center" data-aos="fade-up">
+    <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
+  </div>
+</footer>
+
   </section>
   
   <style>
