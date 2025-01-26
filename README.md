@@ -51,5 +51,5 @@ git push
 for pulling 
 
 git add .
-git commit -m "your commit message"
+git commit -m "depolyment issues"
 git pull --rebase

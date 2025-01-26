@@ -101,6 +101,57 @@
       ease: "power3.out",
     });
   });
+const scrambleText = (element, text) => {
+  const originalText = text;
+  const length = originalText.length;
+  let currentText = '';
+  
+  const scramble = () => {
+    currentText = '';
+    for (let i = 0; i < length; i++) {
+      currentText += Math.random() < 0.5 ? originalText[i] : String.fromCharCode(Math.random() * 26 + 97);
+    }
+    element.innerText = currentText;
+  };
+
+  const interval = setInterval(() => {
+    scramble();
+  }, 100);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    
+    // Fade out the current text
+    gsap.to(element, {
+      opacity: 0,
+      duration: 0.8, // Increased duration for smoother fade-out
+      ease: "power2.in", // Easing function for a smoother effect
+      onComplete: () => {
+        // Set the final text
+        element.innerText = originalText;
+
+        // Fade in the final text
+        gsap.to(element, {
+          opacity: 1,
+          duration: 0.8, // Increased duration for smoother fade-in
+          ease: "power2.out" // Easing function for a smoother effect
+        });
+      }
+    });
+  }, 7000); // Duration of scramble effect
+};
+
+// Call the function on mount
+onMount(() => {
+  const dateElement = document.querySelector('.hero-date');
+  scrambleText(dateElement, "February 20, 21 & 22");
+
+  const taglineElement = document.querySelector('.hero-tagline');
+  scrambleText(taglineElement, "Igniting Innovation, Celebrating Excellence");
+
+  const collageElement = document.querySelector('.hero-collage');
+  scrambleText(collageElement, "BITS VIZAG");
+});
 </script>
 <Nav />
 <LoadingPage />
@@ -117,10 +168,10 @@
   <div class="flex justify-center items-center mt-10">
     <img src="n.png" alt="" class="max-w-full max-h-36 object-cover" loading="lazy"> 
   </div>
-  
-  <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
+    
+    <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
   <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22</p>
-  <p class="hero-date normal-font text-lg mt-2">BITS-VIZAG</p>
+  <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG</p>
   
   <!-- Countdown Timer -->
   <div id="countdown" class="text-3xl font-bold mt-4 countdown">{countdownText}</div>
@@ -202,8 +253,10 @@
 
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-5xl font-extrabold text-orange-400 leading-tight animate__animated animate__fadeInUp font-lora text-2xl" data-aos="fade-up">Event Highlights</h2>
-    <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.</p>
-
+    <!-- <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.</p> -->
+    <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8">
+  Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.
+</p>
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
         <div class="text-3xl font-semibold text-indigo-400">Technical Workshops</div>

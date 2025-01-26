@@ -54,7 +54,7 @@
   </script>
 
   <Nav />
-  <section class="relative bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white py-20 px-0 w-full overflow-hidden pt-[120px]">
+  <section class="pt-14 relative bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white py-18 px-0 w-full overflow-hidden ">
     <!-- Background Shapes -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Triangle Shapes -->
@@ -122,14 +122,17 @@
           <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
             Ekshetra 3.0 - A Remarkable Journey
           </h2>
-          <p class="text-lg leading-relaxed text-justify md:text-right">
+          <p class="text-lg leading-relaxed text-center md:text-right">
             Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
           </p>
         </div>
       </div>
 
-      <!-- Contact Section -->
-      <div class="mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+      
+    </div>
+  </section>
+  <!-- Contact Section -->
+      <div class="mt-auto relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
         <!-- Contact Details -->
         <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
           <div class="flex items-center space-x-3 mb-4">
@@ -174,10 +177,8 @@
           ></iframe>
         </div>
       </div>
-    </div>
-  </section>
   <footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center" data-aos="fade-up">
+  <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
@@ -216,5 +217,19 @@
   footer a:hover {
     text-decoration: underline;
     color: #60a5fa;
+  }
+  /* Default body font */
+  body {
+    font-family: 'Audiowide', cursive;
+  }
+
+  /* Headings */
+  h1, h2, h3 {
+    font-family: 'Audiowide', cursive;
+  }
+
+  /* Paragraphs */
+  p {
+    font-family: 'Audiowide', cursive;
   }
   </style>
