@@ -3,7 +3,8 @@
   import AOS from "aos";
   import "aos/dist/aos.css"; // Import AOS styles
   import Nav from "../nav/+page.svelte";
-  
+  import gsap from "gsap";
+
   const events = [
     { 
       name: "Paper Presentation", 
@@ -41,21 +42,36 @@
       offset: 100 // Start animations a bit earlier
     });
 
-    gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
-    gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
-    gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
-    gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
-    gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to('.background-layer', {
+          scale: 1.1, // Scale up the background
+          duration: 0.5,
+          ease: "power1.out"
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        gsap.to('.background-layer', {
+          scale: 1, // Scale back to original
+          duration: 0.5,
+          ease: "power1.out"
+        });
+      });
     });
+  });
 </script>
 
 <Nav />
-<div class="bg-gray-900 text-white min-h-screen py-16 px-6">
+<div class="background-layer"></div>
+<div class="bg-gray-900 text-white min-h-screen py-16 px-6 relative">
   <div class="max-w-7xl mx-auto">
     <h1 class="text-5xl font-bold text-center mb-16 mt-12">Our Events</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
       {#each events as event}
-        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transform transition relative group" data-aos="fade-up">
+        <div class="card bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition relative group" data-aos="fade-up">
           <!-- Flyer Image -->
           <img src={event.flyer} alt={event.name} class="w-full h-[400px] object-cover" />
           <!-- Event Details - Hidden by default, revealed on hover -->
@@ -75,6 +91,20 @@
 <style>
   body {
     font-family: 'Audiowide', cursive;
+  }
+
+  /* Background Layer */
+  .background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path/to/your/background.jpg'); /* Replace with your background image */
+    background-size: cover;
+    z-index: -1; /* Ensure it stays behind the cards */
+    filter: blur(5px); /* Optional: add a blur effect */
+    transition: transform 0.5s ease; /* Smooth transition for scaling */
   }
 
   /* Headings */

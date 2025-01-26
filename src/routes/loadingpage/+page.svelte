@@ -8,7 +8,7 @@
     // Simulate a loading delay
     setTimeout(() => {
       isLoading = false;
-    }, 7000); // Adjust the delay as needed
+    }, 5000); // Adjust the delay as needed
   });
 
   // Function to set the video start time and handle the fade-out

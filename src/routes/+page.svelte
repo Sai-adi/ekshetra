@@ -5,6 +5,8 @@
   import 'aos/dist/aos.css'; // Import AOS styles
   import Nav from './nav/+page.svelte'; // Ensure this is the correct import
   import LoadingPage from './loadingpage/+page.svelte';
+  
+  
 
   let isMenuOpen = false;
   let countdownText = '';
@@ -102,6 +104,7 @@
 </script>
 <Nav />
 <LoadingPage />
+
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
@@ -320,8 +323,6 @@
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
-
-
 
 <style>
   @keyframes marquee {
