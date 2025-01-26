@@ -1,4 +1,5 @@
 <script>
+
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
     import AOS from 'aos';
@@ -95,7 +96,17 @@
         });
       });
     }
-  </script>
+
+<Nav />
+
+<section class="py-20 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
+  <div class="container mx-auto text-center mt-12">
+    <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-red-500 to-pink-500 mb-12">
+      Our Sponsors
+    </h2>
+
+    <!-- Sponsors Section -->
+    {#each Object.entries(sponsors) as [tier, sponsorList]}
   <Nav />
   <section class="pt-14 py-18 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
     <div class="container mx-auto text-center mt-14">
@@ -103,6 +114,7 @@
         Our Sponsors
       </h2>
   
+
       <!-- Diamond Sponsors Section -->
       <div class="mb-16">
         <h3 class="text-4xl font-bold text-white mb-8">Diamond Sponsors</h3>
@@ -128,7 +140,48 @@
           {/each}
         </div>
       </div>
-  
+
+    {/if}
+  </div>
+</section>
+
+<style>
+  /* Sponsor Card Styling */
+  .sponsor-card {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+    height: 300px;
+  }
+
+  .diamond {
+    background-color: rgba(255, 215, 0, 0.1);
+    border: 2px solid #FFD700;
+  }
+
+  .gold {
+    background-color: rgba(255, 223, 186, 0.1);
+    border: 2px solid #FFA500;
+  }
+
+  .silver {
+    background-color: rgba(192, 192, 192, 0.1);
+    border: 2px solid #C0C0C0;
+  }
+
+  .modal {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+
       <!-- Silver Sponsors Section -->
       <div class="mb-16">
         <h3 class="text-4xl font-bold text-white mb-8">Silver Sponsors</h3>

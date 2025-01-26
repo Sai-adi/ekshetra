@@ -3,7 +3,7 @@
   import AOS from "aos";
   import "aos/dist/aos.css";
   import Nav from "../nav/+page.svelte";
-  import gsap from "gsap";
+  import gsap from "gsap";// Ensure GSAP is imported
 
   const events = [
     { 
@@ -41,6 +41,7 @@
       mirror: true
     });
 
+
     // Animated background shapes
     const shapes = document.querySelectorAll('.bg-shape');
     shapes.forEach(shape => {
@@ -54,6 +55,7 @@
         yoyo: true
       });
     });
+    const cards = document.querySelectorAll('.card');
 
     gsap.from(".royal-title", { 
       opacity: 0, 
@@ -84,6 +86,22 @@
       });
     });
   });
+    // GSAP animations on mount
+    gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
+    gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+    gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
+    gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
+    gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
+  
+  // Load animations
+    gsap.from(".contact-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.out",
+    });
+
 </script>
 
 <Nav />
