@@ -215,12 +215,11 @@
   </div>
 </div>
 
-<footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center">
+<footer class="bg-gray-800 text-white py-4 mt-">
+  <div class="container mx-auto text-center" >
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
-
 <style lang="postcss">
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
 
@@ -266,5 +265,22 @@
   /* Paragraphs */
   p {
     font-family: 'Audiowide', cursive;
+  }
+  footer {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  footer a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+    color: #60a5fa;
   }
 </style>

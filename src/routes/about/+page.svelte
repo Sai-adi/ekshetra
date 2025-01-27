@@ -83,9 +83,9 @@
       <div class="shape circle absolute bg-pink-700 w-22 h-22 opacity-10 blur-lg rounded-full" style="top: 25%; right: 15%;" data-aos="zoom-out" data-aos-duration="1500"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-4">
       <!-- About Section Heading -->
-      <h1 class="section-heading text-4xl font-bold mb-8 text-center" data-aos="fade-up" data-aos-duration="1000">
+      <h1 class="section-heading text-4xl font-bold mb-8 pt-5  text-center" data-aos="fade-up" data-aos-duration="1000">
         About <span class="text-purple-400">Ekshetra 3.0</span>
       </h1>
 

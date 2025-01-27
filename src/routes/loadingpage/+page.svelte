@@ -23,6 +23,23 @@
       }, 14000); // 14 seconds fade-out delay
     }
   };
+
+  // Reactive variable to determine the device type
+  let isMobile = false;
+
+  // Check if the device is mobile
+  const checkDeviceType = () => {
+    isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+  };
+
+  onMount(() => {
+    checkDeviceType();
+    window.addEventListener('resize', checkDeviceType);
+    
+    return () => {
+      window.removeEventListener('resize', checkDeviceType);
+    };
+  });
 </script>
 
 <style>
@@ -40,7 +57,7 @@
     justify-content: center;
     opacity: 1;
     visibility: visible;
-    transition: opacity 1s ease-out, visibility 0s 1s; /* 1s fade-out transition */
+    transition: opacity 1s ease-out, visibility 0s 1s; /* Fade-out transition */
   }
 
   /* Full-Screen Video Styling */
@@ -49,22 +66,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Prevent overflow */
     object-fit: cover; /* Ensures video fully covers the screen */
   }
 
   /* Fade-out effect for the loading screen */
   @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
   }
 
-  /* Adjust the animation for fading out after 14 seconds */
+  /* Adjust the animation for fading out after certain time */
   .loading-screen.fade-out {
     opacity: 0;
     visibility: hidden;
@@ -73,7 +86,7 @@
 
 <!-- Loading Screen -->
 {#if isLoading}
-  <div class="loading-screen show">
+<div class="loading-screen show">
     <!-- Full-Screen Video -->
     <video
       class="loading-video"
@@ -84,13 +97,17 @@
       bind:this={videoElement}
       on:loadedmetadata={setVideoStartTime}
     >
-      <source src="/show8.mp4" type="video/mp4" />
+      {#if isMobile}
+        <source src="./show8.mp4" type="video/mp4" />
+      {:else}
+        <source src="./vedio2.mp4" type="video/mp4" />
+      {/if}
       Your browser does not support the video tag.
     </video>
-  </div>
+</div>
 {/if}
 
 <!-- Main Content -->
 {#if !isLoading}
-  <slot />
+<slot />
 {/if}
