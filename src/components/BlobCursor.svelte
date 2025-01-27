@@ -57,15 +57,15 @@
   }
 
   .main {
-    width: 10px;
-    height: 10px;
+    width: 20px;  /* Increased size */
+    height: 20px; /* Increased size */
     background: white; /* Main circle color changed to white */
     z-index: 99999;
   }
 
   .trailing {
-    width: 30px;
-    height: 30px;
+    width: 50px;  /* Increased size */
+    height: 50px; /* Increased size */
     border: 2px solid white; /* Trailing circle border color changed to white */
     background: transparent;
     z-index: 99998;
@@ -76,25 +76,25 @@
   /* Responsive styling */
   @media (max-width: 768px) {
     .main {
-      width: 8px;
-      height: 8px;
+      width: 18px;  /* Adjusted size for smaller screens */
+      height: 18px; /* Adjusted size for smaller screens */
     }
 
     .trailing {
-      width: 25px;
-      height: 25px;
+      width: 45px;  /* Adjusted size for smaller screens */
+      height: 45px; /* Adjusted size for smaller screens */
     }
   }
 
   @media (max-width: 480px) {
     .main {
-      width: 6px;
-      height: 6px;
+      width: 16px;  /* Adjusted size for mobile screens */
+      height: 16px; /* Adjusted size for mobile screens */
     }
 
     .trailing {
-      width: 20px;
-      height: 20px;
+      width: 40px;  /* Adjusted size for mobile screens */
+      height: 40px; /* Adjusted size for mobile screens */
     }
   }
 </style>
