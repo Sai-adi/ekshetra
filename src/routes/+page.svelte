@@ -372,7 +372,7 @@ onMount(() => {
         
 </section>
 <footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center" >
+  <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
