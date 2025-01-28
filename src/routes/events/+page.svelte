@@ -254,17 +254,17 @@
 
   /* Default body font */
   body {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
 
   /* Headings */
   h1, h2, h3 {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
 
   /* Paragraphs */
   p {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
   footer {
     background-color: #1f2937;
