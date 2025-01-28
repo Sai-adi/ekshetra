@@ -54,7 +54,7 @@
   </script>
 
   <Nav />
-  <section class="pt-14 relative bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white py-18 px-0 w-full overflow-hidden ">
+  <section class=" pt-24 relative bg-gradient-to-b from-gray-900 via-purple-900 to-black text-white py-18 px-0 w-full overflow-hidden ">
     <!-- Background Shapes -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Triangle Shapes -->

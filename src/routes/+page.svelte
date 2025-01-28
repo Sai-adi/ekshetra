@@ -144,7 +144,7 @@ const scrambleText = (element, text) => {
 // Call the function on mount
 onMount(() => {
   const dateElement = document.querySelector('.hero-date');
-  scrambleText(dateElement, "February 20, 21 & 22");
+  scrambleText(dateElement, "February 20, 21 & 22;2025");
 
   const taglineElement = document.querySelector('.hero-tagline');
   scrambleText(taglineElement, "Igniting Innovation, Celebrating Excellence");
@@ -170,7 +170,7 @@ onMount(() => {
   </div>
     
     <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
-  <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22</p>
+  <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22;2025</p>
   <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG</p>
   
   <!-- Countdown Timer -->
@@ -190,20 +190,18 @@ onMount(() => {
 
   <div class="relative z-10 max-w-5xl mx-auto text-center">
     <h2 class="text-5xl font-extrabold text-blue-400 mb-6 tracking-wide leading-tight animate-textFadeIn font-lora text-2xl" data-aos="fade-up">About the Fest</h2>
-    <p class="text-lg font-medium text-gray-300 mb-8 animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">
-      A blend of <span class="text-blue-500 font-bold">innovation</span>, 
-      <span class="text-green-500 font-bold">creativity</span>, and 
-      <span class="text-pink-500 font-bold">celebration</span>!
+    <p class="text-lg font-medium text-gray-200 mb-8 animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">
+      A blend of <span class="text-blue-500 font-bold">Innovation</span>, 
+      <span class="text-green-500 font-bold">Creativity</span>, and 
+      <span class="text-pink-500 font-bold">Celebration</span> !!!
     </p>
 
-    <div class="max-w-3xl mx-auto text-gray-400 text-lg">
+    <div class="max-w-3xl mx-auto text-gray-200 text-lg">
       <p class="mb-6 leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="200">
-        EKSHETRA 3.0 is the ultimate celebration of talent, innovation, and creativity! 
-        Join us for a thrilling lineup of events, workshops, competitions, and cultural showcases.
-      </p>
+        
+        Join us for a thrilling lineup of Technical Events, Niche Technologies, Spot Events, Games, Ekshetra Street Fair - Food & Fun.(And the ultimate cultural night)</p>
       <p class="leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">
-        Experience the vibrant energy of students and professionals coming together 
-        to explore new horizons in technology and art. Let's make this a fest to remember!
+        Technology and Innovation <br> <b>Lets make EKSHETRA-3.0 a memory to remember</b>
       </p>
     </div>
 
@@ -218,7 +216,7 @@ onMount(() => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 6.75l2.25 2.25L14.25 6.75M9.75 11.25l2.25 2.25L14.25 11.25M9.75 15.75l2.25 2.25L14.25 15.75" />
           </svg></a>
         </div>
-        <a href="about"><p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Workshops</p></a>
+        <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Workshops</p></a>
       </div>
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-green-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="500">
         <div class="w-16 h-16 bg-green-700 text-green-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-green-800">
@@ -226,7 +224,7 @@ onMount(() => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.5a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0018.5 4h-13A2.5 2.5 0 003 6.5v11A2.5 2.5 0 005.5 20h11" />
           </svg></a>
         </div>
-        <a href="about"><p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Competitions</p></a>
+        <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Competitions</p></a>
       </div>
       <a href="about"><div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
         <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-pink-800">
@@ -234,7 +232,7 @@ onMount(() => {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
           </svg>
         </div>
-        <p class="text-gray-300 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
+        <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
       </div></a>
     </div>
   </div>
@@ -254,31 +252,31 @@ onMount(() => {
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-5xl font-extrabold text-orange-400 leading-tight animate__animated animate__fadeInUp font-lora text-2xl" data-aos="fade-up">Event Highlights</h2>
     <!-- <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.</p> -->
-    <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8">
-  Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.
+    <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8">
+  Discover the most exciting happenings of EKSHETRA 3.0! From technical events, Niche Technologies to cultural nights.
 </p>
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
-      <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
-        <div class="text-3xl font-semibold text-indigo-400">Technical Workshops</div>
-        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
+      <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+        <div class="text-3xl font-semibold text-white-400">Technical Workshops</div>
+        <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-pink-600 to-pink-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="500">
-        <div class="text-3xl font-semibold text-pink-400">Cultural Events</div>
-        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Catch the best of talent, dance, music, and drama from students across the country.</p>
+        <div class="text-3xl font-semibold text-white-400">Cultural Events</div>
+        <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Catch the best of talent, dance, music, and drama from students across the country.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
       <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-teal-600 to-teal-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="600">
-        <div class="text-3xl font-semibold text-teal-400">Sports Competitions</div>
-        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Get ready to show off your skills in thrilling sports competitions.</p>
+        <div class="text-3xl font-semibold text-white-400">Sports Competitions</div>
+        <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Get ready to show off your skills in thrilling sports competitions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
 
-      <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-purple-600 to-purple-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
-        <div class="text-3xl font-semibold text-purple-400">Guest Lectures</div>
-        <p class="mt-3 text-sm text-gray-400 font-audiowide text-lg">Engage with thought leaders and learn from their inspiring journeys.</p>
+      <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-orange-600 to-orange-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
+        <div class="text-3xl font-semibold text-white-400">Guest Lectures</div>
+        <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Engage with thought leaders and learn from their inspiring journeys.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
     </div>
@@ -299,7 +297,7 @@ onMount(() => {
 
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-4xl mt-7 font-extrabold text-orange-500 mb-6 font-lora text-2xl" data-aos="fade-up">Our Esteemed Partners</h2>
-    <p class="text-lg text-gray-400 leading-relaxed mb-8 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
+    <p class="text-lg text-gray-200 leading-relaxed mb-8 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
 
     <div class="overflow-hidden relative">
       <div class="animate-marquee flex items-center gap-12 sponsor-marquee">
@@ -550,17 +548,17 @@ onMount(() => {
 
   /* Default body font */
   body {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
 
   /* Headings */
   h1, h2, h3 {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
 
   /* Paragraphs */
   p {
-    font-family: 'Audiowide', cursive;
+    font-family: 'Audiowide';
   }
   .button-container {
     display: flex; /* Use flexbox for layout */

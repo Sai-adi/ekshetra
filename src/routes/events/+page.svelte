@@ -143,9 +143,9 @@
   </div>
   
   <div class="max-w-6xl mt-14 mx-auto relative z-10">
-    <h1 class="royal-title text-6xl font-extrabold text-center mb-20 tracking-wide text-[#f8f9fa] drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)]">
+    <h3 class="royal-title text-4xl font-extrabold text-center mb-20 tracking-wide text-[#f8f9fa] drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)]">
       Our Events
-    </h1>
+    </h3>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:px-16">
       {#each events as event, index}
