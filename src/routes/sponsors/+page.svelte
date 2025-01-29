@@ -3,6 +3,7 @@
 import { onMount, onDestroy } from "svelte";
 import { fade, slide } from "svelte/transition";
 import gsap from "gsap";
+import Navbar from "../nav/+page.svelte"
 
 // Customizable props with default values
 export let autoplaySpeed = 5000;
@@ -168,7 +169,6 @@ onMount(() => {
   };
 });
 </script>
-
 <style>
   /* Main container */
   .page-wrapper {
@@ -275,40 +275,86 @@ onMount(() => {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   }
 
+  /* Mobile-specific styles */
   @media (max-width: 768px) {
     .carousel-container {
-      height: 70vh;
+      height: 60vh; /* Reduced height for mobile */
       margin: 1rem;
     }
 
     .control-button {
-      @apply w-12 h-12;
+      @apply w-10 h-10; /* Smaller buttons for mobile */
     }
 
     .image-container {
       padding: 1rem;
     }
+
+    .sponsor-image {
+      @apply max-w-[90%] max-h-[90%]; /* Adjusted image size for mobile */
+    }
+
+    .thumbnail-nav {
+      @apply bottom-4 gap-2 px-4 py-2; /* Adjusted thumbnail navigation for mobile */
+    }
+
+    .nav-dot {
+      @apply w-2 h-2; /* Smaller dots for mobile */
+    }
+
+    .preview-image {
+      display: none; /* Hide preview images on mobile */
+    }
   }
-  /* Preview images for previous and next */
-.preview-image {
-  @apply absolute top-1/2 transform -translate-y-1/2 w-[15%] h-auto opacity-50 transition-all;
-  filter: blur(2px);
-}
-.preview-image:hover {
-  @apply opacity-80;
-  transform: scale(1.05) translateY(-50%);
-}
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .carousel-container {
+      height: 60vh; /* Reduced height for mobile */
+      margin: 1rem;
+    }
 
-.preview-image.prev {
-  left: 5%;
-}
+    .control-button {
+      @apply w-8 h-8; /* Smaller buttons for mobile */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-.preview-image.next {
-  right: 5%;
-}
+    .control-button.left-6 {
+      left: 0.5rem; /* Position closer to the left edge */
+    }
 
+    .control-button.right-6 {
+      right: 0.5rem; /* Position closer to the right edge */
+    }
+
+    .control-button svg {
+      @apply h-6 w-6; /* Smaller icon size for mobile */
+    }
+
+    .image-container {
+      padding: 1rem;
+    }
+
+    .sponsor-image {
+      @apply max-w-[90%] max-h-[90%]; /* Adjusted image size for mobile */
+    }
+
+    .thumbnail-nav {
+      @apply bottom-4 gap-2 px-4 py-2; /* Adjusted thumbnail navigation for mobile */
+    }
+
+    .nav-dot {
+      @apply w-2 h-2; /* Smaller dots for mobile */
+    }
+
+    .preview-image {
+      display: none; /* Hide preview images on mobile */
+    }
+  }
 </style>
 
+<Navbar />
 <div class="page-wrapper">
   <!-- Animated gradient background -->
   <div class="gradient-bg"></div>
@@ -325,8 +371,8 @@ onMount(() => {
       "
     ></div>
   {/each}
-
-  <div class="carousel-wrapper">
+ 
+  <div class="carousel-wrapper mt-12">
     <div 
       class="carousel-container"
       on:touchstart={handleTouchStart}
