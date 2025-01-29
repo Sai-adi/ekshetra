@@ -20,12 +20,9 @@
   }
 
   onMount(() => {
-    // Only initialize the cursor logic if the screen width is greater than 768px
-    if (window.innerWidth > 768) {
-      mainCircle = document.getElementById("mainCircle");
-      trailingCircle = document.getElementById("trailingCircle");
-      animate(); // Start the trailing animation loop
-    }
+    mainCircle = document.getElementById("mainCircle");
+    trailingCircle = document.getElementById("trailingCircle");
+    animate(); // Start the trailing animation loop
   });
 </script>
 
@@ -33,6 +30,46 @@
   <div id="mainCircle" class="cursor main"></div>
   <div id="trailingCircle" class="cursor trailing"></div>
 </div>
+
+<svelte:window
+  on:mousemove={(e) => {
+    // Update mouse position
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Move the main circle directly
+    if (mainCircle) {
+      mainCircle.style.left = `${mouseX}px`;  // Use template literals here
+      mainCircle.style.top = `${mouseY}px`;  // Use template literals here
+      // Add a scaling effect when moving
+      mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      
+      clearTimeout(mainCircle.scaleTimeout);
+      mainCircle.scaleTimeout = setTimeout(() => {
+        mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
+      }, 100);
+    }
+  }}
+  on:touchmove={(e) => {
+    // Handle touch events for mobile
+    const touch = e.touches[0];
+    mouseX = touch.clientX;
+    mouseY = touch.clientY;
+
+    // Move the main circle directly
+    if (mainCircle) {
+      mainCircle.style.left = `${mouseX}px`;  // Use template literals here
+      mainCircle.style.top = `${mouseY}px`;  // Use template literals here
+      // Add a scaling effect when moving
+      mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      
+      clearTimeout(mainCircle.scaleTimeout);
+      mainCircle.scaleTimeout = setTimeout(() => {
+        mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
+      }, 100);
+    }
+  }}
+/>
 
 <style>
   :global(body) {
@@ -76,14 +113,20 @@
     transition: transform 0.2s ease-out, opacity 0.3s; /* Smooth trailing */
   }
 
-  /* Hide cursor on mobile devices */
+  /* Responsive styling */
   @media (max-width: 768px) {
     .cursor-wrapper {
-      display: none;
+      display: none; /* Hide cursor on mobile */
     }
   }
 
-  /* Responsive styling */
+  /* Show cursor on larger screens (laptops/desktops) */
+  @media (min-width: 769px) {
+    .cursor-wrapper {
+      display: block; /* Ensure cursor is visible on laptops/desktops */
+    }
+  }
+
   @media (max-width: 768px) {
     .main {
       width: 18px;  /* Adjusted size for smaller screens */
@@ -108,47 +151,3 @@
     }
   }
 </style>
-
-<svelte:window
-  on:mousemove={(e) => {
-    // Only update mouse position if the screen width is greater than 768px
-    if (window.innerWidth > 768) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-
-      // Move the main circle directly
-      if (mainCircle) {
-        mainCircle.style.left = `${mouseX}px`;
-        mainCircle.style.top = `${mouseY}px`;
-        // Add a scaling effect when moving
-        mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        
-        clearTimeout(mainCircle.scaleTimeout);
-        mainCircle.scaleTimeout = setTimeout(() => {
-          mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
-        }, 100);
-      }
-    }
-  }}
-  on:touchmove={(e) => {
-    // Only handle touch events if the screen width is greater than 768px
-    if (window.innerWidth > 768) {
-      const touch = e.touches[0];
-      mouseX = touch.clientX;
-      mouseY = touch.clientY;
-
-      // Move the main circle directly
-      if (mainCircle) {
-        mainCircle.style.left = `${mouseX}px`;
-        mainCircle.style.top = `${mouseY}px`;
-        // Add a scaling effect when moving
-        mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        
-        clearTimeout(mainCircle.scaleTimeout);
-        mainCircle.scaleTimeout = setTimeout(() => {
-          mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
-        }, 100);
-      }
-    }
-  }}
-/>
