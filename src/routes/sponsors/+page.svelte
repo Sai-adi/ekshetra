@@ -215,14 +215,14 @@
   }
 
   body {
-      font-family: 'Audiowide';
+      font-family: 'Audiowide', cursive;
   }
 
   h1, h2, h3 {
-      font-family: 'Audiowide';
+      font-family: 'Audiowide', cursive;
   }
 
   p {
-      font-family: 'Audiowide';
+      font-family: 'Audiowide', cursive;
   }
 </style>

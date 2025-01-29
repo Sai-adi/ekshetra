@@ -11,7 +11,8 @@
         '../gallery/IMG-20250109-WA0012.jpg',
         '../gallery/IMG-20250109-WA0013.jpg',
         '../gallery/IMG-20250109-WA0014.jpg',
-        '../gallery/IMG-20250109-WA0015.jpg'
+        '../gallery/IMG-20250109-WA0015.jpg',
+        '../gallery/IMG-20250109-WA0014.jpg'
     ];
 
     let currentImage = null;
@@ -63,8 +64,9 @@
         position: relative;
         padding-bottom: 50px; /* Space for bottom image */
         background-color: black; /* Set background color to black */
-        min-height: 100vh; /* Ensure full height */
+        min-height: 100dvh; /* Ensure full height */
         overflow-y: auto; /* Enable vertical scrolling */
+    
     }
 
     /* Custom Scrollbar Styles */
@@ -117,7 +119,7 @@
 </style>
 
 <div class="container flex flex-col items-center justify-center">
-    <h1 class="heading text-4xl font-bold text-white mb-8">Ekshetra 2.0 Memories</h1>
+    <h1 class="heading text-4xl font-bold text-white mb-8 ml-6">Ekshetra 2.0 Memories</h1>
     
     <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
         {#each images as image}

@@ -20,9 +20,12 @@
   }
 
   onMount(() => {
-    mainCircle = document.getElementById("mainCircle");
-    trailingCircle = document.getElementById("trailingCircle");
-    animate(); // Start the trailing animation loop
+    // Only initialize the cursor logic if the screen width is greater than 768px
+    if (window.innerWidth > 768) {
+      mainCircle = document.getElementById("mainCircle");
+      trailingCircle = document.getElementById("trailingCircle");
+      animate(); // Start the trailing animation loop
+    }
   });
 </script>
 
@@ -73,6 +76,13 @@
     transition: transform 0.2s ease-out, opacity 0.3s; /* Smooth trailing */
   }
 
+  /* Hide cursor on mobile devices */
+  @media (max-width: 768px) {
+    .cursor-wrapper {
+      display: none;
+    }
+  }
+
   /* Responsive styling */
   @media (max-width: 768px) {
     .main {
@@ -101,40 +111,44 @@
 
 <svelte:window
   on:mousemove={(e) => {
-    // Update mouse position
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    // Only update mouse position if the screen width is greater than 768px
+    if (window.innerWidth > 768) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
 
-    // Move the main circle directly
-    if (mainCircle) {
-      mainCircle.style.left = `${mouseX}px`;
-      mainCircle.style.top = `${mouseY}px`;
-      // Add a scaling effect when moving
-      mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      
-      clearTimeout(mainCircle.scaleTimeout);
-      mainCircle.scaleTimeout = setTimeout(() => {
-        mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
-      }, 100);
+      // Move the main circle directly
+      if (mainCircle) {
+        mainCircle.style.left = `${mouseX}px`;
+        mainCircle.style.top = `${mouseY}px`;
+        // Add a scaling effect when moving
+        mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        
+        clearTimeout(mainCircle.scaleTimeout);
+        mainCircle.scaleTimeout = setTimeout(() => {
+          mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 100);
+      }
     }
   }}
   on:touchmove={(e) => {
-    // Handle touch events for mobile
-    const touch = e.touches[0];
-    mouseX = touch.clientX;
-    mouseY = touch.clientY;
+    // Only handle touch events if the screen width is greater than 768px
+    if (window.innerWidth > 768) {
+      const touch = e.touches[0];
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
 
-    // Move the main circle directly
-    if (mainCircle) {
-      mainCircle.style.left = `${mouseX}px`;
-      mainCircle.style.top = `${mouseY}px`;
-      // Add a scaling effect when moving
-      mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
-      
-      clearTimeout(mainCircle.scaleTimeout);
-      mainCircle.scaleTimeout = setTimeout(() => {
-        mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
-      }, 100);
+      // Move the main circle directly
+      if (mainCircle) {
+        mainCircle.style.left = `${mouseX}px`;
+        mainCircle.style.top = `${mouseY}px`;
+        // Add a scaling effect when moving
+        mainCircle.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        
+        clearTimeout(mainCircle.scaleTimeout);
+        mainCircle.scaleTimeout = setTimeout(() => {
+          mainCircle.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 100);
+      }
     }
   }}
 />

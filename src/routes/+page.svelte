@@ -150,11 +150,10 @@ onMount(() => {
   scrambleText(taglineElement, "Igniting Innovation, Celebrating Excellence");
 
   const collageElement = document.querySelector('.hero-collage');
-  scrambleText(collageElement, "BITS VIZAG");
+  scrambleText(collageElement, "BITS VIZAG (A)");
 });
 </script>
 <Nav />
-<LoadingPage />
 
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
@@ -171,7 +170,7 @@ onMount(() => {
     
     <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
   <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22;2025</p>
-  <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG</p>
+  <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG (A)</p>
   
   <!-- Countdown Timer -->
   <div id="countdown" class="text-3xl font-bold mt-4 countdown">{countdownText}</div>
@@ -227,7 +226,7 @@ onMount(() => {
         <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Competitions</p></a>
       </div>
       <a href="about"><div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
-        <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-pink-800">
+        <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-lg transition-all hover:bg-pink-800">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
           </svg>
