@@ -289,6 +289,24 @@ onMount(() => {
       padding: 1rem;
     }
   }
+  /* Preview images for previous and next */
+.preview-image {
+  @apply absolute top-1/2 transform -translate-y-1/2 w-[15%] h-auto opacity-50 transition-all;
+  filter: blur(2px);
+}
+.preview-image:hover {
+  @apply opacity-80;
+  transform: scale(1.05) translateY(-50%);
+}
+
+.preview-image.prev {
+  left: 5%;
+}
+
+.preview-image.next {
+  right: 5%;
+}
+
 </style>
 
 <div class="page-wrapper">
@@ -337,7 +355,17 @@ onMount(() => {
           {/if}
         {/each}
       </div>
-
+      <!-- Previous and Next Previews -->
+    <img
+      src={sponsors[(currentIndex - 1 + sponsors.length) % sponsors.length].image}
+      alt="Previous Sponsor"
+      class="preview-image prev"
+    />
+    <img
+      src={sponsors[(currentIndex + 1) % sponsors.length].image}
+      alt="Next Sponsor"
+      class="preview-image next"
+    />
       <!-- Navigation Controls -->
       {#if showArrows}
         <button
