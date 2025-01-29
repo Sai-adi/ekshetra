@@ -5,8 +5,6 @@
   import 'aos/dist/aos.css'; // Import AOS styles
   import Nav from './nav/+page.svelte'; // Ensure this is the correct import
   import LoadingPage from './loadingpage/+page.svelte';
-  
-  
 
   let isMenuOpen = false;
   let countdownText = '';
@@ -26,15 +24,12 @@
 
     const newCountdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    // Check if we are in the browser before accessing the document
     if (typeof document !== 'undefined') {
       const countdownElement = document.getElementById('countdown');
 
-      // Only animate if the text is changing
       if (countdownText !== newCountdownText) {
         countdownText = newCountdownText;
 
-        // Smooth fade and scale animation
         gsap.to(countdownElement, {
           opacity: 0,
           scale: 0.8,
@@ -57,10 +52,8 @@
     }
   };
 
-  // Start the countdown timer
   const countdownInterval = setInterval(updateCountdown, 1000);
 
-  // Clean up the interval on component destroy
   onMount(() => {
     return () => clearInterval(countdownInterval);
   });
@@ -68,31 +61,26 @@
   // GSAP animations on mount
   onMount(() => {
     AOS.init({
-      duration: 800, // Animation duration
-      easing: 'ease-in-out', // Easing function
+      duration: 800,
+      easing: 'ease-in-out',
       once: false,
       mirror: true,
-      offset: 100 // Start animations a bit earlier
+      offset: 100
     });
 
     gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
-    gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
-    gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
-    gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
     gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
 
     gsap.set(mapRef, { scale: 1 });
 
-    // Map hover animations
     mapRef.addEventListener("mouseenter", () => {
-      gsap.to(mapRef, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+      gsap.to(mapRef , { scale: 1.1, duration: 0.3, ease: "power2.out" });
     });
 
     mapRef.addEventListener("mouseleave", () => {
       gsap.to(mapRef, { scale: 1, duration: 0.3, ease: "power2.out" });
     });
 
-    // Load animations
     gsap.from(".contact-section", {
       opacity: 0,
       y: 50,
@@ -101,58 +89,37 @@
       ease: "power3.out",
     });
   });
-const scrambleText = (element, text) => {
-  const originalText = text;
-  const length = originalText.length;
-  let currentText = '';
-  
-  const scramble = () => {
-    currentText = '';
-    for (let i = 0; i < length; i++) {
-      currentText += Math.random() < 0.5 ? originalText[i] : String.fromCharCode(Math.random() * 26 + 97);
+const typingEffect = (element, text, delay = 250) => {
+  let index = 0;
+
+  const type = () => {
+    if (index < text.length) {
+      element.innerHTML += text.charAt(index) === "_" ? "&nbsp;" : text.charAt(index);
+      index++;
+      setTimeout(type, delay);
     }
-    element.innerText = currentText;
   };
 
-  const interval = setInterval(() => {
-    scramble();
-  }, 100);
+  // Clear the element before starting the typing effect
+  element.innerHTML = "";
 
-  setTimeout(() => {
-    clearInterval(interval);
-    
-    // Fade out the current text
-    gsap.to(element, {
-      opacity: 0,
-      duration: 0.8, // Increased duration for smoother fade-out
-      ease: "power2.in", // Easing function for a smoother effect
-      onComplete: () => {
-        // Set the final text
-        element.innerText = originalText;
-
-        // Fade in the final text
-        gsap.to(element, {
-          opacity: 1,
-          duration: 0.8, // Increased duration for smoother fade-in
-          ease: "power2.out" // Easing function for a smoother effect
-        });
-      }
-    });
-  }, 7000); // Duration of scramble effect
+  // Start typing
+  type();
 };
 
-// Call the function on mount
 onMount(() => {
-  const dateElement = document.querySelector('.hero-date');
-  scrambleText(dateElement, "February 20, 21 & 22;2025");
+  const dateElement = document.querySelector(".hero-date");
+  typingEffect(dateElement, "February_20,_21_&_22_2025"); // Spaces fixed
 
-  const taglineElement = document.querySelector('.hero-tagline');
-  scrambleText(taglineElement, "Igniting Innovation, Celebrating Excellence");
+  const taglineElement = document.querySelector(".hero-tagline");
+  typingEffect(taglineElement, "Igniting_Innovation,_Celebrating_Excellence"); // Spaces fixed
 
   const collageElement = document.querySelector('.hero-collage');
   scrambleText(collageElement, "BITS VIZAG (A)");
 });
+
 </script>
+
 <Nav />
 
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
@@ -162,7 +129,6 @@ onMount(() => {
     <div class="bg-shape3 absolute w-40 h-40 bg-orange-300 opacity-30 rounded-full bottom-10 left-10 animate-spin"></div>
     <div class="bg-shape4 absolute w-32 h-32 bg-pink-300 opacity-30 rounded-full top-20 right-10 animate-bounce"></div>
   </div>
-  <div class="cursor tw-hidden md:tw-block" />
   
   <div class="flex justify-center items-center mt-10">
     <img src="n.png" alt="" class="max-w-full max-h-36 object-cover" loading="lazy"> 
@@ -177,9 +143,10 @@ onMount(() => {
 
   <div class="button-container mt-4 space-4">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
-    <!-- svelte-ignore a11y_consider_explicit_label -->
-    <a href="events"><button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
-    </a></div>
+    <a href="events">
+      <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
+    </a>
+  </div>
 </section>
 
 <!-- About the Fest Section -->
@@ -197,7 +164,6 @@ onMount(() => {
 
     <div class="max-w-3xl mx-auto text-gray-200 text-lg">
       <p class="mb-6 leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="200">
-        
         Join us for a thrilling lineup of Technical Events, Niche Technologies, Spot Events, Games, Ekshetra Street Fair - Food & Fun.(And the ultimate cultural night)</p>
       <p class="leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">
         Technology and Innovation <br> <b>Lets make EKSHETRA-3.0 a memory to remember</b>
@@ -250,10 +216,9 @@ onMount(() => {
 
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-5xl font-extrabold text-orange-400 leading-tight animate__animated animate__fadeInUp font-lora text-2xl" data-aos="fade-up">Event Highlights</h2>
-    <!-- <p class="mt-4 text-xl text-gray-300 leading-relaxed opacity-80 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">Discover the most exciting events of EKSHETRA 3.0! From technical workshops to cultural performances, experience innovation and creativity like never before.</p> -->
     <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8">
-  Discover the most exciting happenings of EKSHETRA 3.0! From technical events, Niche Technologies to cultural nights.
-</p>
+      Discover the most exciting happenings of EKSHETRA 3.0! From technical events, Niche Technologies to cultural nights.
+    </p>
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
       <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
         <div class="text-3xl font-semibold text-white-400">Technical Workshops</div>
@@ -280,7 +245,7 @@ onMount(() => {
       </div>
     </div>
 
-    <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
+    <div class="mt-10" data-aos="fade-up" data-aos-delay="400">
       <a href="events" class=" mt-7 px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
     </div>
   </div>
@@ -314,62 +279,58 @@ onMount(() => {
         </div>
       </div>
     </div>
-    <div class="mt-8" data-aos="fade-up" data-aos-delay="400">
+    <div class="mt-10" data-aos="fade-up" data-aos-delay="400">
       <a href="sponsors" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
     </div>
   </div>
   
-  
   <!-- Contact Section -->
-<div class=" mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
-  <!-- Contact Details -->
-  <div class=" mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
-    <div class="flex items-center space-x-3 mb-4">
-      <!-- Phone Icon GIF -->
-      <div class="w-8 h-8 flex justify-center items-center">
-        <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
+  <div class="mt-8 relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+    <!-- Contact Details -->
+    <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="w-8 h-8 flex justify-center items-center">
+          <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
+        </div>
+        <span class="text-2xl font-semibold">Contact Us</span>
       </div>
-      <span class="text-2xl font-semibold">Contact Us</span>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+      </p>
+      <p class="text-lg text-gray-400 mb-4">
+        <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+      </p>
+
+      <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+
+      <div class="flex justify-center mt-4">
+        <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class ="w-8 h-8 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+          </svg>
+        </a>
+      </div>
     </div>
-    <p class="text-xl font-medium mb-2">
-      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
-    </p>
-    <p class="text-lg text-gray-400 mb-4">
-      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
-    </p>
 
-    <!-- Subheading Above Social Media Links -->
-    <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
-
-    <!-- Instagram SVG -->
-    <div class="flex justify-center mt-4">
-      <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
-        </svg>
-      </a>
+    <!-- Google Map Embed -->
+    <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
+      <iframe
+        bind:this={mapRef}
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+        width="100%"
+        height="250"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="rounded-lg shadow-lg transition-transform duration-300"
+      ></iframe>
     </div>
   </div>
-
-  <!-- Google Map Embed -->
-  <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
-    <iframe
-      bind:this={mapRef}
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
-      width="100%"
-      height="250"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      class="rounded-lg shadow-lg transition-transform duration-300"
-    ></iframe>
-  </div>
-</div>
-        
 </section>
+
 <footer class="bg-gray-800 text-white py-4">
-  <div class="container mx-auto text-center" >
+  <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
@@ -545,43 +506,40 @@ onMount(() => {
     font-style: normal;
   }
 
-  /* Default body font */
   body {
     font-family: 'Audiowide';
   }
 
-  /* Headings */
   h1, h2, h3 {
     font-family: 'Audiowide';
   }
 
-  /* Paragraphs */
   p {
     font-family: 'Audiowide';
   }
+
   .button-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-}
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-.cta-button {
-    margin: 0.5rem; /* Add some margin for spacing */
-}
+  .cta-button {
+    margin: 0.5rem;
+  }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center buttons */
+      flex-direction: column;
+      align-items: center;
     }
 
     .cta-button {
-        width: 100%; /* Make buttons full width */
-        max-width: 200px; /* Optional: Set a max width for buttons */
+      width: 100%;
+      max-width: 200px;
     }
-}
-/* Animated Gradient Background */
+  }
+
   @keyframes gradient-xy {
     0%, 100% {
       background-position: 0% 50%;
@@ -590,10 +548,12 @@ onMount(() => {
       background-position: 100% 50%;
     }
   }
+
   .animate-gradient-xy {
     background-size: 200% 200%;
     animation: gradient-xy 6s ease infinite;
   }
+
   footer {
     background-color: #1f2937;
     color: #ffffff;
