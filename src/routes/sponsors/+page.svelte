@@ -1,148 +1,384 @@
+
 <script>
-    import { onMount } from 'svelte';
-    import { gsap } from 'gsap';
-    import AOS from 'aos';
-    import 'aos/dist/aos.css';
-    import Nav from "../nav/+page.svelte";
-    import { writable } from 'svelte/store';
-  
-    let sponsors = {
-        diamond: [
-            { name: "Diamond Sponsor 1", logo: "diamond-sponsor1-logo.png", website: "https://diamond-sponsor1.com", description: "Diamond Sponsor 1 is a leader in the industry, providing innovative solutions and exceptional service." },
-            { name: "Diamond Sponsor 2", logo: "diamond-sponsor2-logo.png", website: "https://diamond-sponsor2.com", description: "Diamond Sponsor 2 provides top-notch services and has a strong commitment to quality." },
-        ],
-        gold: [
-            { name: "Gold Sponsor 1", logo: "gold-sponsor1-logo.png", website: "https://gold-sponsor1.com", description: "Gold Sponsor 1 is known for its quality and customer satisfaction." },
-            { name: "Gold Sponsor 2", logo: "gold-sponsor2-logo.png", website: "https://gold-sponsor2.com", description: "Gold Sponsor 2 excels in customer satisfaction and offers a wide range of services." },
-        ],
-        silver: [
-            { name: "Silver Sponsor 1", logo: "silver-sponsor1-logo.png", website: "https://silver-sponsor1.com", description: "Silver Sponsor 1 offers great value and has a reputation for reliability." },
-            { name: "Silver Sponsor 2", logo: "silver-sponsor2-logo.png", website: "https://silver-sponsor2.com", description: "Silver Sponsor 2 is a trusted partner, providing excellent service and support." },
-        ],
-    };
-  
-    let selectedSponsor = writable(null);
-  
-    function openModal(sponsor) {
-        selectedSponsor.set(sponsor);
-        gsap.to(".modal", { opacity: 1, scale: 1, duration: 0.3 });
+import { onMount, onDestroy } from "svelte";
+import { fade, slide } from "svelte/transition";
+import gsap from "gsap";
+
+// Customizable props with default values
+export let autoplaySpeed = 5000;
+export let pauseOnHover = true;
+export let showProgress = true;
+export let showArrows = true;
+export let showThumbnails = true;
+
+// State management
+let sponsors = Array.from({ length: 13 }, (_, i) => ({
+  id: i + 1,
+  image: `/sponsors/${i + 1}.png`,
+  name: `Sponsor ${i + 1}`
+}));
+
+let currentIndex = 0;
+let isPlaying = true;
+let progressValue = 0;
+let carouselContainer;
+let autoplayTimer;
+let progressTimer;
+let isAnimating = false;
+let isMobile = false;
+let showThumbnailDrawer = false;
+
+// Touch handling
+let touchStartX = 0;
+let touchEndX = 0;
+
+function initializeAnimations() {
+  // Animate floating shapes
+  gsap.to(".floating-shape", {
+    y: "random(-20, 20)",
+    x: "random(-20, 20)",
+    rotate: "random(-15, 15)",
+    scale: "random(0.95, 1.05)",
+    duration: "random(3, 5)",
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    stagger: {
+      amount: 4,
+      from: "random"
     }
+  });
+
+  // Animate gradient background
+  gsap.to(".gradient-bg", {
+    backgroundPosition: "200% 200%",
+    duration: 15,
+    repeat: -1,
+    ease: "none"
+  });
+}
+
+function checkResponsive() {
+  isMobile = window.innerWidth < 768;
+  if (isMobile) {
+    showThumbnails = false;
+  }
+}
+
+function startAutoplay() {
+  if (!autoplaySpeed) return;
   
-    function closeModal() {
-        gsap.to(".modal", { opacity: 0, scale: 0.8, duration: 0.3, onComplete: () => selectedSponsor.set(null) });
+  clearAllTimers();
+  
+  if (isPlaying) {
+    autoplayTimer = setInterval(nextSlide, autoplaySpeed);
+    if (showProgress) {
+      progressTimer = setInterval(() => {
+        progressValue = ((Date.now() % autoplaySpeed) / autoplaySpeed) * 100;
+      }, 16);
     }
+  }
+}
+
+function clearAllTimers() {
+  clearInterval(autoplayTimer);
+  clearInterval(progressTimer);
+}
+
+async function changeSlide(direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const container = carouselContainer;
+  const currentSlide = container.querySelector('.active-slide');
+  const nextIndex = (currentIndex + direction + sponsors.length) % sponsors.length;
+
+  // Fancy exit animation
+  await gsap.to(currentSlide, {
+    opacity: 0,
+    scale: direction > 0 ? 0.8 : 1.2,
+    rotate: direction > 0 ? -5 : 5,
+    duration: 0.6,
+    ease: "power2.inOut"
+  });
+
+  currentIndex = nextIndex;
+
+  // Fancy entrance animation
+  const newSlide = container.querySelector('.active-slide');
+  gsap.fromTo(newSlide,
+    { 
+      opacity: 0, 
+      scale: direction > 0 ? 1.2 : 0.8,
+      rotate: direction > 0 ? 5 : -5
+    },
+    { 
+      opacity: 1, 
+      scale: 1,
+      rotate: 0,
+      duration: 0.6,
+      ease: "power2.out"
+    }
+  );
+
+  isAnimating = false;
+  startAutoplay();
+}
+
+function nextSlide() {
+  changeSlide(1);
+}
+
+function prevSlide() {
+  changeSlide(-1);
+}
+
+function goToSlide(index) {
+  if (index === currentIndex) return;
+  changeSlide(index - currentIndex);
+}
+
+function handleTouchStart(e) {
+  touchStartX = e.touches[0].clientX;
+}
+
+function handleTouchMove(e) {
+  touchEndX = e.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  const swipeDistance = touchEndX - touchStartX;
+  if (Math.abs(swipeDistance) > 50) {
+    if (swipeDistance > 0) {
+      prevSlide();
+    } else {
+      nextSlide();
+    }
+  }
+}
+
+onMount(() => {
+  checkResponsive();
+  window.addEventListener('resize', checkResponsive);
+  startAutoplay();
+  initializeAnimations();
+  return () => {
+    window.removeEventListener('resize', checkResponsive);
+    clearAllTimers();
+  };
+});
+</script>
+
+<style>
+  /* Main container */
+  .page-wrapper {
+    @apply min-h-screen w-full overflow-hidden relative;
+    background: #0f172a;
+  }
+
+  .gradient-bg {
+    @apply absolute inset-0 opacity-40;
+    background: linear-gradient(
+      315deg,
+      #0ea5e9,
+      #6366f1,
+      #8b5cf6,
+      #ec4899,
+      #0ea5e9
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .floating-shape {
+    @apply absolute blur-3xl opacity-30;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  }
+
+  .carousel-wrapper {
+    @apply relative w-full h-screen flex items-center justify-center z-10;
+    perspective: 1000px;
+  }
+
+  .carousel-container {
+    @apply relative w-full max-w-6xl mx-auto overflow-hidden rounded-3xl;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .carousel-slide {
+    @apply absolute inset-0 flex items-center justify-center transition-opacity duration-500;
+  }
+
+  .image-container {
+    @apply relative w-full h-full flex items-center justify-center p-8;
+  }
+
+  .sponsor-image {
+    @apply max-w-full max-h-full object-contain rounded-xl;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+    transition: transform 0.5s ease-out;
+  }
+
+  .sponsor-image:hover {
+    transform: scale(1.02);
+  }
+
+  .control-button {
+    @apply absolute top-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full
+           text-white transition-all duration-300 z-20;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .control-button:hover {
+    @apply scale-110;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  .progress-bar {
+    @apply absolute bottom-0 left-0 h-1 w-full;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .progress-fill {
+    @apply h-full;
+    background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+    transition: width 0.1s linear;
+  }
+
+  .thumbnail-nav {
+    @apply absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 px-6 py-3 rounded-full z-20;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-dot {
+    @apply w-3 h-3 rounded-full transition-all duration-300;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .nav-dot.active {
+    @apply scale-125;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .carousel-container {
+      height: 70vh;
+      margin: 1rem;
+    }
+
+    .control-button {
+      @apply w-12 h-12;
+    }
+
+    .image-container {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<div class="page-wrapper">
+  <!-- Animated gradient background -->
+  <div class="gradient-bg"></div>
   
-    onMount(() => {
-        AOS.init();
-    });
-  </script>
-  
-  <Nav />
-  
-  <section class="py-20 relative overflow-hidden bg-gradient-to-r from-teal-400 to-blue-600">
-    <div class="container mx-auto text-center mt-12">
-        <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-red-500 to-pink-500 mb-12">
-            Our Sponsors
-        </h2>
-  
-        {#each Object.entries(sponsors) as [tier, sponsorList]}
-            <div class="mb-16">
-                <h3 class="text-4xl font-bold text-white mb-8">{tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsors</h3>
-                <div class="flex flex-wrap justify-center gap-10">
-                    {#each sponsorList as sponsor}
-                        <div class="sponsor-card {tier}" on:click={() => openModal(sponsor)} data-aos="fade-up">
-                            <img src={sponsor.logo} alt={sponsor.name} class="h-20 mx-auto">
-                            <p class="mt-4 text-lg font-semibold text-white">{sponsor.name}</p>
-                        </div>
-                    {/each}
-                </div>
+  <!-- Floating shapes -->
+  {#each Array(6) as _, i}
+    <div
+      class="floating-shape"
+      style="
+        width: {200 + i * 100}px;
+        height: {200 + i * 100}px;
+        left: {Math.random() * 100}%;
+        top: {Math.random() * 100}%;
+      "
+    ></div>
+  {/each}
+
+  <div class="carousel-wrapper">
+    <div 
+      class="carousel-container"
+      on:touchstart={handleTouchStart}
+      on:touchmove={handleTouchMove}
+      on:touchend={handleTouchEnd}
+      on:mouseenter={() => isPlaying = !pauseOnHover}
+      on:mouseleave={() => {
+        isPlaying = true;
+        startAutoplay();
+      }}
+    >
+      <!-- Main Carousel -->
+      <div bind:this={carouselContainer} class="relative w-full h-full">
+        {#each sponsors as sponsor, i}
+          {#if i === currentIndex}
+            <div class="carousel-slide active-slide" transition:fade={{ duration: 500 }}>
+              <div class="image-container">
+                <img
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  class="sponsor-image"
+                  loading="lazy"
+                />
+              </div>
             </div>
+          {/if}
         {/each}
-  
-        {#if $selectedSponsor}
-            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                <div class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">{$selectedSponsor.name}</h3>
-                    <p class="mb-4 text-gray-700">{$selectedSponsor.description}</p>
-                    <a href="{$selectedSponsor.website}" target="_blank" class="block bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition">
-                        Visit Website
-                    </a>
-                    <button on:click={closeModal} class="mt-6 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">Close</button>
-                </div>
-            </div>
-        {/if}
+      </div>
+
+      <!-- Navigation Controls -->
+      {#if showArrows}
+        <button
+          class="control-button left-6"
+          on:click={prevSlide}
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          class="control-button right-6"
+          on:click={nextSlide}
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      {/if}
+
+      <!-- Progress Bar -->
+      {#if showProgress && isPlaying}
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: {progressValue}%"></div>
+        </div>
+      {/if}
+
+      <!-- Navigation Dots -->
+      <div class="thumbnail-nav">
+        {#each sponsors as _, i}
+          <button
+            class="nav-dot"
+            class:active={i === currentIndex}
+            on:click={() => goToSlide(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          ></button>
+        {/each}
+      </div>
     </div>
-  </section>
-  
-  <style>
-    .sponsor-card {
-        position: relative;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 1rem;
-        cursor: pointer;
-        width: 220px;
-        height: 280px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-  
-    .sponsor-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-    }
-  
-    .diamond {
-        background-color: rgba(255, 215, 0, 0.15);
-        border: 2px solid #FFD700;
-    }
-  
-    .gold {
-        background-color: rgba(255, 223, 186, 0.15);
-        border: 2px solid #FFA500;
-    }
-  
-    .silver {
-        background-color: rgba(192, 192, 192, 0.15);
-        border: 2px solid #C0C0C0;
-    }
-  
-    .modal {
-        display: flex;
-        animation: fadeIn 0.3s ease-in-out;
-    }
-  
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-  
-    @media (max-width: 768px) {
-        .sponsor-card {
-            width: 180px;
-            height: 240px;
-        }
-        h2 { font-size: 3rem; }
-        h3 { font-size: 2rem; }
-    }
-  
-    @media (max-width: 480px) {
-        .sponsor-card {
-            width: 150px;
-            height: 200px;
-        }
-        h2 { font-size: 2.5rem; }
-        h3 { font-size: 1.5rem; }
-    }
-  
-    @font-face {
-        font-family: 'Audiowide';
-        src: url('./assets/fonts/Audiowide-Regular.ttf') format('truetype');
-    }
-  
-    body, h1, h2, h3, p {
-        font-family: 'Audiowide', cursive;
-    }
-  </style>
-  
+  </div>
+</div>
