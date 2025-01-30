@@ -133,7 +133,7 @@
        <Lightbox src={currentImage} onClose={closeLightbox} />
    {/if}
 
-  <!-- <!-- Link to another page with PNG Image -->
+  <!-- Link to another page with PNG Image -->
    <a href="../gallery1">
        <img class="bounce-image" src="/path/to/your/image.png" alt="3.0 Gallery" />
        <span class="hover-text">3.0</span>
