@@ -363,19 +363,7 @@ onMount(() => {
 </footer>
 
 <style>
-  @media (max-width: 768px) {
-  .hero-tagline {
-    font-size: 2rem; /* Adjust this value as needed */
-  }
-
-  .hero-date {
-    font-size: 1.5rem; /* Adjust this value as needed */
-  }
-
-  .hero-collage {
-    font-size: 1.5rem; /* Adjust this value as needed */
-  }
-}
+  
   @keyframes marquee {
     from {
       transform: translateX(100%);
