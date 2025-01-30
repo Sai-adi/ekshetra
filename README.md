@@ -51,5 +51,5 @@ git push
 for pulling 
 
 git add .
-git commit -m "svg adding"
+git commit -m "svg add"
 git pull --rebase
