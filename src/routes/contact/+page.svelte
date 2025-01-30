@@ -117,16 +117,22 @@
 </svelte:head>
 <div class="bg-light-effect mb-autorelative min-h-screen text-white py-10 overflow-hidden relative">
   <!-- Background Shapes -->
-  <div class="bg-shapes"></div>
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+  </div>
 
   <div class="relative z-20 container mx-auto px-4 mt-20">
-    <h1 class="text-5xl font-extrabold text-center text-blue-400 mb-12 tracking-wider" data-aos="fade-up">
-      Contact Us
-    </h1>
+    <h1 class="section-heading text-4xl font-bold mb-8 pt-5  text-center" data-aos="fade-up" data-aos-duration="1000">
+        Contact Us<span class="text-purple-400"></span>
+      </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each committees as committee}
         <div
-          class="bg-gray-800 rounded-xl shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300 p-6 relative group"
+          class="bg-[#333333] rounded-xl shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300 p-6 relative group"
           data-aos="fade-up"
         >
           <h2 class="text-2xl font-semibold mb-4 text-center text-blue-300 group-hover:text-white transition-colors duration-300">
@@ -151,44 +157,44 @@
   </div>
 </div>
 <!-- Contact Section -->
-  <div class="mt-auto relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
-    <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
-      <div class="flex items-center space-x-3 mb-4">
-        <div class="w-8 h-8 flex justify-center items-center">
-          <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
-        </div>
-        <span class="text-2xl font-semibold">Contact Us</span>
+<div class="mt-auto relative bottom-0 left-0 right-0 p-8 bg-[#003366] bg-opacity-90 shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+  <div class="mt-3 flex flex-col items-center md:items-start w-full md:w-1/2" data-aos="fade-up" data-aos-delay="400">
+    <div class="flex items-center space-x-3 mb-4">
+      <div class="w-8 h-8 flex justify-center items-center">
+        <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
       </div>
-      <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
-      </p>
-      <p class="text-lg text-gray-400 mb-4">
-        <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
-      </p>
-      <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
-      <div class="flex justify-center mt-4">
-        <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
-          </svg>
-        </a>
-      </div>
+      <span class="text-2xl font-semibold">Contact Us</span>
     </div>
-
-    <!-- Google Map Embed -->
-    <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
-        width="100%"
-        height="250"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        class="rounded-lg shadow-lg transition-transform duration-300"
-      ></iframe>
+    <p class="text-xl font-medium mb-2">
+      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+    </p>
+    <p class="text-lg text-gray-400 mb-4">
+      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+    </p>
+    <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+    <div class="flex justify-center mt-4">
+      <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 text-white">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+        </svg>
+      </a>
     </div>
   </div>
+
+  <!-- Google Map Embed -->
+  <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+      width="100%"
+      height="250"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="rounded-lg shadow-lg transition-transform duration-300"
+    ></iframe>
+  </div>
+</div>
 <footer class="bg-gray-800 text-white py-4">
   <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
@@ -216,59 +222,85 @@
   </a>
 </div>
 
-
 <style>
   .bg-light-effect {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(219, 39, 119, 0.4), rgba(56, 189, 248, 0.5));
+    background: linear-gradient(135deg, rgba(75, 0, 130, 0.8), rgba(255, 215, 0, 0.8));
     background-size: 200% 200%;
     animation: gradient-animation 8s infinite alternate;
-  }
+}
 
-  @keyframes gradient-animation {
+@keyframes gradient-animation {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 50% 100%;
+        background-position: 50% 100%;
     }
     100% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
-  }
+}
 
-  .bg-shapes {
+.bg-shapes {
     position: absolute;
     inset: 0;
     z-index: 10;
     pointer-events: none;
-  }
+}
 
-  .bg-shapes::before,
-  .bg-shapes::after {
-    content: "";
+.shape {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     animation: float 6s ease-in-out infinite;
-  }
+}
 
-  .bg-shapes::before {
+.shape-1 {
     width: 300px;
     height: 300px;
     top: 10%;
     left: 15%;
     filter: blur(120px);
-  }
+    animation-delay: 0s;
+}
 
-  .bg-shapes::after {
+.shape-2 {
     width: 400px;
     height: 400px;
     bottom: 15%;
     right: 10%;
     filter: blur(150px);
-  }
+    animation-delay: 2s;
+}
 
-  @keyframes float {
+.shape-3 {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    right: 20%;
+    filter: blur(100px);
+    animation-delay: 4s;
+}
+
+.shape-4 {
+    width: 250px;
+    height: 250px;
+    bottom: 20%;
+    left: 20%;
+    filter: blur(110px);
+    animation-delay: 6s;
+}
+
+.shape-5 {
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    left: 5%;
+    filter: blur(130px);
+    animation-delay: 8s;
+}
+
+@keyframes float {
     0% {
       transform: translateY(0) translateX(0);
     }
@@ -278,33 +310,34 @@
     100% {
       transform: translateY(0) translateX(0);
     }
-  }
+}
 
-  footer {
+footer {
     background-color: #1f2937;
     color: #ffffff;
     padding: 1rem 0;
     text-align: center;
-  }
+}
 
-  footer a {
+footer a {
     color: #3b82f6;
     text-decoration: none;
     transition: all 0.3s ease;
-  }
+}
 
-  footer a:hover {
+footer a:hover {
     text-decoration: underline;
     color: #60a5fa;
-  }
-   @font-face {
+}
+
+@font-face {
     font-family: 'Audiowide';
     src: url('./assets/fonts/Audiowide-Regular.ttf') format('truetype');
     font-weight: 400; /* Regular */
     font-style: normal;
-  }
+}
 
-   /* Apply Poppins to the entire site */
+/* Apply Poppins to the entire site */
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -318,5 +351,4 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-weight: 400; /* Normal */
 }
-
 </style>

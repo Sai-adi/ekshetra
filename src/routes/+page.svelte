@@ -158,8 +158,8 @@ onMount(() => {
   <div class="absolute top-0 left-0 w-48 h-48 bg-blue-900 rounded-full opacity-30 transform -translate-x-20 -translate-y-20 animate-bgShape1"></div>
   <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-800 rounded-full opacity-20 transform translate-x-20 translate-y-20 animate-bgShape2"></div>
 
-  <div class="relative z-10 max-w-5xl mx-auto text-center">
-    <h2 class="text-5xl font-extrabold text-blue-400 mb-6 tracking-wide leading-tight animate-textFadeIn font-lora text-2xl" data-aos="fade-up">About the Fest</h2>
+  <div class="relative z-10 max-w-5xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="text-5xl font-extrabold text-blue-400 mb-6 tracking-wide leading-tight animate-textFadeIn font-lora text-2xl" data-aos="fade-up" data-aos-delay="100">About the Fest</h2>
     <p class="text-lg font-medium text-gray-200 mb-8 animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">
       A blend of <span class="text-blue-500 font-bold">Innovation</span>, 
       <span class="text-green-500 font-bold">Creativity</span>, and 
@@ -181,9 +181,11 @@ onMount(() => {
     <div class="mt-12 flex justify-center gap-8">
       <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="400">
         <div class="w-16 h-16 bg-blue-700 text-blue-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-blue-800">
-          <a href="about"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 6.75l2.25 2.25L14.25 6.75M9.75 11.25l2.25 2.25L14.25 11.25M9.75 15.75l2.25 2.25L14.25 15.75" />
-          </svg></a>
+           <a href="about">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v12m6-6H6" />
+        </svg>
+    </a>
         </div>
         <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Workshops</p></a>
       </div>
@@ -220,11 +222,11 @@ onMount(() => {
 
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-5xl font-extrabold text-orange-400 leading-tight animate__animated animate__fadeInUp font-lora text-2xl" data-aos="fade-up">Event Highlights</h2>
-    <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8">
+    <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8" data-aos="fade-up" data-aos-delay="100">
       Discover the most exciting happenings of EKSHETRA 3.0! From technical events, Niche Technologies to cultural nights.
     </p>
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
-      <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-gray-700 to-gray-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+      <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-blue-700 to-blue-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
         <div class="text-3xl font-semibold text-white-400">Technical Workshops</div>
         <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
