@@ -5,7 +5,7 @@
   import 'aos/dist/aos.css'; // Import AOS styles
   import Nav from './nav/+page.svelte'; // Ensure this is the correct import
   import LoadingPage from './loadingpage/+page.svelte';
-
+  import Marquee from 'svelte-fast-marquee';
   let isMenuOpen = false;
   let countdownText = '';
   let mapRef;
@@ -131,8 +131,8 @@ onMount(() => {
   </div>
   
   <div class="flex justify-center items-center mt-10">
-    <img src="n.png" alt="" class="max-w-full max-h-36 object-cover" loading="lazy"> 
-  </div>
+    <img src="both1.png" alt="Event Image" class="max-w-full h-72 md:h-80 object-cover rounded-lg" loading="lazy"> 
+</div>
     
     <p class="hero-tagline text-xl mt-4 font-audiowide text-lg">Igniting Innovation, Celebrating Excellence!</p>
   <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22;2025</p>
@@ -147,6 +147,7 @@ onMount(() => {
       <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
     </a>
   </div>
+  
 </section>
 
 <!-- About the Fest Section -->
@@ -593,5 +594,48 @@ onMount(() => {
   footer a:hover {
     text-decoration: underline;
     color: #60a5fa;
+  }
+  .marquee-container {
+    padding: 4px 0;
+    text-align: center;
+  }
+
+  .marquee-heading {
+    font-size: 20px; /* Slightly larger font */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  /* Container for each image */
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px; /* XXL size for mobile */
+    height: 50PX;
+    margin: 0; /* No space around images */
+  }
+
+  .marquee-item img {
+    width: 100%; /* Fill the div */
+    height: 100%;
+    object-fit: contain; /* Ensure full image visibility */
+  }
+
+  /* Increase sizes on bigger screens */
+  @media (min-width: 768px) {
+    .marquee-item {
+      width: 200px; /* XXL for tablets */
+      height: 200px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .marquee-item {
+      width: 200px; /* XXL for laptops/desktops */
+      height: 200px;
+    }
   }
 </style>
