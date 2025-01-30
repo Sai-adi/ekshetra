@@ -207,6 +207,21 @@
 
 
   <style>
+     /* Apply Poppins to the entire site */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Set bold for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bold */
+}
+
+/* Set normal weight for paragraphs */
+p {
+    font-weight: 400; /* Normal */
+}
+
     footer {
       background-color: #1f2937;
       color: #ffffff;
@@ -240,19 +255,5 @@
   footer a:hover {
     text-decoration: underline;
     color: #60a5fa;
-  }
-  /* Default body font */
-  body {
-    font-family: 'Audiowide';
-  }
-
-  /* Headings */
-  h1, h2, h3 {
-    font-family: 'Audiowide';
-  }
-
-  /* Paragraphs */
-  p {
-    font-family: 'Audiowide';
   }
   </style>

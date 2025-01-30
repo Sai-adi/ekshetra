@@ -23,7 +23,9 @@
       closeMenuButton.addEventListener('click', toggleMenu);
     });
   </script>
-  
+  <svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</svelte:head>
   <header class="bg-gradient-to-r from-orange-400 to-pink-500 sticky top-0 z-50">
     <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-2 mx-auto bg-[#1e293b] rounded-full shadow-md max-w-7xl h-20 mt-4">
       <div class="flex items-center space-x-3">
@@ -137,19 +139,6 @@
       }
     }
     
-    /* Default body font */
-    body {
-      font-family: 'Audiowide';
-    }
-  
-    /* Headings */
-    h1, h2, h3 {
-      font-family: 'Audiowide';
-    }
-  
-    /* Paragraphs */
-    a {
-      font-family: 'Audiowide';
-    }
+    
     
   </style>

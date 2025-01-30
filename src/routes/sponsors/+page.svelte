@@ -168,6 +168,29 @@ onMount(() => {
     clearAllTimers();
   };
 });
+ let mapRef;
+
+  onMount(() => {
+    gsap.set(mapRef, { scale: 1 });
+
+    // Map hover animations
+    mapRef.addEventListener("mouseenter", () => {
+      gsap.to(mapRef, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+    });
+
+    mapRef.addEventListener("mouseleave", () => {
+      gsap.to(mapRef, { scale: 1, duration: 0.3, ease: "power2.out" });
+    });
+
+    // Load animations
+    gsap.from(".contact-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.out",
+    });
+  });
 </script>
 <style>
   /* Main container */
@@ -352,10 +375,78 @@ onMount(() => {
       display: none; /* Hide preview images on mobile */
     }
   }
+  /* Animated Gradient Background */
+  @keyframes gradient-xy {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  .animate-gradient-xy {
+    background-size: 200% 200%;
+    animation: gradient-xy 6s ease infinite;
+  }
+  /* Royal Heading Styles */
+  .royal-heading {
+    @apply absolute top-12 left-1/2 -translate-x-1/2 text-center z-20;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #f3e8d2;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: glow 3s infinite alternate;
+  }
+
+  .royal-heading h1 {
+    @apply text-5xl md:text-6xl font-bold mb-2;
+    background: linear-gradient(45deg, #f3e8d2, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .royal-heading h2 {
+    @apply text-lg md:text-xl font-light;
+    color: rgba(243, 232, 210, 0.8);
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+  }
+   /* Apply Poppins to the entire site */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Set bold for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bold */
+}
+
+/* Set normal weight for paragraphs */
+p {
+    font-weight: 400; /* Normal */
+}
+
 </style>
 
 <Navbar />
-<div class="page-wrapper">
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</svelte:head>
+  <!-- Royal Heading -->
+  <div class=" mt-16 royal-heading">
+    <h1>Our Sponsors</h1>
+  </div>
+
+<div class=" pt-20 page-wrapper">
   <!-- Animated gradient background -->
   <div class="gradient-bg"></div>
   
@@ -456,24 +547,38 @@ onMount(() => {
     </div>
   </div>
 </div>
-<div>
-  <a
-      href="/"
-      class="fixed bottom-6 right-6 z-50 p-2 lg:p-4 bg-white hover:bg-opacity-50 rounded-full"
-  >
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-      >
-          <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
+<div class="relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
+  <!-- Contact Details -->
+  <div class="flex flex-col items-center md:items-start w-full md:w-1/2">
+    <div class="flex items-center space-x-3 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.06-1.06a1 1 0 011.415 0L7 11m0 0l2.828-2.828a1 1 0 011.414 0L13 11m-6 0v7a4 4 0 004 4h0a4 4 0 004-4v-7m-6 7H5m12-7v2m0-2h-2m2 0a2 2 0 012 2v3a2 2 0 01-2 2m-4 0h2m2-10a2 2 0 00-2-2h-4a2 2 0 00-2 2v3m8 0h-6m-2-3a2 2 0 012-2m0 0a2 2 0 01-2 2" />
       </svg>
-  </a>
+      <span class="text-2xl font-semibold">Contact Us</span>
+    </div>
+    <p class="text-xl font-medium mb-2" aria-label="Phone number">+1 (234) 567-890</p>
+    <p class="text-lg text-gray-400 mb-4" aria-label="Email address">info@college.edu</p>
+  </div>
+
+  <!-- Google Map Embed -->
+  <div class="w-full md:w-1/2 mt-4 md:mt-0">
+    <iframe
+      bind:this={mapRef}
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5764682633658!2d83.32945747494506!3d17.811591383149768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395befa9dda303%3A0x5781c56a5df412!2sBaba%20Institute%20of%20Technology%20%26%20Sciences!5e0!3m2!1sen!2sin!4v1737482955981!5m2!1sen!2sin"
+      width="100%"
+      height="250"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="rounded-lg shadow-lg transition-transform duration-300"
+      aria-label="Google Map location of Baba Institute of Technology & Sciences"
+    ></iframe>
+  </div>
 </div>
+
+<footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto text-center">
+    <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
+  </div>
+</footer>

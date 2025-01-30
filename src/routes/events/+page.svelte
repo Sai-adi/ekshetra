@@ -104,6 +104,9 @@
 </script>
 
 <Nav />
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</svelte:head>
 
 <div class="royal-background min-h-screen bg-gradient-to-br from-[#1A2980] via-[#26D0CE] to-[#0F2027] text-white py-16 px-8 relative overflow-hidden">
   <!-- Animated Background Shapes -->
@@ -296,20 +299,21 @@
     font-style: normal;
   }
 
-  /* Default body font */
-  body {
-    font-family: 'Audiowide';
-  }
+   /* Apply Poppins to the entire site */
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
-  /* Headings */
-  h1, h2, h3 {
-    font-family: 'Audiowide';
-  }
+/* Set bold for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bold */
+}
 
-  /* Paragraphs */
-  p {
-    font-family: 'Audiowide';
-  }
+/* Set normal weight for paragraphs */
+p {
+    font-weight: 400; /* Normal */
+}
+
   footer {
     background-color: #1f2937;
     color: #ffffff;

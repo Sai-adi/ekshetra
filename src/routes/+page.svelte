@@ -121,6 +121,9 @@ onMount(() => {
 </script>
 
 <Nav />
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</svelte:head>
 
 <section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
@@ -530,17 +533,22 @@ onMount(() => {
     font-style: normal;
   }
 
-  body {
-    font-family: 'Audiowide';
-  }
+ /* Apply Poppins to the entire site */
+body {
+    font-family: 'Poppins', sans-serif;
+}
 
-  h1, h2, h3 {
-    font-family: 'Audiowide';
-  }
+/* Set bold for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Bold */
+}
 
-  p {
-    font-family: 'Audiowide';
-  }
+/* Set normal weight for paragraphs */
+p {
+    font-weight: 400; /* Normal */
+}
+
+
 
   .button-container {
     display: flex;

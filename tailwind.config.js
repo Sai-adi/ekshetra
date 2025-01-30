@@ -15,9 +15,8 @@ export default {
                 track: '#f3f4f6',
             },
             fontFamily: {
-                merriweather: ['Merriweather', 'serif'],
-                lora: ['Lora', 'serif'],
-                audiowide: ['Audiowide', 'cursive'],
+                // Removed other fonts and kept only Poppins
+                sans: ['Poppins', 'sans-serif'], // Poppins as the default sans font
             },
         },
     },
