@@ -243,7 +243,7 @@ onMount(() => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
                 </svg>
             </div>
-            <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg pr-3">Cultural Shows</p>
+            <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg pr-3">Culturals</p>
         </div>
     </a>
 </div>
