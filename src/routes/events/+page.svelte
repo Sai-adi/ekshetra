@@ -3,35 +3,128 @@
   import AOS from "aos";
   import "aos/dist/aos.css";
   import Nav from "../nav/+page.svelte";
-  import gsap from "gsap"; // Ensure GSAP is imported
+  import gsap from "gsap";
 
   const events = [
     { 
-      name: "Paper Presentation", 
-      description: "Showcase your innovative ideas and research in a professional setting.", 
-      flyer: ""
+      // name: "Paper Presentation",
+      // description: "Showcase your innovative ideas and research in a professional setting.",
+      flyer: "/flyers/1.png",
+      rules: [
+        "Maximum team size: 2 members",
+        "Time limit: 8 minutes presentation + 2 minutes Q&A",
+        "Submit abstract before deadline",
+        "PowerPoint presentation required",
+        "Original work only, plagiarism will lead to disqualification"
+      ],
+      coordinators: [
+        { name: "Alex Johnson", phone: "+91 9876543210" },
+        { name: "Sarah Miller", phone: "+91 9876543211" }
+      ],
+      prize: "₹10,000"
     },
     { 
-      name: "Poster Presentation", 
-      description: "Display your creativity and technical prowess through visually engaging posters.", 
-      flyer: "/path/to/poster-presentation-image.jpg"
+      // name: "Poster Presentation",
+      // description: "Display your creativity and technical prowess through visually engaging posters.",
+      flyer: "/flyers/2.png",
+      rules: [
+        "Individual participation only",
+        "Poster size: 2x3 feet",
+        "Include references for cited work",
+        "Physical poster required, digital not accepted",
+        "On-spot presentation required"
+      ],
+      coordinators: [
+        { name: "Mike Chen", phone: "+91 9876543212" },
+        { name: "Emily Wang", phone: "+91 9876543213" }
+      ],
+      prize: "₹8,000"
     },
     { 
-      name: "Blind Coding", 
-      description: "Test your coding skills without seeing what you type. A real challenge!", 
-      flyer: "/path/to/blind-coding-image.jpg"
+      // name: "Blind Coding",
+      // description: "Test your coding skills without seeing what you type. A real challenge!",
+      flyer: "/flyers/3.png",
+      rules: [
+        "Individual participation only",
+        "60 minutes time limit",
+        "No IDE or text editor visibility",
+        "Only keyboard input allowed",
+        "Multiple programming languages supported"
+      ],
+      coordinators: [
+        { name: "David Lee", phone: "+91 9876543214" },
+        { name: "Rachel Kim", phone: "+91 9876543215" }
+      ],
+      prize: "₹7,000"
     },
     { 
-      name: "E-Sports", 
-      description: "Compete in an adrenaline-pumping gaming competition.", 
-      flyer: "/path/to/e-sports-image.jpg"
+      // name: "E-Sports",
+      // description: "Compete in an adrenaline-pumping gaming competition.",
+      flyer: "/flyers/4.png",
+      rules: [
+        "Team size: 5 members",
+        "Bring your own peripherals",
+        "Standard tournament rules apply",
+        "Best of three matches",
+        "Fair play policy strictly enforced"
+      ],
+      coordinators: [
+        { name: "Chris Wong", phone: "+91 9876543216" },
+        { name: "Lisa Park", phone: "+91 9876543217" }
+      ],
+      prize: "₹15,000"
     },
     { 
-      name: "Technical Quiz", 
-      description: "Prove your knowledge in technical domains with a thrilling quiz.", 
-      flyer: "/path/to/technical-quiz-image.jpg"
-    },
+      // name: "Technical Quiz",
+      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
+      flyer: "/flyers/5.png",
+      rules: [
+        "Team size: 2 members",
+        "Multiple rounds of increasing difficulty",
+        "Rapid fire round included",
+        "No electronic devices allowed",
+        "Judge's decision is final"
+      ],
+      coordinators: [
+        { name: "Tom Wilson", phone: "+91 9876543218" },
+        { name: "Emma Davis", phone: "+91 9876543219" }
+      ],
+      prize: "₹6,000"
+    }
   ];
+
+  let selectedEvent = null;
+  let isDialogOpen = false;
+
+  function openDialog(event) {
+    selectedEvent = event;
+    isDialogOpen = true;
+    gsap.from(".dialog-content", {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  }
+
+  function closeDialog() {
+    gsap.to(".dialog-content", {
+      opacity: 0,
+      y: 20,
+      duration: 0.2,
+      ease: "power2.in",
+      onComplete: () => {
+        isDialogOpen = false;
+        selectedEvent = null;
+      }
+    });
+  }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape' && isDialogOpen) {
+      closeDialog();
+    }
+  }
 
   onMount(() => {
     AOS.init({
@@ -41,7 +134,6 @@
       mirror: true
     });
 
-    // Animated background shapes
     const shapes = document.querySelectorAll('.bg-shape');
     shapes.forEach(shape => {
       gsap.to(shape, {
@@ -55,7 +147,6 @@
       });
     });
 
-    // GSAP animations on mount
     gsap.from(".hero-title", { 
       opacity: 0, 
       y: -100, 
@@ -85,14 +176,12 @@
       });
     });
 
-    // Additional GSAP animations
     gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
     gsap.from(".hero-tagline", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
     gsap.from(".hero-date", { opacity: 0, y: 20, duration: 1, delay: 1 });
     gsap.from("#countdown", { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
     gsap.from(".cta-button", { opacity: 0, scale: 0.5, duration: 1, stagger: 0.2, delay: 1.5 });
 
-    // Load animations
     gsap.from(".contact-section", {
       opacity: 0,
       y: 50,
@@ -103,10 +192,13 @@
   });
 </script>
 
-<Nav />
+<svelte:window on:keydown={handleKeydown}/>
+
 <svelte:head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </svelte:head>
+
+<Nav />
 
 <div class="royal-background min-h-screen bg-gradient-to-br from-[#1A2980] via-[#26D0CE] to-[#0F2027] text-white py-16 px-8 relative overflow-hidden">
   <!-- Animated Background Shapes -->
@@ -158,9 +250,9 @@
         >
           <div class="relative">
             <img 
-              src={event.flyer || '/path/to/default-image.jpg'} 
+              src={event.flyer} 
               alt={event.name} 
-              class="w-full h-[500px] object-cover filter brightness-75 hover:brightness-100 transition-all duration-200"
+              class="w-full h-[500px] filter brightness-75 hover:brightness-100 transition-all duration-200"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
           </div>
@@ -168,7 +260,10 @@
           <div class="absolute bottom-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
             <h2 class="text-3xl font-bold mb-4 text-[#f8f9fa]">{event.name}</h2>
             <p class="text-xl text-gray-300 mb-6">{event.description}</p>
-            <button class="royal-button px-8 py-4 bg-gradient-to-r from-[#6a5acd] to-[#483d8b] text-white rounded-full font-bold uppercase tracking-wider transform hover:scale-105 transition-all duration-200 shadow-royal-button">
+            <button 
+              class="royal-button px-8 py-4 bg-gradient-to-r from-[#6a5acd] to-[#483d8b] text-white rounded-full font-bold uppercase tracking-wider transform hover:scale-105 transition-all duration-200 shadow-royal-button"
+              on:click={() => openDialog(event)}
+            >
               Know More
             </button>
           </div>
@@ -177,6 +272,68 @@
     </div>
   </div>
 </div>
+
+<!-- Dialog Component -->
+{#if isDialogOpen}
+  <div class=" mt-28 fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div 
+      class="dialog-content bg-gradient-to-br from-[#1A2980] to-[#26D0CE] rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative shadow-2xl"
+      on:click|stopPropagation
+    >
+      <button 
+        class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+        on:click={closeDialog}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="p-8">
+        <h2 class="text-4xl font-bold text-white mb-6">{selectedEvent.name}</h2>
+        
+        <div class="mb-8 bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+          <h3 class="text-2xl font-bold text-white mb-2">Prize Pool</h3>
+          <p class="text-3xl font-bold text-yellow-300">{selectedEvent.prize}</p>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-white mb-4">Rules & Guidelines</h3>
+          <ul class="space-y-3">
+            {#each selectedEvent.rules as rule}
+              <li class="flex items-start space-x-2 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 min-w-6 mt-0.5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                </svg>
+                <span>{rule}</span>
+              </li>
+            {/each}
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">Event Coordinators</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {#each selectedEvent.coordinators as coordinator}
+              <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                <p class="text-lg font-semibold text-white">{coordinator.name}</p>
+                <a 
+                  href="tel:{coordinator.phone}" 
+                  class="text-blue-300 hover:text-blue-400 transition-colors flex items-center space-x-2 mt-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>{coordinator.phone}</span>
+                </a>
+              </div>
+            {/each}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{/if}
 
 <!-- Contact Section -->
 <div class="mt-auto relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
@@ -202,7 +359,6 @@
       </a>
     </div>
   </div>
-  
 
   <!-- Google Map Embed -->
   <div class="w-full md:w-1/2 mt-4 md:mt-0" data-aos="fade-up" data-aos-delay="400">
@@ -219,59 +375,40 @@
   </div>
 </div>
 
-<footer class="bg-gray-800 text-white py-4 mt-">
-  <div class="container mx-auto text-center" >
+<footer class="bg-gray-800 text-white py-4">
+  <div class="container mx-auto text-center">
     <p>Made with 🩷 by <a href="https://konkorde.org" class="text-blue-500 hover:underline">KONKORDE</a></p>
   </div>
 </footer>
+
 <div>
   <a
-      href="/"
-      class="fixed bottom-6 right-6 z-50 p-2 lg:p-4 bg-white hover:bg-opacity-50 rounded-full"
+    href="/"
+    class="fixed bottom-6 right-6 z-50 p-2 lg:p-4 bg-white hover:bg-opacity-50 rounded-full"
   >
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-      >
-          <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-      </svg>
-  </a>
-</div>
-<div>
-  <a
-      href="/"
-      class="fixed bottom-6 right-6 z-50 p-2 lg:p-4 bg-white hover:bg-opacity-50 rounded-full"
-  >
-      <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 text-black"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-      >
-          <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-      </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-black"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+      />
+    </svg>
   </a>
 </div>
 
 <style lang="postcss">
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-  body {
-    font-family: 'Cinzel', serif;
+  :global(body) {
+    font-family: 'Poppins', sans-serif;
   }
 
   .royal-background {
@@ -292,43 +429,62 @@
     will-change: transform, box-shadow;
   }
 
-  @font-face {
-    font-family: 'Audiowide';
-    src: url('./assets/fonts/Audiowide-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
+  .dialog-content {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
   }
 
-   /* Apply Poppins to the entire site */
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Set bold for headings */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700; /* Bold */
-}
-
-/* Set normal weight for paragraphs */
-p {
-    font-weight: 400; /* Normal */
-}
-
-  footer {
-    background-color: #1f2937;
-    color: #ffffff;
-    padding: 1rem 0;
-    text-align: center;
+  .dialog-content::-webkit-scrollbar {
+    width: 8px;
   }
 
-  footer a {
-    color: #3b82f6;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .dialog-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
   }
 
-  footer a:hover {
-    text-decoration: underline;
-    color: #60a5fa;
+  .dialog-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+
+  .dialog-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .royal-button {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .royal-button:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .shadow-royal {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Additional animations */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .animate-gradient-xy {
+    background-size: 400% 400%;
+    animation: gradient-xy 15s ease infinite;
+  }
+
+  @keyframes gradient-xy {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
   }
 </style>
