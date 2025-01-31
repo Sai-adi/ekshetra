@@ -12,33 +12,34 @@
       flyer: "/flyers/1.png",
       rules: [
         "Maximum team size: 2 members",
-        "Time limit: 8 minutes presentation + 2 minutes Q&A",
-        "Submit abstract before deadline",
-        "PowerPoint presentation required",
-        "Original work only, plagiarism will lead to disqualification"
+        "Time limit: 5 minutes presentation + 2 minutes Q&A",
+        "Topic: Must be related to computer science & its verticals.",
+        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st ",
+        "Registration: Click the Register button and complete the payment for confirmation.",
+        "Note: Depending upon the program proceeding then may be change in the event timings"
       ],
       coordinators: [
-        { name: "Alex Johnson", phone: "+91 9876543210" },
-        { name: "Sarah Miller", phone: "+91 9876543211" }
+        { name: "Pavithra", phone: "6304605203" },
+        { name: "Madhu Kumar", phone: "9912636840" }
       ],
-      prize: "₹10,000"
+      prize: "₹7,500"
     },
     { 
       // name: "Poster Presentation",
       // description: "Display your creativity and technical prowess through visually engaging posters.",
       flyer: "/flyers/2.png",
       rules: [
-        "Individual participation only",
-        "Poster size: 2x3 feet",
-        "Include references for cited work",
-        "Physical poster required, digital not accepted",
-        "On-spot presentation required"
+        "Maximum team size: 2 members",
+        "Topic: Must be related to computer science & its verticals.",
+        "Dress Code: Formal attire is mandatory.",
+        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
+        "Registration: Click the Register button and complete the payment for confirmation.",
       ],
       coordinators: [
-        { name: "Mike Chen", phone: "+91 9876543212" },
-        { name: "Emily Wang", phone: "+91 9876543213" }
+        { name: "Manasa", phone: "8143260433" },
+        { name: "Sravani", phone: "7989230095" }
       ],
-      prize: "₹8,000"
+      prize: "₹7,500"
     },
     { 
       // name: "Blind Coding",
@@ -46,33 +47,31 @@
       flyer: "/flyers/3.png",
       rules: [
         "Individual participation only",
-        "60 minutes time limit",
-        "No IDE or text editor visibility",
-        "Only keyboard input allowed",
-        "Multiple programming languages supported"
+        "Topic: Must be related to C programming or python",
+        "Time Limit:  30 mins",
+        "Dress Code: Formal attire is mandatory.",
+        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
+        " Registration: Click the Register button and complete the payment for confirmation.",
+        "Note:- Depending upon the program proceeding then may be change in the event timings"
       ],
       coordinators: [
-        { name: "David Lee", phone: "+91 9876543214" },
-        { name: "Rachel Kim", phone: "+91 9876543215" }
+        { name: "Girish Prasad", phone: "9951941294" },
+        { name: "Pradeep", phone: "8639500480" }
       ],
-      prize: "₹7,000"
+      prize: "₹7,500"
     },
     { 
       // name: "E-Sports",
       // description: "Compete in an adrenaline-pumping gaming competition.",
       flyer: "/flyers/4.png",
       rules: [
-        "Team size: 5 members",
-        "Bring your own peripherals",
-        "Standard tournament rules apply",
-        "Best of three matches",
-        "Fair play policy strictly enforced"
+        "will be updated shortly"
       ],
       coordinators: [
         { name: "Chris Wong", phone: "+91 9876543216" },
         { name: "Lisa Park", phone: "+91 9876543217" }
       ],
-      prize: "₹15,000"
+      prize: "₹7,500"
     },
     { 
       // name: "Technical Quiz",
@@ -80,16 +79,18 @@
       flyer: "/flyers/5.png",
       rules: [
         "Team size: 2 members",
-        "Multiple rounds of increasing difficulty",
-        "Rapid fire round included",
-        "No electronic devices allowed",
-        "Judge's decision is final"
+        "Topic: Will be related to Computer Science.",
+        "Screen online exam and finals.",
+        "No electronic devices allowed.",
+        "Registration: Scan the QR code & complete payment for confirmation.",
+        "Dress Code: Formal attire is mandatory.",
+        "Note:- Depending upon the program proceeding then may be change in the event timings"
       ],
       coordinators: [
         { name: "Tom Wilson", phone: "+91 9876543218" },
         { name: "Emma Davis", phone: "+91 9876543219" }
       ],
-      prize: "₹6,000"
+      prize: "₹7,500"
     }
   ];
 

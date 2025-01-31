@@ -17,7 +17,7 @@
     {
       name: "Event Coordination",
       heads: [
-        { name: "A.S.Adithya", phone: "8317511173" },
+        { name: "K.Aditya", phone: "8317511173" },
         { name: "Vinesh", phone: "7780362864" },
         { name: "Varshitha", phone: "9347936137" },
       ],
@@ -57,7 +57,7 @@
     {
       name: "Miscellaneous",
       heads: [
-        { name: "K.Aditya", phone: "9490459963" },
+        { name: "A.S.Aditya", phone: "9490459963" },
         { name: "Nayani", phone: "6305427404" },
         { name: "P.Saranya", phone: "8688161699" },
       ],
