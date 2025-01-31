@@ -142,7 +142,7 @@ onMount(() => {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </svelte:head>
 
-<section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-28 relative overflow-hidden">
+<section class="hero bg-gradient-to-r from-orange-400 to-pink-500 text-white text-center py-16 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="bg-shape1 absolute w-48 h-48 bg-white opacity-20 rounded-full top-10 left-20 animate-pulse"></div>
     <div class="bg-shape2 absolute w-64 h-64 bg-white opacity-10 rounded-full bottom-20 right-32 animate-ping"></div>
@@ -170,23 +170,22 @@ onMount(() => {
     </a>
   </div>
   <!-- Heading for Premium Partners -->
-  <div class="pt-20">
-    <h3 class="premium-heading">Our Premium Partners</h3>
+   
+<h3 class=" pt-4 premium-heading">Our Premium Partners</h3>
 
-    <div class="marquee-container">
-      <!-- Left Fade -->
-      <div class="fade-overlay fade-left"></div>
+<div class="marquee-container">
+  <!-- Left Fade -->
+  <div class="fade-overlay fade-left"></div>
 
-      <div class="marquee-content">
-        <!-- Dynamically display sponsors with seamless effect -->
-        {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
-          <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
-        {/each}
-      </div>
+  <div class="marquee-content">
+    <!-- Dynamically display sponsors with seamless effect -->
+    {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
+      <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
+    {/each}
+  </div>
 
-      <!-- Right Fade -->
-      <div class="fade-overlay fade-right"></div>
-    </div>
+  <!-- Right Fade -->
+  <div class="fade-overlay fade-right"></div>
 </div>
 </section>
 
