@@ -148,7 +148,7 @@ onMount(() => {
   <div class="button-container mt-4 space-4">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
     <a href="events">
-      <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full">Explore Events</button>
+      <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full mr-12">Explore Events</button>
     </a>
   </div>
   
