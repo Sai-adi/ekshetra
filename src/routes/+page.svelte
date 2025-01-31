@@ -127,7 +127,7 @@ onMount(() => {
   typingEffect(dateElement, "February_20,_21_&_22_2025"); // Spaces fixed
 
   const taglineElement = document.querySelector(".hero-tagline");
-  typingEffect(taglineElement, "Igniting_Innovation,_Celebrating_Excellence"); // Spaces fixed
+  typingEffect(taglineElement, "Ignite_Innovation,_Embracing_Excellence!"); // Spaces fixed
 
   const collageElement = document.querySelector('.hero-collage');
   scrambleText(collageElement, "BITS VIZAG (A)");
@@ -154,7 +154,7 @@ onMount(() => {
     <img src="both1.png" alt="Event Image" class="max-w-full h-72 md:h-80 object-cover rounded-lg" loading="lazy"> 
 </div>
     
-    <p class="hero-tagline text-xl mt-4 font-audiowide text-lg justify-around">Igniting Innovation, Celebrating Excellence!</p>
+    <p class="hero-tagline text-xl mt-4 font-audiowide text-lg justify-around">Ignite Innovation, Embracing Excellence!</p>
   <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22;2025</p>
   <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG (A)</p>
   
