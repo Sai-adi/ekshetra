@@ -213,7 +213,7 @@ onMount(() => {
       <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 via-green-500 to-pink-500"></div>
     </div>
 
-    <div class="mt-12 flex justify-center gap-2 px-4 sm:px-8 pr-3">
+    <div class="mt-12 flex justify-center gap-2 px-4 sm:px-8">
     <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="400">
         <div class="w-16 h-16 bg-blue-700 text-blue-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-blue-800">
             <a href="about">
@@ -243,7 +243,7 @@ onMount(() => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
                 </svg>
             </div>
-            <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
+            <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg pr-3">Cultural Shows</p>
         </div>
     </a>
 </div>
