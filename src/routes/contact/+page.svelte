@@ -9,65 +9,57 @@
     {
       name: "Finance & Budget",
       heads: [
-        { name: "John Doe", phone: "9876543210" },
-        { name: "Jane Smith", phone: "8765432109" },
-        { name: "Jane Smith", phone: "8765432109" },
+        { name: "B.Dileepkumar", phone: "9676677116" },
+        { name: "Karthik", phone: "7657083099" },
+        { name: "Purnema", phone: "9182156252" },
       ],
     },
     {
       name: "Event Coordination",
       heads: [
-        { name: "Alice Brown", phone: "9988776655" },
-        { name: "Bob Johnson", phone: "8877665544" },
-        { name: "Bob Johnson", phone: "8877665544" },
+        { name: "K.Aditya", phone: "8317511173" },
+        { name: "Vinesh", phone: "7780362864" },
+        { name: "Varshitha", phone: "9347936137" },
       ],
     },
     {
       name: "Cultural",
       heads: [
-        { name: "Charlie White", phone: "9123456789" },
-        { name: "Diana Green", phone: "7890123456" },
-        { name: "Diana Green", phone: "7890123456" },
+        { name: "Venkatesh", phone: "6281375552" },
+        { name: "Keerthi", phone: "9391903868" },
+        { name: "Sneha", phone: "7989283901" },
       ],
     },
     {
       name: "Food & Beverages",
       heads: [
-        { name: "Ethan Black", phone: "9001122334" },
-        { name: "Fiona Gray", phone: "8002233445" },
-        { name: "Fiona Gray", phone: "8002233445" },
+        { name: "Ch.Sai.Kiran", phone: "9949072310" },
+        { name: "Ch.Chakri", phone: "8002233445" },
+        { name: "P.Havish", phone: "8002233445" },
       ],
     },
     {
       name: "Media & Public",
       heads: [
-        { name: "George Blue", phone: "7654321098" },
-        { name: "Hannah Red", phone: "6543210987" },
-        { name: "Hannah Red", phone: "6543210987" },
+        { name: "Sam Moses", phone: "7654321098" },
+        { name: "Praveen", phone: "9866696178" },
+        { name: "Gowri Shankar", phone: "8688617166" },
       ],
     },
     {
       name: "Logistics & Ops",
       heads: [
-        { name: "Ivy Violet", phone: "7890987654" },
-        { name: "Jack Orange", phone: "6789098765" },
-        { name: "Jack Orange", phone: "6789098765" },
+        { name: "Achit", phone: "6305438394" },
+        { name: "Himadeep", phone: "6789098765" },
+        { name: "Kiran", phone: "6789098765" },
       ],
     },
     {
       name: "Miscellaneous",
       heads: [
-        { name: "Ivy Violet", phone: "7890987654" },
-        { name: "Jack Orange", phone: "6789098765" },
-        { name: "Jack Orange", phone: "6789098765" },
-      ],
-    },
-    {
-      name: "Sponsorships",
-      heads: [
-        { name: "Ivy Violet", phone: "7890987654" },
-        { name: "Jack Orange", phone: "6789098765" },
-        { name: "Jack Orange", phone: "6789098765" },
+        { name: "A.S.Adithya", phone: "9490459963" },
+        { name: "Nayani", phone: "6305427404" },
+        { name: "P.Saranya", phone: "8688161699" },
       ],
     },
   ];
