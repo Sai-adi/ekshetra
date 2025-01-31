@@ -154,7 +154,7 @@ onMount(() => {
     <img src="both1.png" alt="Event Image" class="max-w-full h-72 md:h-80 object-cover rounded-lg" loading="lazy"> 
 </div>
     
-    <p class="hero-tagline text-xl mt-4 font-audiowide text-lg pl-3 pr-3">Igniting Innovation, Celebrating Excellence!</p>
+    <p class="hero-tagline text-xl mt-4 font-audiowide text-lg justify-around">Igniting Innovation, Celebrating Excellence!</p>
   <p class="hero-date normal-font text-lg mt-2">February 20, 21 & 22;2025</p>
   <p class="hero-collage normal-font text-lg font-bold mt-2">BITS-VIZAG (A)</p>
   
