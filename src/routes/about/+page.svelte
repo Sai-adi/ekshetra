@@ -1,4 +1,4 @@
-  <script>
+<script>
     import { onMount } from "svelte";
     import AOS from "aos";
     import "aos/dist/aos.css"; // Import AOS styles
@@ -97,7 +97,9 @@
             About Our College
           </h2>
           <p class="text-lg leading-relaxed text-center md:text-right">
-            Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+            The Department of Computer Science and Engineering at BITS Vizag, established in 2008, 
+            offers advanced IT infrastructure, industry collaborations, and a research-driven learning environment.
+             The experienced faculty trains students to become skilled engineers, leading to global recruitment by top companies.
           </p>
         </div>
       </div>
@@ -107,10 +109,12 @@
         <img src="ekshetra2.0.jpg" alt="Ekshetra 2.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
         <div class="flex-1">
           <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
-            Ekshetra 2.0 - A Remarkable Journey
+            Department of CSE
           </h2>
           <p class="text-lg leading-relaxed text-center md:text-right">
-            Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+            The Department of Computer Science and Engineering at BITS Vizag, established in 2008, offers advanced IT infrastructure,
+             industry collaborations, and a research-driven learning environment. 
+            The experienced faculty trains students to become skilled engineers, leading to global recruitment by top companies.
           </p>
         </div>
       </div>
@@ -120,10 +124,12 @@
         <img src="jo.jpg" alt="Ekshetra 3.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
         <div class="flex-1">
           <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
-            Ekshetra 3.0 - A Remarkable Journey
+            Ekshetra 2.0 - A Remarkable Journey
           </h2>
           <p class="text-lg leading-relaxed text-center md:text-right">
-            Baba Institute of Technology & Sciences (BITS) was founded in 2008. The college was founded by a group of well-known academicians. They are pioneering educators, having unmatched experience in the field of education with a belief that the continuous search for knowledge is the sole path to success. The primary focus of the institution is to expose the young minds to the world of technology and business, instilling in them confidence and fortitude to face new challenges that enable them to excel in their chosen fields.
+            Ekshetra 2.0, a college fest organized by CSE department students, has been held twice, with the inaugural event at Radisson. 
+            The fest features a variety of events and cultural nights,
+             creating an exciting and vibrant atmosphere for students to showcase their talents and creativity.
           </p>
         </div>
       </div>
@@ -143,11 +149,11 @@
             <span class="text-2xl font-semibold">Contact Us</span>
           </div>
           <p class="text-xl font-medium mb-2">
-            <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
-          </p>
-          <p class="text-lg text-gray-400 mb-4">
-            <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
-          </p>
+        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
+      </p>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
+      </p>
 
           <!-- Subheading Above Social Media Links -->
           <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>

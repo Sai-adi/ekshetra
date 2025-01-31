@@ -7,44 +7,66 @@
 
   const committees = [
     {
-      name: "Technical Committee",
+      name: "Finance & Budget",
       heads: [
         { name: "John Doe", phone: "9876543210" },
+        { name: "Jane Smith", phone: "8765432109" },
         { name: "Jane Smith", phone: "8765432109" },
       ],
     },
     {
-      name: "Cultural Committee",
+      name: "Event Coordination",
       heads: [
         { name: "Alice Brown", phone: "9988776655" },
+        { name: "Bob Johnson", phone: "8877665544" },
         { name: "Bob Johnson", phone: "8877665544" },
       ],
     },
     {
-      name: "Marketing Committee",
+      name: "Cultural",
       heads: [
         { name: "Charlie White", phone: "9123456789" },
+        { name: "Diana Green", phone: "7890123456" },
         { name: "Diana Green", phone: "7890123456" },
       ],
     },
     {
-      name: "Logistics Committee",
+      name: "Food & Beverages",
       heads: [
         { name: "Ethan Black", phone: "9001122334" },
+        { name: "Fiona Gray", phone: "8002233445" },
         { name: "Fiona Gray", phone: "8002233445" },
       ],
     },
     {
-      name: "Hospitality Committee",
+      name: "Media & Public",
       heads: [
         { name: "George Blue", phone: "7654321098" },
+        { name: "Hannah Red", phone: "6543210987" },
         { name: "Hannah Red", phone: "6543210987" },
       ],
     },
     {
-      name: "Sponsorship Committee",
+      name: "Logistics & Ops",
       heads: [
         { name: "Ivy Violet", phone: "7890987654" },
+        { name: "Jack Orange", phone: "6789098765" },
+        { name: "Jack Orange", phone: "6789098765" },
+      ],
+    },
+    {
+      name: "Miscellaneous",
+      heads: [
+        { name: "Ivy Violet", phone: "7890987654" },
+        { name: "Jack Orange", phone: "6789098765" },
+        { name: "Jack Orange", phone: "6789098765" },
+      ],
+    },
+    {
+      name: "Sponsorships",
+      heads: [
+        { name: "Ivy Violet", phone: "7890987654" },
+        { name: "Jack Orange", phone: "6789098765" },
         { name: "Jack Orange", phone: "6789098765" },
       ],
     },
@@ -127,7 +149,7 @@
 
   <div class="relative z-20 container mx-auto px-4 mt-20">
     <h1 class="section-heading text-4xl font-bold mb-8 pt-5  text-center" data-aos="fade-up" data-aos-duration="1000">
-        Contact Us<span class="text-purple-400"></span>
+        Reach Our Committe(s)<span class="text-purple-400"></span>
       </h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each committees as committee}
@@ -166,10 +188,10 @@
       <span class="text-2xl font-semibold">Contact Us</span>
     </div>
     <p class="text-xl font-medium mb-2">
-      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
     </p>
-    <p class="text-lg text-gray-400 mb-4">
-      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+    <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
     </p>
     <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
     <div class="flex justify-center mt-4">

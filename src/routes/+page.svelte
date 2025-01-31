@@ -9,7 +9,22 @@
   let isMenuOpen = false;
   let countdownText = '';
   let mapRef;
+let sponsors = [
+    "/logos/1.png",
+    "/logos/2.png",
+    "/logos/3.png",
+    "/logos/4.png",
+    "/logos/5.png",
+    "/logos/6.png",
+    "/logos/7.png",
+    "/logos/8.png",
+    "/logos/9.png",
+    "/logos/10.png",
+    "/logos/11.png",
+    "/logos/12.png",
+    "/logos/13.png"
 
+  ];
   // Countdown Timer Logic
   const eventDate = new Date("February 20, 2025 00:00:00").getTime();
 
@@ -121,8 +136,9 @@ onMount(() => {
 </script>
 
 <Nav />
-<LoadingPage />
+<!-- <LoadingPage /> -->
 <svelte:head>
+    <link rel="icon" href="main.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </svelte:head>
 
@@ -146,12 +162,30 @@ onMount(() => {
   <div id="countdown" class="text-3xl font-bold mt-4 countdown">{countdownText}</div>
 
   <div class="button-container mt-4 space-4">
+    <a href="https://forms.gle/x4VrCgBDKruueZ8W8">
     <button class="cta-button font-audiowide bg-white text-orange-600 px-6 py-2 rounded-full shadow-lg">Register Now</button>
+    </a>
     <a href="events">
       <button class="cta-button font-audiowide bg-transparent border-2 border-white px-6 py-2 rounded-full mr-12">Explore Events</button>
     </a>
   </div>
-  
+  <!-- Heading for Premium Partners -->
+<h3 class="premium-heading">Our Premium Partners</h3>
+
+<div class="marquee-container">
+  <!-- Left Fade -->
+  <div class="fade-overlay fade-left"></div>
+
+  <div class="marquee-content">
+    <!-- Dynamically display sponsors with seamless effect -->
+    {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
+      <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
+    {/each}
+  </div>
+
+  <!-- Right Fade -->
+  <div class="fade-overlay fade-right"></div>
+</div>
 </section>
 
 <!-- About the Fest Section -->
@@ -179,34 +213,40 @@ onMount(() => {
       <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-500 via-green-500 to-pink-500"></div>
     </div>
 
-    <div class="mt-12 flex justify-center gap-8">
-      <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="400">
+    <div class="mt-12 flex justify-center gap-8 px-4 sm:px-8">
+    <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-blue-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="400">
         <div class="w-16 h-16 bg-blue-700 text-blue-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-blue-800">
-           <a href="about">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v12m6-6H6" />
-        </svg>
-    </a>
+            <a href="about">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v12m6-6H6" />
+                </svg>
+            </a>
         </div>
         <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Workshops</p></a>
-      </div>
-      <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-green-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="500">
+    </div>
+    
+    <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-green-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="500">
         <div class="w-16 h-16 bg-green-700 text-green-500 flex justify-center items-center rounded-full shadow-xl transition-all hover:bg-green-800">
-          <a href="about"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.5a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0018.5 4h-13A2.5 2.5 0 003 6.5v11A2.5 2.5 0 005.5 20h11" />
-          </svg></a>
+            <a href="about">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.5a2.5 2.5 0 002.5-2.5v-1A2.5 2.5 0 0018.5 4h-13A2.5 2.5 0 003 6.5v11A2.5 2.5 0 005.5 20h11" />
+                </svg>
+            </a>
         </div>
         <a href="about"><p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Competitions</p></a>
-      </div>
-      <a href="about"><div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
-        <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-lg transition-all hover:bg-pink-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
-          </svg>
-        </div>
-        <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
-      </div></a>
     </div>
+    
+    <a href="about">
+        <div class="flex flex-col items-center transform transition-all hover:scale-105 hover:shadow-2xl hover:bg-pink-700 p-6 rounded-full" data-aos="fade-up" data-aos-delay="600">
+            <div class="w-16 h-16 bg-pink-700 text-pink-500 flex justify-center items-center rounded-full shadow-lg transition-all hover:bg-pink-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14l4-4 m0 0l4 4m-4-4v10" />
+                </svg>
+            </div>
+            <p class="text-gray-200 font-semibold mt-2 font-audiowide text-lg">Cultural Shows</p>
+        </div>
+    </a>
+</div>
   </div>
 </section>
 
@@ -224,7 +264,7 @@ onMount(() => {
   <div class="container mx-auto text-center relative z-10">
     <h2 class="text-5xl font-extrabold text-orange-400 leading-tight animate__animated animate__fadeInUp font-lora text-2xl" data-aos="fade-up">Event Highlights</h2>
     <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8" data-aos="fade-up" data-aos-delay="100">
-      Discover the most exciting happenings of EKSHETRA 3.0! From technical events, Niche Technologies to cultural nights.
+      Discover the most exciting happenings of EKSHETRA 3.0! <br> From technical events, Niche Technologies to cultural nights.
     </p>
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
       <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-blue-700 to-blue-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
@@ -273,7 +313,7 @@ onMount(() => {
     <div class="overflow-hidden relative">
       <div class="animate-marquee flex items-center gap-12 sponsor-marquee">
         <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
-          <img src="https://via.placeholder.com/150" alt="Tech Innovators Inc. Logo" class="w-24 h-24 mr-4">
+          <img src="./logos/1.png" alt="Tech Innovators Inc. Logo" class="w-24 h-24 mr-4">
           <p class="font-semibold text-gray-700">Tech Innovators Inc.</p>
         </div>
         <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
@@ -302,10 +342,10 @@ onMount(() => {
         <span class="text-2xl font-semibold">Contact Us</span>
       </div>
       <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
+        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
       </p>
-      <p class="text-lg text-gray-400 mb-4">
-        <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
       </p>
 
       <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
@@ -607,47 +647,87 @@ p {
     text-decoration: underline;
     color: #60a5fa;
   }
-  .marquee-container {
-    padding: 4px 0;
+ .premium-heading {
     text-align: center;
-  }
-
-  .marquee-heading {
-    font-size: 20px; /* Slightly larger font */
+    font-size: 1rem;
     font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 5px;
-    margin-top: 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: #333; /* Customize color if needed */
   }
 
-  /* Container for each image */
-  .marquee-item {
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: white; /* White background */
+    padding: 1rem 0;
+  }
+
+  /* Full width on small screens, centered half-width on large screens */
+  @media (min-width: 1024px) {
+    .marquee-container {
+      width: 50vw; /* Half of screen width */
+      margin: 0 auto; /* Centering */
+    }
+  }
+
+  .marquee-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 160px; /* XXL size for mobile */
-    height: 50PX;
-    margin: 0; /* No space around images */
+    gap: 2rem;
+    width: max-content; /* Ensures smooth repeat */
+    animation: marquee 30s linear infinite; /* Slowed down speed from 10s to 30s */
   }
 
-  .marquee-item img {
-    width: 100%; /* Fill the div */
-    height: 100%;
-    object-fit: contain; /* Ensure full image visibility */
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
-  /* Increase sizes on bigger screens */
-  @media (min-width: 768px) {
-    .marquee-item {
-      width: 200px; /* XXL for tablets */
-      height: 200px;
+  /* Pause animation on hover */
+  .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  /* Sponsor images styling */
+  .sponsor-img {
+    height: 3.5rem;
+    width: auto;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  @media (min-width: 640px) {
+    .sponsor-img {
+      height: 5rem;
     }
   }
 
   @media (min-width: 1024px) {
-    .marquee-item {
-      width: 200px; /* XXL for laptops/desktops */
-      height: 200px;
+    .sponsor-img {
+      height: 7rem;
     }
+  }
+
+  /* Fade effect at the edges of the container */
+  .fade-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 15%;
+    pointer-events: none;
+  }
+
+  .fade-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(247, 129, 80, 0.8), transparent);
+  }
+
+  .fade-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(240, 92, 127, 0.8), transparent);
   }
 </style>

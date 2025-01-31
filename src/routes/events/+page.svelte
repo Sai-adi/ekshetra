@@ -345,11 +345,11 @@
       <span class="text-2xl font-semibold">Contact Us</span>
     </div>
     <p class="text-xl font-medium mb-2">
-      <a href="tel:+1234567890" class="hover:underline">+1 (234) 567-890</a>
-    </p>
-    <p class="text-lg text-gray-400 mb-4">
-      <a href="mailto:info@college.edu" class="hover:underline">info@college.edu</a>
-    </p>
+        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
+      </p>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
+      </p>
     <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
     <div class="flex justify-center mt-4">
       <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform duration-300">

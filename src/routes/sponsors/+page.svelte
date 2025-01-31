@@ -13,7 +13,7 @@ export let showArrows = true;
 export let showThumbnails = true;
 
 // State management
-let sponsors = Array.from({ length: 13 }, (_, i) => ({
+let sponsors = Array.from({ length: 14 }, (_, i) => ({
   id: i + 1,
   image: `/sponsors/${i + 1}.png`,
   name: `Sponsor ${i + 1}`
@@ -555,9 +555,12 @@ p {
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.06-1.06a1 1 0 011.415 0L7 11m0 0l2.828-2.828a1 1 0 011.414 0L13 11m-6 0v7a4 4 0 004 4h0a4 4 0 004-4v-7m-6 7H5m12-7v2m0-2h-2m2 0a2 2 0 012 2v3a2 2 0 01-2 2m-4 0h2m2-10a2 2 0 00-2-2h-4a2 2 0 00-2 2v3m8 0h-6m-2-3a2 2 0 012-2m0 0a2 2 0 01-2 2" />
       </svg>
       <span class="text-2xl font-semibold">Contact Us</span>
-    </div>
-    <p class="text-xl font-medium mb-2" aria-label="Phone number">+1 (234) 567-890</p>
-    <p class="text-lg text-gray-400 mb-4" aria-label="Email address">info@college.edu</p>
+    </div><p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
+      </p>
+      <p class="text-xl font-medium mb-2">
+        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
+      </p>
   </div>
 
   <!-- Google Map Embed -->

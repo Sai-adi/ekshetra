@@ -40,7 +40,7 @@
         <a href="contact" class="nav-link text-white underline-animation">Contact</a>
       </div>
   
-      <a href="#register" class="hidden lg:inline-block px-5 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+      <a href="https://forms.gle/x4VrCgBDKruueZ8W8" class="hidden lg:inline-block px-5 py-2 bg-[#0ea5e9] text-white rounded-full hover:bg-[#0284c7] shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
         Register
       </a>
   
