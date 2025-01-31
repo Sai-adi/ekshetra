@@ -310,21 +310,19 @@ onMount(() => {
     <h2 class="text-4xl mt-7 font-extrabold text-orange-500 mb-6 font-lora text-2xl" data-aos="fade-up">Our Esteemed Partners</h2>
     <p class="text-lg text-gray-200 leading-relaxed mb-8 font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">We are proudly supported by some of the most prestigious tech companies and educational institutions, whose collaboration elevates our mission.</p>
 
-    <div class="overflow-hidden relative">
-      <div class="animate-marquee flex items-center gap-12 sponsor-marquee">
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
-          <img src="./logos/1.png" alt="Tech Innovators Inc. Logo" class="w-24 h-24 mr-4">
-          <p class="font-semibold text-gray-700">Tech Innovators Inc.</p>
-        </div>
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
-          <img src="https://via.placeholder.com/150" alt="NextGen Solutions Logo" class="w-24 h-24 mr-4">
-          <p class="font-semibold text-gray-700">NextGen Solutions</p>
-        </div>
-        <div class="partner-item flex items-center bg-gray-100 shadow-md p-4 rounded-lg">
-          <img src="https://via.placeholder.com/150" alt="GlobalTech Corporation Logo" class="w-24 h-24 mr-4">
-          <p class="font-semibold text-gray-700">GlobalTech Corporation</p>
-        </div>
+    <div class="marquee-container1">
+      <!-- Left Fade -->
+      <div class="fade-overlay fade-left1"></div>
+    
+      <div class="marquee-content">
+        <!-- Dynamically display sponsors with seamless effect -->
+        {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
+          <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
+        {/each}
       </div>
+    
+      <!-- Right Fade -->
+      <div class="fade-overlay fade-right1"></div>
     </div>
     <div class="mt-10" data-aos="fade-up" data-aos-delay="400">
       <a href="sponsors" class="px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="500">Know More</a>
@@ -730,4 +728,28 @@ p {
     right: 0;
     background: linear-gradient(to left, rgba(240, 92, 127, 0.8), transparent);
   }
+  .marquee-container1 {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: white; /* White background */
+    padding: 1rem 0;
+  }
+
+    /* Full width on small screens, centered half-width on large screens */
+  @media (min-width: 1024px) {
+    .marquee-container1 {
+      width: 80vw; /* Half of screen width */
+      margin: 0 auto; /* Centering */
+    }
+  }
+  .fade-left1 {
+      left: 0;
+      background: linear-gradient(to right, rgb(23, 31, 46), transparent);
+    }
+
+    .fade-right1 {
+      right: 0;
+      background: linear-gradient(to left, rgb(27, 35, 50), transparent);
+    }
 </style>
