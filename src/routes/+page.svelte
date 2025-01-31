@@ -136,7 +136,7 @@ onMount(() => {
 </script>
 
 <Nav />
-<LoadingPage />
+<!-- <LoadingPage /> -->
 <svelte:head>
     <link rel="icon" href="main.png" type="image/png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -170,21 +170,23 @@ onMount(() => {
     </a>
   </div>
   <!-- Heading for Premium Partners -->
-<h3 class="premium-heading">Our Premium Partners</h3>
+  <div class="pt-20">
+    <h3 class="premium-heading">Our Premium Partners</h3>
 
-<div class="marquee-container">
-  <!-- Left Fade -->
-  <div class="fade-overlay fade-left"></div>
+    <div class="marquee-container">
+      <!-- Left Fade -->
+      <div class="fade-overlay fade-left"></div>
 
-  <div class="marquee-content">
-    <!-- Dynamically display sponsors with seamless effect -->
-    {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
-      <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
-    {/each}
-  </div>
+      <div class="marquee-content">
+        <!-- Dynamically display sponsors with seamless effect -->
+        {#each [...sponsors, ...sponsors] as sponsor} <!-- Duplicate for seamless effect -->
+          <img src={sponsor} alt="Sponsor Logo" class="sponsor-img" />
+        {/each}
+      </div>
 
-  <!-- Right Fade -->
-  <div class="fade-overlay fade-right"></div>
+      <!-- Right Fade -->
+      <div class="fade-overlay fade-right"></div>
+    </div>
 </div>
 </section>
 
