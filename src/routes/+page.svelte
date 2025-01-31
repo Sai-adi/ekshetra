@@ -197,16 +197,14 @@ onMount(() => {
     <h2 class="text-5xl font-extrabold text-blue-400 mb-6 tracking-wide leading-tight animate-textFadeIn font-lora text-2xl" data-aos="fade-up" data-aos-delay="100">About the Fest</h2>
     <p class="text-lg font-medium text-gray-200 mb-8 animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">
       A blend of <span class="text-blue-500 font-bold">Innovation</span>, 
-      <span class="text-green-500 font-bold">Creativity</span>, and 
+      <span class="text-green-500 font-bold">Creativity</span>,<br> and 
       <span class="text-pink-500 font-bold">Celebration</span> !!!
     </p>
 
     <div class="max-w-3xl mx-auto text-gray-200 text-lg">
       <p class="mb-6 leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="200">
-        Join us for a thrilling lineup of Technical Events, Niche Technologies, Spot Events, Games, Ekshetra Street Fair - Food & Fun.(And the ultimate cultural night)</p>
-      <p class="leading-relaxed animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="300">
-        Technology and Innovation <br> <b>Lets make EKSHETRA-3.0 a memory to remember</b>
-      </p>
+        Join us for a thrilling lineup of Technical Events,Workshops on Niche Technologies, Spot Events, Games, Ekshetra Street Fair - Food & Fun.</p>
+      
     </div>
 
     <div class="mt-10">
