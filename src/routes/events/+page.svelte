@@ -44,7 +44,7 @@
     { 
       // name: "Blind Coding",
       // description: "Test your coding skills without seeing what you type. A real challenge!",
-      flyer: "/flyers/3.png",
+      flyer: "/flyers/4.png",
       rules: [
         "Individual participation only",
         "Topic: Must be related to C programming or python",
@@ -61,22 +61,9 @@
       prize: "₹7,500"
     },
     { 
-      // name: "E-Sports",
-      // description: "Compete in an adrenaline-pumping gaming competition.",
-      flyer: "/flyers/4.png",
-      rules: [
-        "will be updated shortly"
-      ],
-      coordinators: [
-        { name: "Chris Wong", phone: "+91 9876543216" },
-        { name: "Lisa Park", phone: "+91 9876543217" }
-      ],
-      prize: "₹7,500"
-    },
-    { 
       // name: "Technical Quiz",
-      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
-      flyer: "/flyers/5.png",
+      // description: "Compete in an adrenaline-pumping gaming competition.",
+      flyer: "/flyers/3.png",
       rules: [
         "Team size: 2 members",
         "Topic: Will be related to Computer Science.",
@@ -85,6 +72,19 @@
         "Registration: Scan the QR code & complete payment for confirmation.",
         "Dress Code: Formal attire is mandatory.",
         "Note:- Depending upon the program proceeding then may be change in the event timings"
+      ],
+      coordinators: [
+        { name: "Karthik", phone: "7997578230" },
+        { name: "Sumedha", phone: "9441478393" }
+      ],
+      prize: "₹7,500"
+    },
+    { 
+      // name: "e-sports",
+      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
+      flyer: "/flyers/5.png",
+      rules: [
+        "Will be Updated shortly"
       ],
       coordinators: [
         { name: "Tom Wilson", phone: "+91 9876543218" },
