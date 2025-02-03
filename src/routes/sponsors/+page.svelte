@@ -547,13 +547,32 @@ p {
     </div>
   </div>
 </div>
+<div>
+  <a
+      href="/"
+      class="fixed bottom-6 right-6 z-50 p-2 lg:p-4 bg-white hover:bg-opacity-50 rounded-full"
+  >
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 text-black"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+      >
+          <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          />
+      </svg>
+  </a>
+</div>
 <div class="relative bottom-0 left-0 right-0 p-8 bg-opacity-90 bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-800 animate-gradient-xy shadow-2xl rounded-t-lg flex flex-col md:flex-row justify-between items-center contact-section space-y-6 md:space-y-0 md:space-x-8">
   <!-- Contact Details -->
   <div class="flex flex-col items-center md:items-start w-full md:w-1/2">
     <div class="flex items-center space-x-3 mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.06-1.06a1 1 0 011.415 0L7 11m0 0l2.828-2.828a1 1 0 011.414 0L13 11m-6 0v7a4 4 0 004 4h0a4 4 0 004-4v-7m-6 7H5m12-7v2m0-2h-2m2 0a2 2 0 012 2v3a2 2 0 01-2 2m-4 0h2m2-10a2 2 0 00-2-2h-4a2 2 0 00-2 2v3m8 0h-6m-2-3a2 2 0 012-2m0 0a2 2 0 01-2 2" />
-      </svg>
+      <img src="./image.png" alt="Phone Icon" class="w-8 h-8" />
       <span class="text-2xl font-semibold">Contact Us</span>
     </div><p class="text-xl font-medium mb-2">
         <a href="tel:+1234567890" class="hover:underline">9490459963</a>
@@ -561,6 +580,15 @@ p {
       <p class="text-xl font-medium mb-2">
         <a href="tel:+1234567890" class="hover:underline">9676677116</a>
       </p>
+      <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
+
+      <div class="flex justify-center mt-4">
+        <a href="https://www.instagram.com/ekshetra_3.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:scale-110 transition-transform duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class ="w-8 h-8 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H16A5 5 0 0121 8V16A5 5 0 0116 21H8A5 5 0 013 16V8A5 5 0 018 3ZM12 15.5A3.5 3.5 0 1012 8.5 3.5 3.5 0 0012 15.5ZM16.5 7.5A1.5 1.5 0 1118 6 1.5 1.5 0 0116.5 7.5Z" />
+          </svg>
+        </a>
+        </div>
   </div>
 
   <!-- Google Map Embed -->
