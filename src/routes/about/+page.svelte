@@ -119,9 +119,9 @@
         </div>
       </div>
 
-      <!-- About Ekshetra 3.0 -->
+      <!-- About Ekshetra 2.0 -->
       <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-        <img src="jo.jpg" alt="Ekshetra 3.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+        <img src="n.png" alt="Ekshetra 3.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
         <div class="flex-1">
           <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
             Ekshetra 2.0 - A Remarkable Journey
