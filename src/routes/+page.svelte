@@ -173,7 +173,7 @@ onMount(() => {
    
 <h3 class=" pt-4 premium-heading">Our Premium Partners</h3>
 
-<div class="marquee-container">
+<div class="marquee-container"  data-aos="fade-in" data-aos-delay="100">
   <!-- Left Fade -->
   <div class="fade-overlay fade-left"></div>
 
@@ -194,7 +194,7 @@ onMount(() => {
   <div class="absolute top-0 left-0 w-48 h-48 bg-blue-900 rounded-full opacity-30 transform -translate-x-20 -translate-y-20 animate-bgShape1"></div>
   <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-800 rounded-full opacity-20 transform translate-x-20 translate-y-20 animate-bgShape2"></div>
 
-  <div class="relative z-10 max-w-5xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+  <div class="relative z-10 max-w-5xl mx-auto text-center">
     <h2 class="text-5xl font-extrabold text-blue-400 mb-6 tracking-wide leading-tight animate-textFadeIn font-lora text-2xl" data-aos="fade-up" data-aos-delay="100">About the Fest</h2>
     <p class="text-lg font-medium text-gray-200 mb-8 animate-textFadeIn font-audiowide text-lg" data-aos="fade-up" data-aos-delay="100">
       A blend of <span class="text-blue-500 font-bold">Innovation</span>, 
