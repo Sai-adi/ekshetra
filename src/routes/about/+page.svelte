@@ -106,7 +106,7 @@
 
       <!-- About Ekshetra 2.0 -->
       <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-        <img src="" alt="Ekshetra 2.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+        <img src="VALIANT WIZADRS w.png" alt="Ekshetra 2.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
         <div class="flex-1">
           <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
             Department of CSE
@@ -133,6 +133,18 @@
           </p>
         </div>
       </div>
+      <div class="content bg-gray-800 p-8 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+  <img src="square.jpg" alt="Ekshetra 3.0 image" class="w-96 h-auto rounded-lg border-2 border-gray-600 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl mb-4 md:mb-0 md:mr-4" />
+  <div class="flex-1">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-300 text-center md:text-left">
+      Ekshetra 3.0 - Unleashing New Horizons
+    </h2>
+    <p class="text-lg leading-relaxed text-center md:text-right">
+      Ekshetra 3.0 is back, bigger and better! Organized by the dynamic CSE department, this edition promises cutting-edge technical events, 
+      engaging workshops, and unforgettable cultural nights. Join us as we celebrate innovation, creativity, and limitless possibilities.
+    </p>
+  </div>
+</div>
 
       
     </div>
@@ -149,10 +161,10 @@
             <span class="text-2xl font-semibold">Contact Us</span>
           </div>
           <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
+        <a href="tel:9490459963" class="hover:underline">9490459963</a>
       </p>
       <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
+        <a href="tel:9676677116" class="hover:underline">9676677116</a>
       </p>
 
           <!-- Subheading Above Social Media Links -->

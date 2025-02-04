@@ -346,10 +346,10 @@
       <span class="text-2xl font-semibold">Contact Us</span>
     </div>
     <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">9490459963</a>
+        <a href="tel:9490459963" class="hover:underline">9490459963</a>
       </p>
       <p class="text-xl font-medium mb-2">
-        <a href="tel:+1234567890" class="hover:underline">9676677116</a>
+        <a href="tel:+9676677116" class="hover:underline">9676677116</a>
       </p>
     <h3 class="text-lg font-semibold text-white mb-2">Follow Us on Instagram</h3>
     <div class="flex justify-center mt-4">
