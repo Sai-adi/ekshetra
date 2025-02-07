@@ -22,7 +22,8 @@ let sponsors = [
     "/logos/10.png",
     "/logos/11.png",
     "/logos/12.png",
-    "/logos/13.png"
+    "/logos/13.png",
+    "/logos/14.png"
 
   ];
   // Countdown Timer Logic
