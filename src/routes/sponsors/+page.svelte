@@ -13,7 +13,7 @@ export let showArrows = true;
 export let showThumbnails = true;
 
 // State management
-let sponsors = Array.from({ length: 15 }, (_, i) => ({
+let sponsors = Array.from({ length: 16 }, (_, i) => ({
   id: i + 1,
   image: `/sponsors/${i + 1}.png`,
   name: `Sponsor ${i + 1}`
