@@ -97,7 +97,7 @@
        </svg>
    </a>
 
-   <h1 class="heading text-4xl font-bold text-white mb-8">Ekshetra 3.0 Gallery</h1>
+   <h1 class="heading text-4xl font-bold text-white mb-8 ">Ekshetra 3.0 Gallery</h1>
     
    <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
        {#each images as image}
