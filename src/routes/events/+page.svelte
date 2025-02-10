@@ -14,9 +14,11 @@
         "Maximum team size: 2 members",
         "Time limit: 5 minutes presentation + 2 minutes Q&A",
         "Topic: Must be related to computer science & its verticals.",
-        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st ",
         "Registration: Click the Register button and complete the payment for confirmation.",
-        "Note: Depending upon the program proceeding then may be change in the event timings"
+        "BITS Vizag Participants: Preliminary round on February 15th; shortlisted candidates' round on February 21st.",
+        "Other Colleges: Both rounds scheduled for February 21st.",
+        "Note: Depending upon the program proceeding then may be change in the event timings",
+        
       ],
       coordinators: [
         { name: "Pavithra", phone: "6304605203" },
@@ -32,7 +34,7 @@
         "Maximum team size: 2 members",
         "Topic: Must be related to computer science & its verticals.",
         "Dress Code: Formal attire is mandatory.",
-        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
+        "A preliminary round will be conducted in the same week for the students of BITS-VIZAG. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
         "Registration: Click the Register button and complete the payment for confirmation.",
       ],
       coordinators: [
@@ -83,6 +85,19 @@
       // name: "e-sports",
       // description: "Prove your knowledge in technical domains with a thrilling quiz.",
       flyer: "/flyers/5.png",
+      rules: [
+        "Will be Updated shortly"
+      ],
+      coordinators: [
+        { name: "Tom Wilson", phone: "+91 9876543218" },
+        { name: "Emma Davis", phone: "+91 9876543219" }
+      ],
+      prize: "₹7,500"
+    },
+    { 
+      // name: "cyber  tresure hunt",
+      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
+      flyer: "/flyers/6.png",
       rules: [
         "Will be Updated shortly"
       ],
