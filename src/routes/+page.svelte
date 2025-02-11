@@ -266,7 +266,7 @@ onMount(() => {
     <p class="mt-4 text-xl text-gray-200 leading-relaxed opacity-80 font-audiowide text-lg px-4 sm:px-8" data-aos="fade-up" data-aos-delay="100">
       Discover the most exciting happenings of EKSHETRA 3.0! <br> From technical events, Niche Technologies to cultural nights.
     </p>
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-8">
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 px-8 justify-items-center">
       <div class="event-card bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-blue-700 to-blue-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
         <div class="text-3xl font-semibold text-white-400">Technical Workshops</div>
         <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Interactive workshops with industry experts and hands-on learning sessions.</p>
@@ -284,16 +284,10 @@ onMount(() => {
         <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Get ready to show off your skills in thrilling sports competitions.</p>
         <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
       </div>
-
-      <div class="event-card bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg p-6 rounded-lg transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-l from-orange-600 to-orange-800 transition-all duration-500" data-aos="fade-up" data-aos-delay="700">
-        <div class="text-3xl font-semibold text-white-400">Guest Lectures</div>
-        <p class="mt-3 text-sm text-gray-100 font-audiowide text-lg">Engage with thought leaders and learn from their inspiring journeys.</p>
-        <div class="absolute inset-0 bg-black opacity-10 rounded-lg"></div>
-      </div>
     </div>
 
     <div class="mt-10" data-aos="fade-up" data-aos-delay="400">
-      <a href="events" class=" mt-7 px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
+      <a href="events" class="mt-7 px-6 py-3 bg-orange-400 text-gray-900 font-semibold rounded-full shadow-lg hover:bg-orange-500 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="800">Know More</a>
     </div>
   </div>
 </section>
