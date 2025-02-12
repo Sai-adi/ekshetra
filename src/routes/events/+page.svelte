@@ -7,8 +7,6 @@
 
   const events = [
     { 
-      // name: "Paper Presentation",
-      // description: "Showcase your innovative ideas and research in a professional setting.",
       flyer: "/flyers/1.png",
       rules: [
         "Maximum team size: 2 members",
@@ -17,8 +15,7 @@
         "Registration: Click the Register button and complete the payment for confirmation.",
         "BITS Vizag Participants: Preliminary round on February 15th; shortlisted candidates' round on February 21st.",
         "Other Colleges: Both rounds scheduled for February 21st.",
-        "Note: Depending upon the program proceeding then may be change in the event timings",
-        
+        "Note: Event timings may change based on the program schedule."
       ],
       coordinators: [
         { name: "Pavithra", phone: "6304605203" },
@@ -27,15 +24,13 @@
       prize: "₹7,500"
     },
     { 
-      // name: "Poster Presentation",
-      // description: "Display your creativity and technical prowess through visually engaging posters.",
       flyer: "/flyers/2.png",
       rules: [
         "Maximum team size: 2 members",
         "Topic: Must be related to computer science & its verticals.",
         "Dress Code: Formal attire is mandatory.",
-        "A preliminary round will be conducted in the same week for the students of BITS-VIZAG. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
-        "Registration: Click the Register button and complete the payment for confirmation.",
+        "A preliminary round will be conducted in the same week for the students of BITS-VIZAG. Shortlisted teams will present in the final round, scheduled for February 20th or 21st.",
+        "Registration: Click the Register button and complete the payment for confirmation."
       ],
       coordinators: [
         { name: "Manasa", phone: "8143260433" },
@@ -44,17 +39,15 @@
       prize: "₹7,500"
     },
     { 
-      // name: "Blind Coding",
-      // description: "Test your coding skills without seeing what you type. A real challenge!",
       flyer: "/flyers/4.png",
       rules: [
         "Individual participation only",
-        "Topic: Must be related to C programming or python",
-        "Time Limit:  30 mins",
+        "Topic: Must be related to C programming or Python.",
+        "Time Limit: 30 mins",
         "Dress Code: Formal attire is mandatory.",
-        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st",
-        " Registration: Click the Register button and complete the payment for confirmation.",
-        "Note:- Depending upon the program proceeding then may be change in the event timings"
+        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st.",
+        "Registration: Click the Register button and complete the payment for confirmation.",
+        "Note: Event timings may change based on the program schedule."
       ],
       coordinators: [
         { name: "Girish Prasad", phone: "9951941294" },
@@ -63,8 +56,6 @@
       prize: "₹7,500"
     },
     { 
-      // name: "Technical Quiz",
-      // description: "Compete in an adrenaline-pumping gaming competition.",
       flyer: "/flyers/3.png",
       rules: [
         "Team size: 2 members",
@@ -73,7 +64,7 @@
         "No electronic devices allowed.",
         "Registration: Scan the QR code & complete payment for confirmation.",
         "Dress Code: Formal attire is mandatory.",
-        "Note:- Depending upon the program proceeding then may be change in the event timings"
+        "Note: Event timings may change based on the program schedule."
       ],
       coordinators: [
         { name: "Karthik", phone: "7997578230" },
@@ -82,32 +73,29 @@
       prize: "₹7,500"
     },
     { 
-      // name: "e-sports",
-      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
       flyer: "/flyers/5.png",
       rules: [
-        "Will be Updated shortly"
+        "Registration closes at 13/02/2025 11:59 PM",
+        "No Gloo Wall Break",
+        "No Chips Upgrade",
+        "No Heights/Rooftops",
+        "No Hacks",
+        "No PC Allowed",
+        "No Character Skills",
+        "No Gun Attributes",
+        "Connection Issues = Your Responsibility",
+        "Match Objective: Win 6 Rounds to Victory!",
+        "Allowed Weapons: Desert Eagle, UMP, MP40, M1014, M1887, AK47, Woodpecker",
+        "Follow the rules, battle smart & claim glory!"
       ],
       coordinators: [
-        { name: "Tom Wilson", phone: "+91 9876543218" },
-        { name: "Emma Davis", phone: "+91 9876543219" }
-      ],
-      prize: "₹7,500"
-    },
-    { 
-      // name: "cyber  tresure hunt",
-      // description: "Prove your knowledge in technical domains with a thrilling quiz.",
-      flyer: "/flyers/6.png",
-      rules: [
-        "Will be Updated shortly"
-      ],
-      coordinators: [
-        { name: "Tom Wilson", phone: "+91 9876543218" },
-        { name: "Emma Davis", phone: "+91 9876543219" }
+        { name: "K.Aditya", phone: "8317511173" },
+        { name: "P.Praveen", phone: "9866696178" }
       ],
       prize: "₹7,500"
     }
-  ];
+];
+
 
   let selectedEvent = null;
   let isDialogOpen = false;

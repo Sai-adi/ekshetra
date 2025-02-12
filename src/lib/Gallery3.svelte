@@ -26,11 +26,8 @@
         '../gallery3.0/18.JPG',
         '../gallery3.0/19.JPG',
         '../gallery3.0/20.JPG',
-        '../gallery3.0/22.JPG',
-        '../gallery3.0/23.JPG',
-        '../gallery3.0/24.JPG',
-        '../gallery3.0/25.JPG',
-        '../gallery3.0/26.JPG'
+        '../gallery3.0/21.JPG'
+        
     ];
 
     let currentImage = null;
