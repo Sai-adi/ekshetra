@@ -9,6 +9,7 @@
     { 
       flyer: "/flyers/1.png",
       rules: [
+        "Poster Presentation Proceedings 20th Afternoon Post Lunch Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
         "Time limit: 5 minutes presentation + 2 minutes Q&A",
         "Topic: Must be related to computer science & its verticals.",
@@ -26,6 +27,7 @@
     { 
       flyer: "/flyers/2.png",
       rules: [
+        "Paper Presentation Proceedings 21st Morning Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
         "Topic: Must be related to computer science & its verticals.",
         "Dress Code: Formal attire is mandatory.",
@@ -41,6 +43,7 @@
     { 
       flyer: "/flyers/4.png",
       rules: [
+        "Blind Coding Proceedings 21st Afternoon Post Lunch Central seminar hall,BITS VIZAG",
         "Individual participation only",
         "Topic: Must be related to C programming or Python.",
         "Time Limit: 30 mins",
@@ -58,6 +61,7 @@
     { 
       flyer: "/flyers/3.png",
       rules: [
+        "Quiz Proceedings 22nd Morning Central seminar hall,BITS VIZAG",
         "Team size: 2 members",
         "Topic: Will be related to Computer Science.",
         "Screen online exam and finals.",
@@ -75,6 +79,7 @@
     { 
       flyer: "/flyers/5.png",
       rules: [
+        "14th February 2025, 10:00 AM - 4:00 PM Central Seminar Hall at BITS Vizag",
         "Registration closes at 13/02/2025 11:59 PM",
         "No Gloo Wall Break",
         "No Chips Upgrade",
