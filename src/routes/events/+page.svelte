@@ -9,7 +9,7 @@
     { 
       flyer: "/flyers/1.png",
       rules: [
-        "Poster Presentation Proceedings 20th Afternoon Post Lunch Central seminar hall,BITS VIZAG",
+        "Paper Presentation Proceedings 20th Afternoon Post Lunch Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
         "Time limit: 5 minutes presentation + 2 minutes Q&A",
         "Topic: Must be related to computer science & its verticals.",
@@ -27,7 +27,7 @@
     { 
       flyer: "/flyers/2.png",
       rules: [
-        "Paper Presentation Proceedings 21st Morning Central seminar hall,BITS VIZAG",
+        "Poster Presentation Proceedings 21st Morning Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
         "Topic: Must be related to computer science & its verticals.",
         "Dress Code: Formal attire is mandatory.",
