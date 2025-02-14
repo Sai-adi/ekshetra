@@ -9,12 +9,13 @@
     { 
       flyer: "/flyers/1.png",
       rules: [
-        "Paper Presentation Proceedings 20th Afternoon Post Lunch Central seminar hall,BITS VIZAG",
+        "Paper Presentation Proceedings 21st Morning at Central seminar hall,BITS VIZAG",
+        "Documentation should be submitted hard copy",
         "Maximum team size: 2 members",
         "Time limit: 5 minutes presentation + 2 minutes Q&A",
         "Topic: Must be related to computer science & its verticals.",
         "Registration: Click the Register button and complete the payment for confirmation.",
-        "BITS Vizag Participants: Preliminary round on February 15th; shortlisted candidates' round on February 21st.",
+        "BITS Vizag Participants: Preliminary round for the students of BITS-VIZAG will be announced shortly",
         "Other Colleges: Both rounds scheduled for February 21st.",
         "Note: Event timings may change based on the program schedule."
       ],
@@ -27,8 +28,9 @@
     { 
       flyer: "/flyers/2.png",
       rules: [
-        "Poster Presentation Proceedings 21st Morning Central seminar hall,BITS VIZAG",
+        "Poster Presentation Proceedings 20th afternoon post lunch at Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
+        "Artificial charts are not allowed only handmade charts are allowed",
         "Topic: Must be related to computer science & its verticals.",
         "Dress Code: Formal attire is mandatory.",
         "A preliminary round will be conducted in the same week for the students of BITS-VIZAG. Shortlisted teams will present in the final round, scheduled for February 20th or 21st.",
@@ -43,12 +45,12 @@
     { 
       flyer: "/flyers/4.png",
       rules: [
-        "Blind Coding Proceedings 21st Afternoon Post Lunch Central seminar hall,BITS VIZAG",
+        "Blind Coding Proceedings 20th Morning at Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
         "Topic: Must be related to C programming or Python.",
         "Time Limit: 30 mins",
         "Dress Code: Formal attire is mandatory.",
-        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th or 21st.",
+        "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th.",
         "Registration: Click the Register button and complete the payment for confirmation.",
         "Note: Event timings may change based on the program schedule."
       ],
@@ -63,7 +65,7 @@
       rules: [
         "Quiz Proceedings 22nd Morning Central seminar hall,BITS VIZAG",
         "Team size: 2 members",
-        "Topic: Will be related to Computer Science.",
+        "Topic: Will be related to Computer Science and Generals.",
         "Screen online exam and finals.",
         "No electronic devices allowed.",
         "Registration: Scan the QR code & complete payment for confirmation.",
@@ -74,6 +76,19 @@
         { name: "Karthik", phone: "7997578230" },
         { name: "Sumedha", phone: "9441478393" }
       ],
+      prize: "₹7,500"
+    },
+    { 
+      flyer: "/flyers/6.png",
+      rules: [
+        " Proceedings 21st Afternoon Post Lunch Central seminar hall,BITS VIZAG",
+        "Team size: 2 members",
+        "Topic: Finding out the treasure using given clues through programming",
+      ],
+      // coordinators: [
+      //   { name: "Karthik", phone: "7997578230" },
+      //   { name: "Sumedha", phone: "9441478393" }
+      // ],
       prize: "₹7,500"
     },
     { 
@@ -100,7 +115,8 @@
       ],
       prize: "₹7,500",
       status: "Event Over" // Added status message
-    }
+    },
+    
   ];
 
   let selectedEvent = null;
