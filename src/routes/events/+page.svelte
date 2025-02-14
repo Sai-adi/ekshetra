@@ -44,7 +44,7 @@
       flyer: "/flyers/4.png",
       rules: [
         "Blind Coding Proceedings 21st Afternoon Post Lunch Central seminar hall,BITS VIZAG",
-        "Individual participation only",
+        "Maximum team size: 2 members",
         "Topic: Must be related to C programming or Python.",
         "Time Limit: 30 mins",
         "Dress Code: Formal attire is mandatory.",
@@ -78,6 +78,7 @@
     },
     { 
       flyer: "/flyers/5.png",
+      name: "Esports Tournament",
       rules: [
         "14th February 2025, 10:00 AM - 4:00 PM Central Seminar Hall at BITS Vizag",
         "Registration closes at 13/02/2025 11:59 PM",
@@ -97,10 +98,10 @@
         { name: "K.Aditya", phone: "8317511173" },
         { name: "P.Praveen", phone: "9866696178" }
       ],
-      prize: "₹7,500"
+      prize: "₹7,500",
+      status: "Event Over" // Added status message
     }
-];
-
+  ];
 
   let selectedEvent = null;
   let isDialogOpen = false;
@@ -263,12 +264,21 @@
               alt={event.name} 
               class="w-full h-[500px] filter brightness-75 hover:brightness-100 transition-all duration-200"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
+            {#if event.status === "Event Over"}
+              <div class="absolute inset-0 bg-black opacity-80"></div> <!-- Increased opacity for dull effect for esports -->
+            {:else}
+              <div class="absolute inset-0 bg-black opacity-10"></div> <!-- Normal opacity for other events -->
+            {/if}
           </div>
           
           <div class="absolute bottom-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
             <h2 class="text-3xl font-bold mb-4 text-[#f8f9fa]">{event.name}</h2>
             <p class="text-xl text-gray-300 mb-6">{event.description}</p>
+            
+            {#if event.status}
+              <span class="inline-block bg-red-600 text-white text-sm font-semibold px-3 py-1 rounded-full mb-4">{event.status}</span> <!-- Badge for status -->
+            {/if}
+
             <button 
               class="royal-button px-8 py-4 bg-gradient-to-r from-[#6a5acd] to-[#483d8b] text-white rounded-full font-bold uppercase tracking-wider transform hover:scale-105 transition-all duration-200 shadow-royal-button"
               on:click={() => openDialog(event)}
@@ -331,7 +341,7 @@
                   class="text-blue-300 hover:text-blue-400 transition-colors flex items-center space-x-2 mt-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <span>{coordinator.phone}</span>
                 </a>
