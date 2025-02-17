@@ -85,10 +85,10 @@
         "Team size: 2 members",
         "Topic: Finding out the treasure using given clues through programming",
       ],
-      // coordinators: [
-      //   { name: "Karthik", phone: "7997578230" },
-      //   { name: "Sumedha", phone: "9441478393" }
-      // ],
+      coordinators: [
+        { name: "B.Vinesh", phone: "7780362864" },
+        { name: "P.Praveen Kumar", phone: "9392542068" }
+      ],
       prize: "₹7,500"
     },
     { 
