@@ -45,9 +45,8 @@
     { 
       flyer: "/flyers/4.png",
       rules: [
-        "Blind Coding Proceedings 20th Morning at Central seminar hall,BITS VIZAG",
+        "Blind Coding Proceedings 20th afternoon at Central seminar hall,BITS VIZAG",
         "Maximum team size: 2 members",
-        "Topic: Must be related to C programming or Python.",
         "Time Limit: 30 mins",
         "Dress Code: Formal attire is mandatory.",
         "A preliminary round will be conducted in the same week. Shortlisted teams will present in the final round, scheduled for February 20th.",
