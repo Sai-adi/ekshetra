@@ -46,8 +46,7 @@ git commit -m "done with bottom nav bar"
 git push -u origin main
 git push
 
-
-
+git push origin main --force
 for pulling 
 
 git add .
